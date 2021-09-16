@@ -19,5 +19,14 @@ Sorry, the following keywords/characters are not allowed :- _ ,config ,os, RUNCM
  With _ we can bypass by \x5f (hex encode) With os we can bypass by \x6f\x73 With .</description>
     </item>
     
+    <item>
+      <title>CSAW - 2021</title>
+      <link>/posts/lord_of_sqli/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/lord_of_sqli/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
