@@ -5,7 +5,16 @@
     <link>/posts/</link>
     <description>Recent content in Posts on D@rkmod3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 15 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DownUnderCTF2021</title>
+      <link>/posts/downunderctf/</link>
+      <pubDate>Sun, 26 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/downunderctf/</guid>
+      <description>Web (7/11) My team ends up at 11th place all over 2142 teams, that is a proud achievement huh !</description>
+    </item>
+    
     <item>
       <title>Lord of Sqli</title>
       <link>/posts/lord_of_sqli/</link>
