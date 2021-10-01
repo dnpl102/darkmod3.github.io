@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Overthewire // D@rkmod3</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.8751543c8da766b689e79176cbd58ed78b7c1b5ffde4bc716e1da317e5caccbe.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Overthewire"/>
+<meta name="twitter:description" content="Bandit Level 0 Use ls command, we get a file readme. Use cat command to read it.
+cat readmeboJ9jbbUNNfktd78OOpsqOltutMc3MY1Level 1 When use ls it returns only -, I use cat - but it not works because:
+ &quot;-&quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
+bandit1@bandit:~$ file ./-./-: ASCII textbandit1@bandit:~$ cat ./-CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9Level 2 It uses spaces in this filename, but don&rsquo;t worry because we can use * to select all file from this directory"/>
+
+    <meta property="og:title" content="Overthewire" />
+<meta property="og:description" content="Bandit Level 0 Use ls command, we get a file readme. Use cat command to read it.
+cat readmeboJ9jbbUNNfktd78OOpsqOltutMc3MY1Level 1 When use ls it returns only -, I use cat - but it not works because:
+ &quot;-&quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
+bandit1@bandit:~$ file ./-./-: ASCII textbandit1@bandit:~$ cat ./-CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9Level 2 It uses spaces in this filename, but don&rsquo;t worry because we can use * to select all file from this directory" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/overthewire/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-09-28T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href=""><img class="app-header-avatar" src="/avatar.png" alt="John Doe" /></a>
+      <h1>D@rkmod3</h1>
+      <p>Hack or hacked</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Overthewire</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 28, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          7 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="bandit">Bandit</h1>
+<h3 id="level-0">Level 0</h3>
+<p>Use <code>ls</code> command, we get a file <code>readme</code>. Use <code>cat</code> command to read it.</p>
+<pre tabindex="0"><code>cat readme
+boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+</code></pre><h3 id="level-1">Level 1</h3>
+<p>When use <code>ls</code> it returns only <code>-</code>, I use <code>cat -</code> but it not works because:</p>
+<ul>
+<li><code>&quot;-&quot;</code> means to read the argument/content from STDIN (file descriptor 0)</li>
+</ul>
+<p>So I use <code>./-</code> to select this file.</p>
+<pre tabindex="0"><code>bandit1@bandit:~$ file ./-
+./-: ASCII text
+
+bandit1@bandit:~$ cat ./-
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+</code></pre><h3 id="level-2">Level 2</h3>
+<p>It uses spaces in this filename, but don&rsquo;t worry because we can use <code>*</code> to select all file from this directory</p>
+<pre tabindex="0"><code>cat *
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+</code></pre><h3 id="level-3">Level 3</h3>
+<p>From the description, I find a argument <code>-a</code> of <code>ls</code> command will be show all file hidden.</p>
+<pre tabindex="0"><code>bandit3@bandit:~$ cd inhere
+bandit3@bandit:~/inhere$ ls -a
+.  ..  .hidden
+bandit3@bandit:~/inhere$ cat .*
+cat: .: Is a directory
+cat: ..: Is a directory
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+</code></pre><p>Use <code>cat .*</code> to get password, or u can use <code>cat .hidden</code> instead.</p>
+<h3 id="level-4">Level 4</h3>
+<p><code>*</code> is useful :)), In this level we maybe use <code>cat ./-*</code> to get all text from all file (It will hard to get password)</p>
+<p>Thus, we should use <code>file</code> to get type of all file.</p>
+<pre tabindex="0"><code>bandit4@bandit:~/inhere$ file ./-*
+./-file00: data
+./-file01: data
+./-file02: data
+./-file03: data
+./-file04: data
+./-file05: data
+./-file06: data
+./-file07: ASCII text
+./-file08: data
+./-file09: data
+bandit4@bandit:~/inhere$ cat ./-file07
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+</code></pre><h3 id="level-5">Level 5</h3>
+<p>It has many folder in <code>inhere</code> directory, so we will use <code>find</code> to get password.</p>
+<p>Read the description of this level, we can use argument of <code>find</code> to filter.</p>
+<ul>
+<li><code>human-readable</code> use <code>-type f</code></li>
+<li><code>1033 bytes in size</code> use <code>-size 1033c</code></li>
+<li><code>not executable</code> use <code>! -executable</code></li>
+</ul>
+<pre tabindex="0"><code>bandit5@bandit:~/inhere$ ls -la
+total 88
+drwxr-x--- 22 root bandit5 4096 May  7  2020 .
+drwxr-xr-x  3 root root    4096 May  7  2020 ..
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere00
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere01
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere02
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere03
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere04
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere05
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere06
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere07
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere08
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere09
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere10
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere11
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere12
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere13
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere14
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere15
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere16
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere17
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere18
+drwxr-x---  2 root bandit5 4096 May  7  2020 maybehere19
+bandit5@bandit:~/inhere$ find . -type f -size 1033c ! -executable
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+</code></pre><h3 id="level-6">Level 6</h3>
+<p>Same with level 6, we use argument of <code>find</code> to filter:</p>
+<ul>
+<li><code>owned by user bandit7</code> by <code>-user bandit7</code></li>
+<li><code>owned by group bandit6</code> by <code>-group bandit6</code></li>
+<li><code>33 bytes in size</code> by <code>-size 33c</code></li>
+</ul>
+<p>When we use <code>find / -user bandit7 -group bandit6 -size 33c</code>, it appears many errors.
+So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
+<pre tabindex="0"><code>bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2&gt;/dev/null
+/var/lib/dpkg/info/bandit7.password
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+</code></pre><h3 id="level-7">Level 7</h3>
+<p>Combine <code>cat</code> and <code>grep</code> via pipe.</p>
+<pre tabindex="0"><code>bandit7@bandit:~$ cat data.txt  | grep &quot;millionth&quot;
+millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+</code></pre><h3 id="level-8">Level 8</h3>
+<p><code>sort</code> and <code>uniq</code> are useful in this case. With <code>sort</code> we can sort same data to a set, then use <code>uniq -u</code> to remove multiple duplicate lines.</p>
+<p><code>-u – -unique : It allows you to print only unique lines.</code></p>
+<pre tabindex="0"><code>bandit8@bandit:~$ cat data.txt | sort | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+</code></pre><h3 id="level-9">Level 9</h3>
+<p>Use <code>strings</code> to find out <code>printable</code> character, then <code>grep</code> with <code>regex</code></p>
+<pre tabindex="0"><code>bandit9@bandit:~$ strings data.txt | grep &quot;= [a-z0-9]&quot;
+========== the*2i&quot;4
+========== password
+Z)========== is
+&amp;========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+</code></pre><h3 id="level-10">Level 10</h3>
+<p>Decode base64 from string.</p>
+<pre tabindex="0"><code>bandit10@bandit:~$ cat data.txt
+VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg==
+bandit10@bandit:~$ cat data.txt | base64 -d
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+</code></pre><h3 id="level-11">Level 11</h3>
+<p>From description <code>rotated by 13 positions</code> which make me thinking about rot13 algorithm.</p>
+<ul>
+<li>ROT13 is a special case of the encryption algorithm known as a Caesar cipher</li>
+</ul>
+<p>So I search on <code>stackoverflow</code>, and find out <code>alias</code> of rot13.</p>
+<pre tabindex="0"><code>bandit11@bandit:~$ cat data.txt
+Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+bandit11@bandit:~$ alias rot13=&quot;tr 'A-Za-z' 'N-ZA-Mn-za-m'&quot;
+bandit11@bandit:~$ cat data.txt | rot13
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+</code></pre><h3 id="level-12">Level 12</h3>
+<p>First step, create directory which permit we execute command on <code>data.txt</code></p>
+<pre tabindex="0"><code>bandit12@bandit:~$ mkdir /tmp/D@rkmod3
+bandit12@bandit:~$ cd /tmp/D@rkmod3
+bandit12@bandit:/tmp/D@rkmod3$ cp ~/data.txt .
+bandit12@bandit:/tmp/D@rkmod3$ ls
+data.txt
+</code></pre><p>Data in <code>data.txt</code> is hexdump. So we need reverse hexdump into binary by using <code>xxd -r</code></p>
+<pre tabindex="0"><code>bandit12@bandit:/tmp/D@rkmod3$ xxd -r data.txt data
+bandit12@bandit:/tmp/D@rkmod3$ file data
+pw: gzip compressed data, was &quot;data2.bin&quot;, last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+</code></pre><p>Now Extract this compressed</p>
+<pre tabindex="0"><code>bandit12@bandit:/tmp/D@rkmod3$ mv data data.gz
+bandit12@bandit:/tmp/D@rkmod3$ gzip -d data.gz
+bandit12@bandit:/tmp/D@rkmod3$ file data
+pw: bzip2 compressed data, block size = 900k
+</code></pre><p>It seems to be compressed from multiple type. It&rsquo;ll spend more time If you use gzip gzip2 &hellip; to extract one by one.</p>
+<p>A wiser way is use directly data from <code>data compressed</code>.</p>
+<pre tabindex="0"><code>bandit12@bandit:/tmp/D@rkmod3$ file data
+pw: bzip2 compressed data, block size = 900k
+bandit12@bandit:/tmp/D@rkmod3$ bzcat data | file -
+/dev/stdin: gzip compressed data, was &quot;data4.bin&quot;, last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/D@rkmod3$ bzcat data | zcat | file -
+/dev/stdin: POSIX tar archive (GNU)
+bandit12@bandit:/tmp/D@rkmod3$ bzcat data | zcat | tar -xvf -
+data5.bin
+bandit12@bandit:/tmp/D@rkmod3$ tar -xvf data5.bin
+data6.bin
+bandit12@bandit:/tmp/D@rkmod3$ tar -xvf data6.bin
+data8.bin
+bandit12@bandit:/tmp/D@rkmod3$ file data8.bin
+data8.bin: gzip compressed data, was &quot;data9.bin&quot;, last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+bandit12@bandit:/tmp/D@rkmod3$ zcat data8.bin | file -
+/dev/stdin: ASCII text
+bandit12@bandit:/tmp/D@rkmod3$ zcat data8.bin
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+</code></pre><h3 id="level-13">Level 13</h3>
+<pre tabindex="0"><code>bandit13@bandit:~$ ls
+sshkey.private
+</code></pre><p>I use nmap to scan port available on this machine:</p>
+<pre tabindex="0"><code>bandit13@bandit:~$ nmap -v A localhost
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2021-09-30 02:51 CEST
+Failed to resolve &quot;A&quot;.
+Initiating Ping Scan at 02:51
+Scanning localhost (127.0.0.1) [2 ports]
+Completed Ping Scan at 02:51, 0.00s elapsed (1 total hosts)
+Initiating Connect Scan at 02:51
+Scanning localhost (127.0.0.1) [1000 ports]
+Discovered open port 22/tcp on 127.0.0.1
+Discovered open port 113/tcp on 127.0.0.1
+Discovered open port 30000/tcp on 127.0.0.1
+Completed Connect Scan at 02:51, 0.05s elapsed (1000 total ports)
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00022s latency).
+Not shown: 997 closed ports
+PORT      STATE SERVICE
+22/tcp    open  ssh
+113/tcp   open  ident
+30000/tcp open  ndmps
+</code></pre><p>Port 22 is opened and private key is available. Login Now ~~</p>
+<pre tabindex="0"><code>bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost -p 22
+</code></pre><h3 id="level-14">Level 14</h3>
+<pre tabindex="0"><code>bandit14@bandit:~$ ls /etc/bandit_pass
+bandit0   bandit11  bandit14  bandit17  bandit2   bandit22  bandit25  bandit28  bandit30  bandit33  bandit6  bandit9
+bandit1   bandit12  bandit15  bandit18  bandit20  bandit23  bandit26  bandit29  bandit31  bandit4   bandit7
+bandit10  bandit13  bandit16  bandit19  bandit21  bandit24  bandit27  bandit3   bandit32  bandit5   bandit8
+bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+</code></pre><p>Netcat to port 30000:</p>
+<pre tabindex="0"><code>bandit14@bandit:~$ nc localhost 30000
+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+</code></pre><h3 id="level-15">Level 15</h3>
+<p>Use openssl generates key to connect to localhost</p>
+<pre tabindex="0"><code>bandit15@bandit:~$ openssl s_client -ign_eof -connect localhost:30001
+...
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
+</code></pre><h3 id="level-16">Level 16</h3>
+<p>Use <code>nmap -p 31000-32000 localhost</code> to scan all port available from 31000 to 32000</p>
+<pre tabindex="0"><code>bandit16@bandit:~$ nmap -p 31000-32000 localhost
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2021-09-30 04:01 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00028s latency).
+Not shown: 996 closed ports
+PORT      STATE SERVICE
+31046/tcp open  unknown
+31518/tcp open  unknown
+31691/tcp open  unknown
+31790/tcp open  unknown
+31960/tcp open  unknown
+</code></pre><p>I try to connect to 5 port <code>openssl s_client -connect localhost:{port}</code>. The result is 31790 return a correct information.</p>
+<pre tabindex="0"><code>bandit16@bandit:~$ openssl s_client -quiet -connect localhost:31790
+cluFn7wTiGryunymYOu4RcffSxQluehd
+-----BEGIN RSA PRIVATE KEY-----
+...
+-----END RSA PRIVATE KEY-----
+</code></pre><p>Next, write private key to <code>/tmp</code> and use it to levelup.</p>
+<pre tabindex="0"><code>bandit16@bandit:~$ openssl s_client -quiet -connect localhost:31790 &gt; /tmp/test/privatekey
+depth=0 CN = localhost
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = localhost
+verify return:1
+cluFn7wTiGryunymYOu4RcffSxQluehd
+bandit16@bandit:/tmp/test$ nano privatekey
+bandit16@bandit:/tmp/test$ chmod 700 privatekey
+bandit16@bandit:/tmp/test$ ssh -i ./privatekey bandit17@localhost
+</code></pre><h3 id="level--17">Level  17</h3>
+<p>Use <code>diff</code> command to find different between two files.</p>
+<pre tabindex="0"><code>bandit17@bandit:~$ diff passwords.old passwords.new
+42c42
+&lt; w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
+---
+&gt; kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+</code></pre><p>Thus, password for next level is <code>kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd</code></p>
+<h3 id="level-18">Level 18</h3>
+<p>I search on gg for this problem and i found <code>ssh user@host  &quot;/bin/bash --norc&quot;</code> is useful.</p>
+<pre tabindex="0"><code>ssh bandit18@bandit.labs.overthewire.org -p 2220 &quot;/bin/bash --norc&quot;
+bandit18@bandit.labs.overthewire.org's password:
+ls
+readme
+cat readme
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+</code></pre><h3 id="level-19">Level 19</h3>
+<pre tabindex="0"><code>bandit19@bandit:~$ ls
+bandit20-do
+bandit19@bandit:~$ ./bandit20-do
+Run a command as another user.
+  Example: ./bandit20-do id
+bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+</code></pre><h3 id="level-20">Level 20</h3>
+<pre tabindex="0"><code>bandit20@bandit:~$ ls
+suconnect
+bandit20@bandit:~$ ./suconnect
+Usage: ./suconnect &lt;portnumber&gt;
+This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
+bandit20@bandit:~$
+</code></pre><p>Okay, Listen on port <code>1337</code> and attach the text of password this level.</p>
+<pre tabindex="0"><code>nc -lvnp 1337 &lt; /etc/bandit_pass/bandit20
+
+... From another terminal
+
+./suconnect 1337
+Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+Password matches, sending next password
+</code></pre><p>And result from first terminal:</p>
+<pre tabindex="0"><code>bandit20@bandit:~$ nc -lvnp 1337 &lt; /etc/bandit_pass/bandit20
+listening on [any] 1337 ...
+connect to [127.0.0.1] from (UNKNOWN) [127.0.0.1] 39324
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+</code></pre>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
