@@ -13,9 +13,9 @@
       
       <guid>/posts/overthewire/</guid>
       <description>Bandit Level 0 Use ls command, we get a file readme. Use cat command to read it.
-cat readmeboJ9jbbUNNfktd78OOpsqOltutMc3MY1Level 1 When use ls it returns only -, I use cat - but it not works because:
+cat readme boJ9jbbUNNfktd78OOpsqOltutMc3MY1 Level 1 When use ls it returns only -, I use cat - but it not works because:
  &amp;quot;-&amp;quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
-bandit1@bandit:~$ file ./-./-: ASCII textbandit1@bandit:~$ cat ./-CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9Level 2 It uses spaces in this filename, but don&amp;rsquo;t worry because we can use * to select all file from this directory</description>
+bandit1@bandit:~$ file ./- ./-: ASCII text bandit1@bandit:~$ cat ./- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 Level 2 It uses spaces in this filename, but don&amp;rsquo;t worry because we can use * to select all file from this directory</description>
     </item>
     
     <item>
