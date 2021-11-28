@@ -5,7 +5,17 @@
     <link>/</link>
     <description>Recent content on D@rkmod3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ISITDTU CTF QUALS 2021</title>
+      <link>/posts/isitdtu_qual2021/</link>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/isitdtu_qual2021/</guid>
+      <description>Warmup Type: SSTI Đọc source Bài này khi bắt đầu phân tích, mình nhìn vào fileiptables.sh và nhận thấy 1 số thông tin sau:
+#!/bin/bash IPT=&amp;#34;/usr/sbin/iptables&amp;#34; echo &amp;#34;Set default policy to &amp;#39;DROP&amp;#39;&amp;#34; $IPT -P INPUT DROP $IPT -P FORWARD DROP $IPT -P OUTPUT DROP echo &amp;#34;Allowing new and established incoming connections to port 5000&amp;#34; $IPT -A INPUT -p tcp -m multiport --dports 5000 -m state --state NEW,ESTABLISHED -j ACCEPT $IPT -A OUTPUT -p tcp -m multiport --sports 5000 -m state --state ESTABLISHED -j ACCEPT exit 0 iptables là interface cho netfilter giúp xử lí các packet một cách linh hoạt, quyết định các packet nào được phép đi vào (incoming) hay đi ra (outgoing) khỏi hệ thống.</description>
+    </item>
+    
     <item>
       <title>Cookie Hân Hoan season 1</title>
       <link>/posts/cookiehanhoanseason-1/</link>
