@@ -4,7 +4,7 @@
     <title>Overthewire // D@rkmod3</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="D@rkmod3" />
     <meta name="description" content="" />
@@ -16,13 +16,13 @@
 <meta name="twitter:description" content="Bandit Level 0 Use ls command, we get a file readme. Use cat command to read it.
 cat readme boJ9jbbUNNfktd78OOpsqOltutMc3MY1 Level 1 When use ls it returns only -, I use cat - but it not works because:
  &quot;-&quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
-bandit1@bandit:~$ file ./- ./-: ASCII text bandit1@bandit:~$ cat ./- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 Level 2 It uses spaces in this filename, but don&rsquo;t worry because we can use * to select all file from this directory"/>
+bandit1@bandit:~$ file ./- ./-: ASCII text  bandit1@bandit:~$ cat ./- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 Level 2 It uses spaces in this filename, but don&rsquo;t worry because we can use * to select all file from this directory"/>
 
     <meta property="og:title" content="Overthewire" />
 <meta property="og:description" content="Bandit Level 0 Use ls command, we get a file readme. Use cat command to read it.
 cat readme boJ9jbbUNNfktd78OOpsqOltutMc3MY1 Level 1 When use ls it returns only -, I use cat - but it not works because:
  &quot;-&quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
-bandit1@bandit:~$ file ./- ./-: ASCII text bandit1@bandit:~$ cat ./- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 Level 2 It uses spaces in this filename, but don&rsquo;t worry because we can use * to select all file from this directory" />
+bandit1@bandit:~$ file ./- ./-: ASCII text  bandit1@bandit:~$ cat ./- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 Level 2 It uses spaces in this filename, but don&rsquo;t worry because we can use * to select all file from this directory" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/overthewire/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-28T00:00:00+00:00" />
@@ -33,7 +33,7 @@ bandit1@bandit:~$ file ./- ./-: ASCII text bandit1@bandit:~$ cat ./- CV1DtqXWVFX
   </head>
   <body>
     <header class="app-header">
-      <a href="/"><img class="app-header-avatar" src="/avatar.png" alt="D@rkmod3" /></a>
+      <a href=""><img class="app-header-avatar" src="/avatar.png" alt="D@rkmod3" /></a>
       <h1>D@rkmod3</h1>
       <p>Hack or hacked</p>
     </header>
@@ -63,50 +63,50 @@ bandit1@bandit:~$ file ./- ./-: ASCII text bandit1@bandit:~$ cat ./- CV1DtqXWVFX
       <h1 id="bandit">Bandit</h1>
 <h3 id="level-0">Level 0</h3>
 <p>Use <code>ls</code> command, we get a file <code>readme</code>. Use <code>cat</code> command to read it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat readme
-boJ9jbbUNNfktd78OOpsqOltutMc3MY1
-</code></pre></div><h3 id="level-1">Level 1</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat readme
+</span></span><span style="display:flex;"><span>boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+</span></span></code></pre></div><h3 id="level-1">Level 1</h3>
 <p>When use <code>ls</code> it returns only <code>-</code>, I use <code>cat -</code> but it not works because:</p>
 <ul>
 <li><code>&quot;-&quot;</code> means to read the argument/content from STDIN (file descriptor 0)</li>
 </ul>
 <p>So I use <code>./-</code> to select this file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit1@bandit:~$ file ./-
-./-: ASCII text
-
-bandit1@bandit:~$ cat ./-
-CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
-</code></pre></div><h3 id="level-2">Level 2</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit1@bandit:~$ file ./-
+</span></span><span style="display:flex;"><span>./-: ASCII text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bandit1@bandit:~$ cat ./-
+</span></span><span style="display:flex;"><span>CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+</span></span></code></pre></div><h3 id="level-2">Level 2</h3>
 <p>It uses spaces in this filename, but don&rsquo;t worry because we can use <code>*</code> to select all file from this directory</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat *
-UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
-</code></pre></div><h3 id="level-3">Level 3</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat *
+</span></span><span style="display:flex;"><span>UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+</span></span></code></pre></div><h3 id="level-3">Level 3</h3>
 <p>From the description, I find a argument <code>-a</code> of <code>ls</code> command will be show all file hidden.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit3@bandit:~$ cd inhere
-bandit3@bandit:~/inhere$ ls -a
-.  ..  .hidden
-bandit3@bandit:~/inhere$ cat .*
-cat: .: Is a directory
-cat: ..: Is a directory
-pIwrPrtPN36QITSp3EQaw936yaFoFgAB
-</code></pre></div><p>Use <code>cat .*</code> to get password, or u can use <code>cat .hidden</code> instead.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit3@bandit:~$ cd inhere
+</span></span><span style="display:flex;"><span>bandit3@bandit:~/inhere$ ls -a
+</span></span><span style="display:flex;"><span>.  ..  .hidden
+</span></span><span style="display:flex;"><span>bandit3@bandit:~/inhere$ cat .*
+</span></span><span style="display:flex;"><span>cat: .: Is a directory
+</span></span><span style="display:flex;"><span>cat: ..: Is a directory
+</span></span><span style="display:flex;"><span>pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+</span></span></code></pre></div><p>Use <code>cat .*</code> to get password, or u can use <code>cat .hidden</code> instead.</p>
 <h3 id="level-4">Level 4</h3>
 <p><code>*</code> is useful :)), In this level we maybe use <code>cat ./-*</code> to get all text from all file (It will hard to get password)</p>
 <p>Thus, we should use <code>file</code> to get type of all file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit4@bandit:~/inhere$ file ./-*
-./-file00: data
-./-file01: data
-./-file02: data
-./-file03: data
-./-file04: data
-./-file05: data
-./-file06: data
-./-file07: ASCII text
-./-file08: data
-./-file09: data
-bandit4@bandit:~/inhere$ cat ./-file07
-koReBOKuIDDepwhWk7jZC0RTdopnAYKh
-</code></pre></div><h3 id="level-5">Level 5</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit4@bandit:~/inhere$ file ./-*
+</span></span><span style="display:flex;"><span>./-file00: data
+</span></span><span style="display:flex;"><span>./-file01: data
+</span></span><span style="display:flex;"><span>./-file02: data
+</span></span><span style="display:flex;"><span>./-file03: data
+</span></span><span style="display:flex;"><span>./-file04: data
+</span></span><span style="display:flex;"><span>./-file05: data
+</span></span><span style="display:flex;"><span>./-file06: data
+</span></span><span style="display:flex;"><span>./-file07: ASCII text
+</span></span><span style="display:flex;"><span>./-file08: data
+</span></span><span style="display:flex;"><span>./-file09: data
+</span></span><span style="display:flex;"><span>bandit4@bandit:~/inhere$ cat ./-file07
+</span></span><span style="display:flex;"><span>koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+</span></span></code></pre></div><h3 id="level-5">Level 5</h3>
 <p>It has many folder in <code>inhere</code> directory, so we will use <code>find</code> to get password.</p>
 <p>Read the description of this level, we can use argument of <code>find</code> to filter.</p>
 <ul>
@@ -114,35 +114,35 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 <li><code>1033 bytes in size</code> use <code>-size 1033c</code></li>
 <li><code>not executable</code> use <code>! -executable</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit5@bandit:~/inhere$ ls -la
-total <span style="color:#ae81ff">88</span>
-drwxr-x--- <span style="color:#ae81ff">22</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> .
-drwxr-xr-x  <span style="color:#ae81ff">3</span> root root    <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> ..
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere00
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere01
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere02
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere03
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere04
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere05
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere06
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere07
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere08
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere09
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere10
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere11
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere12
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere13
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere14
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere15
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere16
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere17
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere18
-drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere19
-bandit5@bandit:~/inhere$ find . -type f -size 1033c ! -executable
-./maybehere07/.file2
-bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
-DXjZPULLxYr17uwoI01bNLQbtFemEgo7
-</code></pre></div><h3 id="level-6">Level 6</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit5@bandit:~/inhere$ ls -la
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">88</span>
+</span></span><span style="display:flex;"><span>drwxr-x--- <span style="color:#ae81ff">22</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> .
+</span></span><span style="display:flex;"><span>drwxr-xr-x  <span style="color:#ae81ff">3</span> root root    <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> ..
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere00
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere01
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere02
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere03
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere04
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere05
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere06
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere07
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere08
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere09
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere10
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere11
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere12
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere13
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere14
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere15
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere16
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere17
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere18
+</span></span><span style="display:flex;"><span>drwxr-x---  <span style="color:#ae81ff">2</span> root bandit5 <span style="color:#ae81ff">4096</span> May  <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2020</span> maybehere19
+</span></span><span style="display:flex;"><span>bandit5@bandit:~/inhere$ find . -type f -size 1033c ! -executable
+</span></span><span style="display:flex;"><span>./maybehere07/.file2
+</span></span><span style="display:flex;"><span>bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+</span></span><span style="display:flex;"><span>DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+</span></span></code></pre></div><h3 id="level-6">Level 6</h3>
 <p>Same with level 6, we use argument of <code>find</code> to filter:</p>
 <ul>
 <li><code>owned by user bandit7</code> by <code>-user bandit7</code></li>
@@ -151,265 +151,265 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 </ul>
 <p>When we use <code>find / -user bandit7 -group bandit6 -size 33c</code>, it appears many errors.
 So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2&gt;/dev/null
-/var/lib/dpkg/info/bandit7.password
-bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
-HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
-</code></pre></div><h3 id="level-7">Level 7</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2&gt;/dev/null
+</span></span><span style="display:flex;"><span>/var/lib/dpkg/info/bandit7.password
+</span></span><span style="display:flex;"><span>bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+</span></span><span style="display:flex;"><span>HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+</span></span></code></pre></div><h3 id="level-7">Level 7</h3>
 <p>Combine <code>cat</code> and <code>grep</code> via pipe.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit7@bandit:~$ cat data.txt  | grep <span style="color:#e6db74">&#34;millionth&#34;</span>
-millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
-</code></pre></div><h3 id="level-8">Level 8</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit7@bandit:~$ cat data.txt  | grep <span style="color:#e6db74">&#34;millionth&#34;</span>
+</span></span><span style="display:flex;"><span>millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+</span></span></code></pre></div><h3 id="level-8">Level 8</h3>
 <p><code>sort</code> and <code>uniq</code> are useful in this case. With <code>sort</code> we can sort same data to a set, then use <code>uniq -u</code> to remove multiple duplicate lines.</p>
 <p><code>-u – -unique : It allows you to print only unique lines.</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit8@bandit:~$ cat data.txt | sort | uniq -u
-UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
-</code></pre></div><h3 id="level-9">Level 9</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit8@bandit:~$ cat data.txt | sort | uniq -u
+</span></span><span style="display:flex;"><span>UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+</span></span></code></pre></div><h3 id="level-9">Level 9</h3>
 <p>Use <code>strings</code> to find out <code>printable</code> character, then <code>grep</code> with <code>regex</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit9@bandit:~$ strings data.txt | grep <span style="color:#e6db74">&#34;= [a-z0-9]&#34;</span>
-<span style="color:#f92672">==========</span> the*2i<span style="color:#e6db74">&#34;4
-</span><span style="color:#e6db74">========== password
-</span><span style="color:#e6db74">Z)========== is
-</span><span style="color:#e6db74">&amp;========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
-</span></code></pre></div><h3 id="level-10">Level 10</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit9@bandit:~$ strings data.txt | grep <span style="color:#e6db74">&#34;= [a-z0-9]&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========</span> the*2i<span style="color:#e6db74">&#34;4
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">========== password
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Z)========== is
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&amp;========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+</span></span></span></code></pre></div><h3 id="level-10">Level 10</h3>
 <p>Decode base64 from string.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit10@bandit:~$ cat data.txt
-VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg<span style="color:#f92672">==</span>
-bandit10@bandit:~$ cat data.txt | base64 -d
-The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
-</code></pre></div><h3 id="level-11">Level 11</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit10@bandit:~$ cat data.txt
+</span></span><span style="display:flex;"><span>VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg<span style="color:#f92672">==</span>
+</span></span><span style="display:flex;"><span>bandit10@bandit:~$ cat data.txt | base64 -d
+</span></span><span style="display:flex;"><span>The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+</span></span></code></pre></div><h3 id="level-11">Level 11</h3>
 <p>From description <code>rotated by 13 positions</code> which make me thinking about rot13 algorithm.</p>
 <ul>
 <li>ROT13 is a special case of the encryption algorithm known as a Caesar cipher</li>
 </ul>
 <p>So I search on <code>stackoverflow</code>, and find out <code>alias</code> of rot13.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit11@bandit:~$ cat data.txt
-Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
-bandit11@bandit:~$ alias rot13<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tr &#39;A-Za-z&#39; &#39;N-ZA-Mn-za-m&#39;&#34;</span>
-bandit11@bandit:~$ cat data.txt | rot13
-The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
-</code></pre></div><h3 id="level-12">Level 12</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit11@bandit:~$ cat data.txt
+</span></span><span style="display:flex;"><span>Gur cnffjbeq vf 5Gr8L4qetPEsPk8htqjhRK8XSP6x2RHh
+</span></span><span style="display:flex;"><span>bandit11@bandit:~$ alias rot13<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tr &#39;A-Za-z&#39; &#39;N-ZA-Mn-za-m&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>bandit11@bandit:~$ cat data.txt | rot13
+</span></span><span style="display:flex;"><span>The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+</span></span></code></pre></div><h3 id="level-12">Level 12</h3>
 <p>First step, create directory which permit we execute command on <code>data.txt</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:~$ mkdir /tmp/D@rkmod3
-bandit12@bandit:~$ cd /tmp/D@rkmod3
-bandit12@bandit:/tmp/D@rkmod3$ cp ~/data.txt .
-bandit12@bandit:/tmp/D@rkmod3$ ls
-data.txt
-</code></pre></div><p>Data in <code>data.txt</code> is hexdump. So we need reverse hexdump into binary by using <code>xxd -r</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/D@rkmod3$ xxd -r data.txt data
-bandit12@bandit:/tmp/D@rkmod3$ file data
-pw: gzip compressed data, was <span style="color:#e6db74">&#34;data2.bin&#34;</span>, last modified: Thu May  <span style="color:#ae81ff">7</span> 18:14:30 2020, max compression, from Unix
-</code></pre></div><p>Now Extract this compressed</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/D@rkmod3$ mv data data.gz
-bandit12@bandit:/tmp/D@rkmod3$ gzip -d data.gz
-bandit12@bandit:/tmp/D@rkmod3$ file data
-pw: bzip2 compressed data, block size <span style="color:#f92672">=</span> 900k
-</code></pre></div><p>It seems to be compressed from multiple type. It&rsquo;ll spend more time If you use gzip gzip2 &hellip; to extract one by one.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit12@bandit:~$ mkdir /tmp/D@rkmod3
+</span></span><span style="display:flex;"><span>bandit12@bandit:~$ cd /tmp/D@rkmod3
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ cp ~/data.txt .
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ ls
+</span></span><span style="display:flex;"><span>data.txt
+</span></span></code></pre></div><p>Data in <code>data.txt</code> is hexdump. So we need reverse hexdump into binary by using <code>xxd -r</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ xxd -r data.txt data
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ file data
+</span></span><span style="display:flex;"><span>pw: gzip compressed data, was <span style="color:#e6db74">&#34;data2.bin&#34;</span>, last modified: Thu May  <span style="color:#ae81ff">7</span> 18:14:30 2020, max compression, from Unix
+</span></span></code></pre></div><p>Now Extract this compressed</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ mv data data.gz
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ gzip -d data.gz
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ file data
+</span></span><span style="display:flex;"><span>pw: bzip2 compressed data, block size <span style="color:#f92672">=</span> 900k
+</span></span></code></pre></div><p>It seems to be compressed from multiple type. It&rsquo;ll spend more time If you use gzip gzip2 &hellip; to extract one by one.</p>
 <p>A wiser way is use directly data from <code>data compressed</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit12@bandit:/tmp/D@rkmod3$ file data
-pw: bzip2 compressed data, block size <span style="color:#f92672">=</span> 900k
-bandit12@bandit:/tmp/D@rkmod3$ bzcat data | file -
-/dev/stdin: gzip compressed data, was <span style="color:#e6db74">&#34;data4.bin&#34;</span>, last modified: Thu May  <span style="color:#ae81ff">7</span> 18:14:30 2020, max compression, from Unix
-bandit12@bandit:/tmp/D@rkmod3$ bzcat data | zcat | file -
-/dev/stdin: POSIX tar archive <span style="color:#f92672">(</span>GNU<span style="color:#f92672">)</span>
-bandit12@bandit:/tmp/D@rkmod3$ bzcat data | zcat | tar -xvf -
-data5.bin
-bandit12@bandit:/tmp/D@rkmod3$ tar -xvf data5.bin
-data6.bin
-bandit12@bandit:/tmp/D@rkmod3$ tar -xvf data6.bin
-data8.bin
-bandit12@bandit:/tmp/D@rkmod3$ file data8.bin
-data8.bin: gzip compressed data, was <span style="color:#e6db74">&#34;data9.bin&#34;</span>, last modified: Thu May  <span style="color:#ae81ff">7</span> 18:14:30 2020, max compression, from Unix
-bandit12@bandit:/tmp/D@rkmod3$ zcat data8.bin | file -
-/dev/stdin: ASCII text
-bandit12@bandit:/tmp/D@rkmod3$ zcat data8.bin
-The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
-</code></pre></div><h3 id="level-13">Level 13</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit13@bandit:~$ ls
-sshkey.private
-</code></pre></div><p>I use nmap to scan port available on this machine:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit13@bandit:~$ nmap -v A localhost
-
-Starting Nmap 7.40 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2021-09-30 02:51 CEST
-Failed to resolve <span style="color:#e6db74">&#34;A&#34;</span>.
-Initiating Ping Scan at 02:51
-Scanning localhost <span style="color:#f92672">(</span>127.0.0.1<span style="color:#f92672">)</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span> ports<span style="color:#f92672">]</span>
-Completed Ping Scan at 02:51, 0.00s elapsed <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> total hosts<span style="color:#f92672">)</span>
-Initiating Connect Scan at 02:51
-Scanning localhost <span style="color:#f92672">(</span>127.0.0.1<span style="color:#f92672">)</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1000</span> ports<span style="color:#f92672">]</span>
-Discovered open port 22/tcp on 127.0.0.1
-Discovered open port 113/tcp on 127.0.0.1
-Discovered open port 30000/tcp on 127.0.0.1
-Completed Connect Scan at 02:51, 0.05s elapsed <span style="color:#f92672">(</span><span style="color:#ae81ff">1000</span> total ports<span style="color:#f92672">)</span>
-Nmap scan report <span style="color:#66d9ef">for</span> localhost <span style="color:#f92672">(</span>127.0.0.1<span style="color:#f92672">)</span>
-Host is up <span style="color:#f92672">(</span>0.00022s latency<span style="color:#f92672">)</span>.
-Not shown: <span style="color:#ae81ff">997</span> closed ports
-PORT      STATE SERVICE
-22/tcp    open  ssh
-113/tcp   open  ident
-30000/tcp open  ndmps
-</code></pre></div><p>Port 22 is opened and private key is available. Login Now ~~</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost -p <span style="color:#ae81ff">22</span>
-</code></pre></div><h3 id="level-14">Level 14</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit14@bandit:~$ ls /etc/bandit_pass
-bandit0   bandit11  bandit14  bandit17  bandit2   bandit22  bandit25  bandit28  bandit30  bandit33  bandit6  bandit9
-bandit1   bandit12  bandit15  bandit18  bandit20  bandit23  bandit26  bandit29  bandit31  bandit4   bandit7
-bandit10  bandit13  bandit16  bandit19  bandit21  bandit24  bandit27  bandit3   bandit32  bandit5   bandit8
-bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
-4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
-</code></pre></div><p>Netcat to port 30000:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit14@bandit:~$ nc localhost <span style="color:#ae81ff">30000</span>
-4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
-Correct!
-BfMYroe26WYalil77FoDi9qh59eK5xNr
-</code></pre></div><h3 id="level-15">Level 15</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ file data
+</span></span><span style="display:flex;"><span>pw: bzip2 compressed data, block size <span style="color:#f92672">=</span> 900k
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ bzcat data | file -
+</span></span><span style="display:flex;"><span>/dev/stdin: gzip compressed data, was <span style="color:#e6db74">&#34;data4.bin&#34;</span>, last modified: Thu May  <span style="color:#ae81ff">7</span> 18:14:30 2020, max compression, from Unix
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ bzcat data | zcat | file -
+</span></span><span style="display:flex;"><span>/dev/stdin: POSIX tar archive <span style="color:#f92672">(</span>GNU<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ bzcat data | zcat | tar -xvf -
+</span></span><span style="display:flex;"><span>data5.bin
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ tar -xvf data5.bin
+</span></span><span style="display:flex;"><span>data6.bin
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ tar -xvf data6.bin
+</span></span><span style="display:flex;"><span>data8.bin
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ file data8.bin
+</span></span><span style="display:flex;"><span>data8.bin: gzip compressed data, was <span style="color:#e6db74">&#34;data9.bin&#34;</span>, last modified: Thu May  <span style="color:#ae81ff">7</span> 18:14:30 2020, max compression, from Unix
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ zcat data8.bin | file -
+</span></span><span style="display:flex;"><span>/dev/stdin: ASCII text
+</span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ zcat data8.bin
+</span></span><span style="display:flex;"><span>The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+</span></span></code></pre></div><h3 id="level-13">Level 13</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit13@bandit:~$ ls
+</span></span><span style="display:flex;"><span>sshkey.private
+</span></span></code></pre></div><p>I use nmap to scan port available on this machine:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit13@bandit:~$ nmap -v A localhost
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Starting Nmap 7.40 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2021-09-30 02:51 CEST
+</span></span><span style="display:flex;"><span>Failed to resolve <span style="color:#e6db74">&#34;A&#34;</span>.
+</span></span><span style="display:flex;"><span>Initiating Ping Scan at 02:51
+</span></span><span style="display:flex;"><span>Scanning localhost <span style="color:#f92672">(</span>127.0.0.1<span style="color:#f92672">)</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span> ports<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Completed Ping Scan at 02:51, 0.00s elapsed <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> total hosts<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Initiating Connect Scan at 02:51
+</span></span><span style="display:flex;"><span>Scanning localhost <span style="color:#f92672">(</span>127.0.0.1<span style="color:#f92672">)</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1000</span> ports<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Discovered open port 22/tcp on 127.0.0.1
+</span></span><span style="display:flex;"><span>Discovered open port 113/tcp on 127.0.0.1
+</span></span><span style="display:flex;"><span>Discovered open port 30000/tcp on 127.0.0.1
+</span></span><span style="display:flex;"><span>Completed Connect Scan at 02:51, 0.05s elapsed <span style="color:#f92672">(</span><span style="color:#ae81ff">1000</span> total ports<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> localhost <span style="color:#f92672">(</span>127.0.0.1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.00022s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">997</span> closed ports
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE
+</span></span><span style="display:flex;"><span>22/tcp    open  ssh
+</span></span><span style="display:flex;"><span>113/tcp   open  ident
+</span></span><span style="display:flex;"><span>30000/tcp open  ndmps
+</span></span></code></pre></div><p>Port 22 is opened and private key is available. Login Now ~~</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost -p <span style="color:#ae81ff">22</span>
+</span></span></code></pre></div><h3 id="level-14">Level 14</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit14@bandit:~$ ls /etc/bandit_pass
+</span></span><span style="display:flex;"><span>bandit0   bandit11  bandit14  bandit17  bandit2   bandit22  bandit25  bandit28  bandit30  bandit33  bandit6  bandit9
+</span></span><span style="display:flex;"><span>bandit1   bandit12  bandit15  bandit18  bandit20  bandit23  bandit26  bandit29  bandit31  bandit4   bandit7
+</span></span><span style="display:flex;"><span>bandit10  bandit13  bandit16  bandit19  bandit21  bandit24  bandit27  bandit3   bandit32  bandit5   bandit8
+</span></span><span style="display:flex;"><span>bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
+</span></span><span style="display:flex;"><span>4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+</span></span></code></pre></div><p>Netcat to port 30000:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit14@bandit:~$ nc localhost <span style="color:#ae81ff">30000</span>
+</span></span><span style="display:flex;"><span>4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+</span></span><span style="display:flex;"><span>Correct!
+</span></span><span style="display:flex;"><span>BfMYroe26WYalil77FoDi9qh59eK5xNr
+</span></span></code></pre></div><h3 id="level-15">Level 15</h3>
 <p>Use openssl generates key to connect to localhost</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit15@bandit:~$ openssl s_client -ign_eof -connect localhost:30001
-...
-BfMYroe26WYalil77FoDi9qh59eK5xNr
-Correct!
-cluFn7wTiGryunymYOu4RcffSxQluehd
-</code></pre></div><h3 id="level-16">Level 16</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit15@bandit:~$ openssl s_client -ign_eof -connect localhost:30001
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>BfMYroe26WYalil77FoDi9qh59eK5xNr
+</span></span><span style="display:flex;"><span>Correct!
+</span></span><span style="display:flex;"><span>cluFn7wTiGryunymYOu4RcffSxQluehd
+</span></span></code></pre></div><h3 id="level-16">Level 16</h3>
 <p>Use <code>nmap -p 31000-32000 localhost</code> to scan all port available from 31000 to 32000</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit16@bandit:~$ nmap -p 31000-32000 localhost
-
-Starting Nmap 7.40 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2021-09-30 04:01 CEST
-Nmap scan report <span style="color:#66d9ef">for</span> localhost <span style="color:#f92672">(</span>127.0.0.1<span style="color:#f92672">)</span>
-Host is up <span style="color:#f92672">(</span>0.00028s latency<span style="color:#f92672">)</span>.
-Not shown: <span style="color:#ae81ff">996</span> closed ports
-PORT      STATE SERVICE
-31046/tcp open  unknown
-31518/tcp open  unknown
-31691/tcp open  unknown
-31790/tcp open  unknown
-31960/tcp open  unknown
-</code></pre></div><p>I try to connect to 5 port <code>openssl s_client -connect localhost:{port}</code>. The result is 31790 return a correct information.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit16@bandit:~$ openssl s_client -quiet -connect localhost:31790
-cluFn7wTiGryunymYOu4RcffSxQluehd
------BEGIN RSA PRIVATE KEY-----
-...
------END RSA PRIVATE KEY-----
-</code></pre></div><p>Next, write private key to <code>/tmp</code> and use it to levelup.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit16@bandit:~$ openssl s_client -quiet -connect localhost:31790 &gt; /tmp/test/privatekey
-depth<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> CN <span style="color:#f92672">=</span> localhost
-verify error:num<span style="color:#f92672">=</span>18:self signed certificate
-verify <span style="color:#66d9ef">return</span>:1
-depth<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> CN <span style="color:#f92672">=</span> localhost
-verify <span style="color:#66d9ef">return</span>:1
-cluFn7wTiGryunymYOu4RcffSxQluehd
-bandit16@bandit:/tmp/test$ nano privatekey
-bandit16@bandit:/tmp/test$ chmod <span style="color:#ae81ff">700</span> privatekey
-bandit16@bandit:/tmp/test$ ssh -i ./privatekey bandit17@localhost
-</code></pre></div><h3 id="level--17">Level  17</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit16@bandit:~$ nmap -p 31000-32000 localhost
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Starting Nmap 7.40 <span style="color:#f92672">(</span> https://nmap.org <span style="color:#f92672">)</span> at 2021-09-30 04:01 CEST
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> localhost <span style="color:#f92672">(</span>127.0.0.1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Host is up <span style="color:#f92672">(</span>0.00028s latency<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>Not shown: <span style="color:#ae81ff">996</span> closed ports
+</span></span><span style="display:flex;"><span>PORT      STATE SERVICE
+</span></span><span style="display:flex;"><span>31046/tcp open  unknown
+</span></span><span style="display:flex;"><span>31518/tcp open  unknown
+</span></span><span style="display:flex;"><span>31691/tcp open  unknown
+</span></span><span style="display:flex;"><span>31790/tcp open  unknown
+</span></span><span style="display:flex;"><span>31960/tcp open  unknown
+</span></span></code></pre></div><p>I try to connect to 5 port <code>openssl s_client -connect localhost:{port}</code>. The result is 31790 return a correct information.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit16@bandit:~$ openssl s_client -quiet -connect localhost:31790
+</span></span><span style="display:flex;"><span>cluFn7wTiGryunymYOu4RcffSxQluehd
+</span></span><span style="display:flex;"><span>-----BEGIN RSA PRIVATE KEY-----
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>-----END RSA PRIVATE KEY-----
+</span></span></code></pre></div><p>Next, write private key to <code>/tmp</code> and use it to levelup.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit16@bandit:~$ openssl s_client -quiet -connect localhost:31790 &gt; /tmp/test/privatekey
+</span></span><span style="display:flex;"><span>depth<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> CN <span style="color:#f92672">=</span> localhost
+</span></span><span style="display:flex;"><span>verify error:num<span style="color:#f92672">=</span>18:self signed certificate
+</span></span><span style="display:flex;"><span>verify <span style="color:#66d9ef">return</span>:1
+</span></span><span style="display:flex;"><span>depth<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> CN <span style="color:#f92672">=</span> localhost
+</span></span><span style="display:flex;"><span>verify <span style="color:#66d9ef">return</span>:1
+</span></span><span style="display:flex;"><span>cluFn7wTiGryunymYOu4RcffSxQluehd
+</span></span><span style="display:flex;"><span>bandit16@bandit:/tmp/test$ nano privatekey
+</span></span><span style="display:flex;"><span>bandit16@bandit:/tmp/test$ chmod <span style="color:#ae81ff">700</span> privatekey
+</span></span><span style="display:flex;"><span>bandit16@bandit:/tmp/test$ ssh -i ./privatekey bandit17@localhost
+</span></span></code></pre></div><h3 id="level--17">Level  17</h3>
 <p>Use <code>diff</code> command to find different between two files.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit17@bandit:~$ diff passwords.old passwords.new
-42c42
-&lt; w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
----
-&gt; kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
-</code></pre></div><p>Thus, password for next level is <code>kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit17@bandit:~$ diff passwords.old passwords.new
+</span></span><span style="display:flex;"><span>42c42
+</span></span><span style="display:flex;"><span>&lt; w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>&gt; kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+</span></span></code></pre></div><p>Thus, password for next level is <code>kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd</code></p>
 <h3 id="level-18">Level 18</h3>
 <p>I search on gg for this problem and i found <code>ssh user@host  &quot;/bin/bash --norc&quot;</code> is useful.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh bandit18@bandit.labs.overthewire.org -p <span style="color:#ae81ff">2220</span> <span style="color:#e6db74">&#34;/bin/bash --norc&#34;</span>
-bandit18@bandit.labs.overthewire.org<span style="color:#960050;background-color:#1e0010">&#39;</span>s password:
-ls
-readme
-cat readme
-IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
-</code></pre></div><h3 id="level-19">Level 19</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit19@bandit:~$ ls
-bandit20-do
-bandit19@bandit:~$ ./bandit20-do
-Run a command as another user.
-  Example: ./bandit20-do id
-bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
-GbKksEFF4yrVs6il55v6gwY5aVje5f0j
-</code></pre></div><h3 id="level-20">Level 20</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit20@bandit:~$ ls
-suconnect
-bandit20@bandit:~$ ./suconnect
-Usage: ./suconnect &lt;portnumber&gt;
-This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
-bandit20@bandit:~$
-</code></pre></div><p>Okay, Listen on port <code>1337</code> and attach the text of password this level.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -lvnp <span style="color:#ae81ff">1337</span> &lt; /etc/bandit_pass/bandit20
-
-... From another terminal
-
-./suconnect <span style="color:#ae81ff">1337</span>
-Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
-Password matches, sending next password
-</code></pre></div><p>And result from first terminal:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit20@bandit:~$ nc -lvnp <span style="color:#ae81ff">1337</span> &lt; /etc/bandit_pass/bandit20
-listening on <span style="color:#f92672">[</span>any<span style="color:#f92672">]</span> <span style="color:#ae81ff">1337</span> ...
-connect to <span style="color:#f92672">[</span>127.0.0.1<span style="color:#f92672">]</span> from <span style="color:#f92672">(</span>UNKNOWN<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>127.0.0.1<span style="color:#f92672">]</span> <span style="color:#ae81ff">39324</span>
-gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
-</code></pre></div><h3 id="level-21">Level 21</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh bandit18@bandit.labs.overthewire.org -p <span style="color:#ae81ff">2220</span> <span style="color:#e6db74">&#34;/bin/bash --norc&#34;</span>
+</span></span><span style="display:flex;"><span>bandit18@bandit.labs.overthewire.org<span style="color:#960050;background-color:#1e0010">&#39;</span>s password:
+</span></span><span style="display:flex;"><span>ls
+</span></span><span style="display:flex;"><span>readme
+</span></span><span style="display:flex;"><span>cat readme
+</span></span><span style="display:flex;"><span>IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+</span></span></code></pre></div><h3 id="level-19">Level 19</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit19@bandit:~$ ls
+</span></span><span style="display:flex;"><span>bandit20-do
+</span></span><span style="display:flex;"><span>bandit19@bandit:~$ ./bandit20-do
+</span></span><span style="display:flex;"><span>Run a command as another user.
+</span></span><span style="display:flex;"><span>  Example: ./bandit20-do id
+</span></span><span style="display:flex;"><span>bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
+</span></span><span style="display:flex;"><span>GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+</span></span></code></pre></div><h3 id="level-20">Level 20</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit20@bandit:~$ ls
+</span></span><span style="display:flex;"><span>suconnect
+</span></span><span style="display:flex;"><span>bandit20@bandit:~$ ./suconnect
+</span></span><span style="display:flex;"><span>Usage: ./suconnect &lt;portnumber&gt;
+</span></span><span style="display:flex;"><span>This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
+</span></span><span style="display:flex;"><span>bandit20@bandit:~$
+</span></span></code></pre></div><p>Okay, Listen on port <code>1337</code> and attach the text of password this level.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nc -lvnp <span style="color:#ae81ff">1337</span> &lt; /etc/bandit_pass/bandit20
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>... From another terminal
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>./suconnect <span style="color:#ae81ff">1337</span>
+</span></span><span style="display:flex;"><span>Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+</span></span><span style="display:flex;"><span>Password matches, sending next password
+</span></span></code></pre></div><p>And result from first terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit20@bandit:~$ nc -lvnp <span style="color:#ae81ff">1337</span> &lt; /etc/bandit_pass/bandit20
+</span></span><span style="display:flex;"><span>listening on <span style="color:#f92672">[</span>any<span style="color:#f92672">]</span> <span style="color:#ae81ff">1337</span> ...
+</span></span><span style="display:flex;"><span>connect to <span style="color:#f92672">[</span>127.0.0.1<span style="color:#f92672">]</span> from <span style="color:#f92672">(</span>UNKNOWN<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>127.0.0.1<span style="color:#f92672">]</span> <span style="color:#ae81ff">39324</span>
+</span></span><span style="display:flex;"><span>gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+</span></span></code></pre></div><h3 id="level-21">Level 21</h3>
 <p>Following the description: <code>Look in /etc/cron.d/ for the configuration and see what command is being executed.</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit21@bandit:~$ ls -a /etc/cron.d
-.   cronjob_bandit15_root  cronjob_bandit22  cronjob_bandit24       .placeholder
-..  cronjob_bandit17_root  cronjob_bandit23  cronjob_bandit25_root
-bandit21@bandit:~$ cat /etc/cron.d/cronjob_bandit22
-@reboot bandit22 /usr/bin/cronjob_bandit22.sh &amp;&gt; /dev/null
-* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &amp;&gt; /dev/null
-</code></pre></div><p>From here, Let&rsquo;s see cronjob_bandit22.sh work.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit21@bandit:~$ cat /usr/bin/cronjob_bandit22.sh
-<span style="color:#75715e">#!/bin/bash</span>
-chmod <span style="color:#ae81ff">644</span> /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-cat /etc/bandit_pass/bandit22 &gt; /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
-</code></pre></div><h3 id="level-22">Level 22</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit21@bandit:~$ ls -a /etc/cron.d
+</span></span><span style="display:flex;"><span>.   cronjob_bandit15_root  cronjob_bandit22  cronjob_bandit24       .placeholder
+</span></span><span style="display:flex;"><span>..  cronjob_bandit17_root  cronjob_bandit23  cronjob_bandit25_root
+</span></span><span style="display:flex;"><span>bandit21@bandit:~$ cat /etc/cron.d/cronjob_bandit22
+</span></span><span style="display:flex;"><span>@reboot bandit22 /usr/bin/cronjob_bandit22.sh &amp;&gt; /dev/null
+</span></span><span style="display:flex;"><span>* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &amp;&gt; /dev/null
+</span></span></code></pre></div><p>From here, Let&rsquo;s see cronjob_bandit22.sh work.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit21@bandit:~$ cat /usr/bin/cronjob_bandit22.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">644</span> /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+</span></span><span style="display:flex;"><span>cat /etc/bandit_pass/bandit22 &gt; /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+</span></span><span style="display:flex;"><span>bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+</span></span><span style="display:flex;"><span>Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+</span></span></code></pre></div><h3 id="level-22">Level 22</h3>
 <p>From the experience of the previous level.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
-<span style="color:#75715e">#!/bin/bash</span>
-
-myname<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>
-mytarget<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo I am user $myname | md5sum | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 1<span style="color:#66d9ef">)</span>
-
-echo <span style="color:#e6db74">&#34;Copying passwordfile /etc/bandit_pass/</span>$myname<span style="color:#e6db74"> to /tmp/</span>$mytarget<span style="color:#e6db74">&#34;</span>
-
-cat /etc/bandit_pass/$myname &gt; /tmp/$mytarget
-</code></pre></div><p>Run the code above in terminal.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit22@bandit:~$ whoami
-bandit22
-bandit22@bandit:~$ myname<span style="color:#f92672">=</span>bandit23
-bandit22@bandit:~$ mytarget<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo I am user $myname | md5sum | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 1<span style="color:#66d9ef">)</span>
-bandit22@bandit:~$ cat /tmp/$mytarget
-jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
-</code></pre></div><h3 id="level-23">Level 23</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
-<span style="color:#75715e">#!/bin/bash</span>
-
-myname<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>
-
-cd /var/spool/$myname
-echo <span style="color:#e6db74">&#34;Executing and deleting all scripts in /var/spool/</span>$myname<span style="color:#e6db74">:&#34;</span>
-<span style="color:#66d9ef">for</span> i in * .*;
-<span style="color:#66d9ef">do</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.&#34;</span> -a <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;..&#34;</span> <span style="color:#f92672">]</span>;
-    <span style="color:#66d9ef">then</span>
-        echo <span style="color:#e6db74">&#34;Handling </span>$i<span style="color:#e6db74">&#34;</span>
-        owner<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>stat --format <span style="color:#e6db74">&#34;%U&#34;</span> ./$i<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>owner<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bandit23&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-            timeout -s <span style="color:#ae81ff">9</span> <span style="color:#ae81ff">60</span> ./$i
-        <span style="color:#66d9ef">fi</span>
-        rm -f ./$i
-    <span style="color:#66d9ef">fi</span>
-<span style="color:#66d9ef">done</span>
-</code></pre></div><p>Here, create bash file with content like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bandit23@bandit:~$ mkdir /tmp/24
-bandit23@bandit:~$ cd /tmp/24
-bandit23@bandit:/tmp/24$ nano hack.sh
-bandit23@bandit:/tmp/24$ cat hack.sh
-<span style="color:#75715e">#!/bin/bash</span>
-cat /etc/bandit_pass/bandit24 &gt; tmp/24/pw
-bandit23@bandit:/tmp/24$ chmod +x hack.sh
-bandit23@bandit:/tmp/24$ ls
-hack.sh  pw
-bandit23@bandit:/tmp/24$ cat pw
-UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>myname<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>mytarget<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo I am user $myname | md5sum | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 1<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Copying passwordfile /etc/bandit_pass/</span>$myname<span style="color:#e6db74"> to /tmp/</span>$mytarget<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat /etc/bandit_pass/$myname &gt; /tmp/$mytarget
+</span></span></code></pre></div><p>Run the code above in terminal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit22@bandit:~$ whoami
+</span></span><span style="display:flex;"><span>bandit22
+</span></span><span style="display:flex;"><span>bandit22@bandit:~$ myname<span style="color:#f92672">=</span>bandit23
+</span></span><span style="display:flex;"><span>bandit22@bandit:~$ mytarget<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo I am user $myname | md5sum | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 1<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>bandit22@bandit:~$ cat /tmp/$mytarget
+</span></span><span style="display:flex;"><span>jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+</span></span></code></pre></div><h3 id="level-23">Level 23</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>myname<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd /var/spool/$myname
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Executing and deleting all scripts in /var/spool/</span>$myname<span style="color:#e6db74">:&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in * .*;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;.&#34;</span> -a <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;..&#34;</span> <span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Handling </span>$i<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        owner<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>stat --format <span style="color:#e6db74">&#34;%U&#34;</span> ./$i<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>owner<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bandit23&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>            timeout -s <span style="color:#ae81ff">9</span> <span style="color:#ae81ff">60</span> ./$i
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>        rm -f ./$i
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>Here, create bash file with content like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit23@bandit:~$ mkdir /tmp/24
+</span></span><span style="display:flex;"><span>bandit23@bandit:~$ cd /tmp/24
+</span></span><span style="display:flex;"><span>bandit23@bandit:/tmp/24$ nano hack.sh
+</span></span><span style="display:flex;"><span>bandit23@bandit:/tmp/24$ cat hack.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span>cat /etc/bandit_pass/bandit24 &gt; tmp/24/pw
+</span></span><span style="display:flex;"><span>bandit23@bandit:/tmp/24$ chmod +x hack.sh
+</span></span><span style="display:flex;"><span>bandit23@bandit:/tmp/24$ ls
+</span></span><span style="display:flex;"><span>hack.sh  pw
+</span></span><span style="display:flex;"><span>bandit23@bandit:/tmp/24$ cat pw
+</span></span><span style="display:flex;"><span>UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+</span></span></code></pre></div>
     </div>
     <div class="post-footer">
       

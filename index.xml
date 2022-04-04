@@ -5,25 +5,14 @@
     <link>/</link>
     <description>Recent content on D@rkmod3</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ISITDTU CTF QUALS 2021</title>
-      <link>/posts/isitdtu_qual2021/</link>
-      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+      <title>RitsecCTF 2022</title>
+      <link>/posts/ritsecctf2022/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>/posts/isitdtu_qual2021/</guid>
-      <description>Warmup Type: SSTI Đọc source Bài này khi bắt đầu phân tích, mình nhìn vào fileiptables.sh và nhận thấy 1 số thông tin sau:
-#!/bin/bash IPT=&amp;#34;/usr/sbin/iptables&amp;#34; echo &amp;#34;Set default policy to &amp;#39;DROP&amp;#39;&amp;#34; $IPT -P INPUT DROP $IPT -P FORWARD DROP $IPT -P OUTPUT DROP echo &amp;#34;Allowing new and established incoming connections to port 5000&amp;#34; $IPT -A INPUT -p tcp -m multiport --dports 5000 -m state --state NEW,ESTABLISHED -j ACCEPT $IPT -A OUTPUT -p tcp -m multiport --sports 5000 -m state --state ESTABLISHED -j ACCEPT exit 0 iptables là interface cho netfilter giúp xử lí các packet một cách linh hoạt, quyết định các packet nào được phép đi vào (incoming) hay đi ra (outgoing) khỏi hệ thống.</description>
-    </item>
-    
-    <item>
-      <title>Cookie Hân Hoan season 1</title>
-      <link>/posts/cookiehanhoanseason-1/</link>
-      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/cookiehanhoanseason-1/</guid>
-      <description>Web-basic 1.Hân Hoan Vào trang web, ta thấy có 1 form đăng nhập. Đăng nhập bằng 1 tài khoản bất kì, kết quả trả về là “You are not CookieHanHoan!” Chỉnh sửa cookie ở phần httprequest header ta có được flag 2.Header 401 Từ tên challenge, mình đoán rằng bài này thuộc dạng authentication, status 401 chính là Unauthorized lúc người dùng xác thực sai thông tin.
-Xem source HTML, mình thấy 1 chuỗi thông tin được comment lại</description>
+      <guid>/posts/ritsecctf2022/</guid>
+      <description>Lời mở đầu  Đây là giải thứ 4 mình clear web, theo mình đánh giá thì giải này khá dễ Mình chỉ viết writeup 3 bài mà mình cảm thấy khá thú vị  Web(7/7) Really Cool Encryption </description>
     </item>
     
     <item>
@@ -35,7 +24,7 @@ Xem source HTML, mình thấy 1 chuỗi thông tin được comment lại</descr
       <description>Bandit Level 0 Use ls command, we get a file readme. Use cat command to read it.
 cat readme boJ9jbbUNNfktd78OOpsqOltutMc3MY1 Level 1 When use ls it returns only -, I use cat - but it not works because:
  &amp;quot;-&amp;quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
-bandit1@bandit:~$ file ./- ./-: ASCII text bandit1@bandit:~$ cat ./- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 Level 2 It uses spaces in this filename, but don&amp;rsquo;t worry because we can use * to select all file from this directory</description>
+bandit1@bandit:~$ file ./- ./-: ASCII text  bandit1@bandit:~$ cat ./- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 Level 2 It uses spaces in this filename, but don&amp;rsquo;t worry because we can use * to select all file from this directory</description>
     </item>
     
     <item>
@@ -46,7 +35,7 @@ bandit1@bandit:~$ file ./- ./-: ASCII text bandit1@bandit:~$ cat ./- CV1DtqXWVFX
       <guid>/posts/downunderctf/</guid>
       <description>Web (7/11) My team ends up at 11th place all over 2142 teams, that is a proud achievement right? FarSight  Difficult: easy  Login to this page, notice to the burp proxy history, i found a route /graphql.
 I use a tool named GraphQL Playground to analysis scheme and execute query command.
-type ConfigPair { key: String! value: String! } type Mutation { loginOrRegister(username: String!, password: String!): String newPage(name: String, content: String, siteId: ID!</description>
+type ConfigPair {  key: String!  value: String! }  type Mutation {  loginOrRegister(username: String!, password: String!</description>
     </item>
     
     <item>
@@ -56,8 +45,8 @@ type ConfigPair { key: String! value: String! } type Mutation { loginOrRegister(
       
       <guid>/posts/lord_of_sqli/</guid>
       <description>Day 1  Grimlin cobolt goblin orc  Grimlin To win this game, we force $result[&#39;id&#39;] return any value.
-$query = &amp;#34;select id from prob_gremlin where id=&amp;#39;{$_GET[id]}&amp;#39; and pw=&amp;#39;{$_GET[pw]}&amp;#39;&amp;#34;; I use &#39; to escape id param and add a sql command:
-id=&amp;#39;or(1)--+- # ... where id=&amp;#39;&amp;#39; or(1)-- +-and pw= id=1&amp;#39; union select &amp;#39;vietcaijvaodaycungduoc&amp;#39; --+- # try with union, huh! # ... many ways Cobolt Same with Grimlin we must do some trick to force $result[&#39;id&#39;] = &#39;admin&#39;</description>
+ $query = &amp;#34;select id from prob_gremlin where id=&amp;#39;{$_GET[id]}&amp;#39; and pw=&amp;#39;{$_GET[pw]}&amp;#39;&amp;#34;; I use &#39; to escape id param and add a sql command:
+ id=&amp;#39;or(1)--+-  # ... where id=&amp;#39;&amp;#39; or(1)-- +-and pw=  id=1&amp;#39; union select &amp;#39;vietcaijvaodaycungduoc&amp;#39; --+-  # try with union, huh!  # ... many ways Cobolt Same with Grimlin we must do some trick to force $result[&#39;id&#39;] = &#39;admin&#39;</description>
     </item>
     
     <item>
