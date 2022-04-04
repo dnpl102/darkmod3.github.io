@@ -96,7 +96,7 @@ và dấu <code>~</code> sẽ trả về <code>/home/bruh</code>.</p>
 <p>Mình đoán dụng ý người ra đề muốn chúng ta khôi phục lại bức ảnh gốc, đây là 1 chall kiểu mix giữa web-forensic, mình thấy khá thú vị.</p>
 <p>Nhìn vào nội dung file txt, ta thấy quy luật sau:</p>
 <pre tabindex="0"><code>[offset, bytestring] nextpath
-</code></pre><p>Truy cập vào nextpath.txt ta được nội dung của chunk tiếp theo. Biết quy luật rồi thì ta giải quyết thôi :v</p>
+</code></pre><p>Truy cập vào <code>{nextpath}</code>.txt ta được nội dung của chunk tiếp theo. Biết quy luật rồi thì ta giải quyết thôi :v</p>
 <p><code>(P/s: Để tối ưu hoá code thì mình sử dụng session thay vì tạo mới request qua mỗi vòng lặp, như vậy tốc độ request sẽ nhanh hơn)</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> session
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests<span style="color:#f92672">,</span>re 
