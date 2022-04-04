@@ -12,7 +12,8 @@
       <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>/posts/ritsecctf2022/</guid>
-      <description>Lời mở đầu  Đây là giải thứ 4 mình clear web, theo mình đánh giá thì giải này khá dễ Mình chỉ viết writeup 3 bài mà mình cảm thấy khá thú vị  Web(7/7) Really Cool Encryption </description>
+      <description>Lời mở đầu  Giải này hơi dễ so với rating 3x Mình học được 1 số thứ hay ho liên quan đến ftp protocol Mình chỉ viết writeup 3 bài mà mình cảm thấy khá thú vị  Web(7/7) Really Cool Encryption Bài này cho phép chúng ta nhập vào 1 input bất kì và in ra base64 encode của input đó.
+Lúc đầu, mình thử fuzzing 1 số thứ liên quan đến SSTI như {{7*7}}, {% if .</description>
     </item>
     
     <item>
