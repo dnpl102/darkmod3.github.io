@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" data-mode="dark">
   <head prefix="og: http://ogp.me/ns#">
@@ -308,6 +309,76 @@
 
   <h3 id="level-1"><a class="anchor" href="#level-1" title='Anchor for: Level 1.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 1</h3> 
 
+=======
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Overthewire // D@rkmod3</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.96.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="D@rkmod3" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.8751543c8da766b689e79176cbd58ed78b7c1b5ffde4bc716e1da317e5caccbe.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Overthewire"/>
+<meta name="twitter:description" content="Bandit Level 0 Use ls command, we get a file readme. Use cat command to read it.
+cat readme boJ9jbbUNNfktd78OOpsqOltutMc3MY1 Level 1 When use ls it returns only -, I use cat - but it not works because:
+ &quot;-&quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
+bandit1@bandit:~$ file ./- ./-: ASCII text  bandit1@bandit:~$ cat ./- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 Level 2 It uses spaces in this filename, but don&rsquo;t worry because we can use * to select all file from this directory"/>
+
+    <meta property="og:title" content="Overthewire" />
+<meta property="og:description" content="Bandit Level 0 Use ls command, we get a file readme. Use cat command to read it.
+cat readme boJ9jbbUNNfktd78OOpsqOltutMc3MY1 Level 1 When use ls it returns only -, I use cat - but it not works because:
+ &quot;-&quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
+bandit1@bandit:~$ file ./- ./-: ASCII text  bandit1@bandit:~$ cat ./- CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 Level 2 It uses spaces in this filename, but don&rsquo;t worry because we can use * to select all file from this directory" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/overthewire/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-09-28T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href=""><img class="app-header-avatar" src="/avatar.png" alt="D@rkmod3" /></a>
+      <h1>D@rkmod3</h1>
+      <p>Hack or hacked</p>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Overthewire</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 28, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          9 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="bandit">Bandit</h1>
+<h3 id="level-0">Level 0</h3>
+<p>Use <code>ls</code> command, we get a file <code>readme</code>. Use <code>cat</code> command to read it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat readme
+</span></span><span style="display:flex;"><span>boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+</span></span></code></pre></div><h3 id="level-1">Level 1</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>When use <code>ls</code> it returns only <code>-</code>, I use <code>cat -</code> but it not works because:</p>
 <ul>
 <li><code>&quot;-&quot;</code> means to read the argument/content from STDIN (file descriptor 0)</li>
@@ -318,6 +389,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>bandit1@bandit:~$ cat ./-
 </span></span><span style="display:flex;"><span>CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -343,6 +415,13 @@
 
   <h3 id="level-3"><a class="anchor" href="#level-3" title='Anchor for: Level 3.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 3</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-2">Level 2</h3>
+<p>It uses spaces in this filename, but don&rsquo;t worry because we can use <code>*</code> to select all file from this directory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat *
+</span></span><span style="display:flex;"><span>UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+</span></span></code></pre></div><h3 id="level-3">Level 3</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>From the description, I find a argument <code>-a</code> of <code>ls</code> command will be show all file hidden.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit3@bandit:~$ cd inhere
 </span></span><span style="display:flex;"><span>bandit3@bandit:~/inhere$ ls -a
@@ -352,6 +431,7 @@
 </span></span><span style="display:flex;"><span>cat: ..: Is a directory
 </span></span><span style="display:flex;"><span>pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 </span></span></code></pre></div><p>Use <code>cat .*</code> to get password, or u can use <code>cat .hidden</code> instead.</p>
+<<<<<<< HEAD
 
 
 
@@ -363,6 +443,9 @@
 
   <h3 id="level-4"><a class="anchor" href="#level-4" title='Anchor for: Level 4.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 4</h3> 
 
+=======
+<h3 id="level-4">Level 4</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p><code>*</code> is useful :)), In this level we maybe use <code>cat ./-*</code> to get all text from all file (It will hard to get password)</p>
 <p>Thus, we should use <code>file</code> to get type of all file.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit4@bandit:~/inhere$ file ./-*
@@ -378,6 +461,7 @@
 </span></span><span style="display:flex;"><span>./-file09: data
 </span></span><span style="display:flex;"><span>bandit4@bandit:~/inhere$ cat ./-file07
 </span></span><span style="display:flex;"><span>koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -389,6 +473,9 @@
 
   <h3 id="level-5"><a class="anchor" href="#level-5" title='Anchor for: Level 5.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 5</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-5">Level 5</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>It has many folder in <code>inhere</code> directory, so we will use <code>find</code> to get password.</p>
 <p>Read the description of this level, we can use argument of <code>find</code> to filter.</p>
 <ul>
@@ -424,6 +511,7 @@
 </span></span><span style="display:flex;"><span>./maybehere07/.file2
 </span></span><span style="display:flex;"><span>bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
 </span></span><span style="display:flex;"><span>DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -435,6 +523,9 @@
 
   <h3 id="level-6"><a class="anchor" href="#level-6" title='Anchor for: Level 6.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 6</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-6">Level 6</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>Same with level 6, we use argument of <code>find</code> to filter:</p>
 <ul>
 <li><code>owned by user bandit7</code> by <code>-user bandit7</code></li>
@@ -447,6 +538,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>/var/lib/dpkg/info/bandit7.password
 </span></span><span style="display:flex;"><span>bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
 </span></span><span style="display:flex;"><span>HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -472,10 +564,18 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-8"><a class="anchor" href="#level-8" title='Anchor for: Level 8.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 8</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-7">Level 7</h3>
+<p>Combine <code>cat</code> and <code>grep</code> via pipe.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit7@bandit:~$ cat data.txt  | grep <span style="color:#e6db74">&#34;millionth&#34;</span>
+</span></span><span style="display:flex;"><span>millionth       cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+</span></span></code></pre></div><h3 id="level-8">Level 8</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p><code>sort</code> and <code>uniq</code> are useful in this case. With <code>sort</code> we can sort same data to a set, then use <code>uniq -u</code> to remove multiple duplicate lines.</p>
 <p><code>-u – -unique : It allows you to print only unique lines.</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit8@bandit:~$ cat data.txt | sort | uniq -u
 </span></span><span style="display:flex;"><span>UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -487,12 +587,16 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-9"><a class="anchor" href="#level-9" title='Anchor for: Level 9.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 9</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-9">Level 9</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>Use <code>strings</code> to find out <code>printable</code> character, then <code>grep</code> with <code>regex</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit9@bandit:~$ strings data.txt | grep <span style="color:#e6db74">&#34;= [a-z0-9]&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">==========</span> the*2i<span style="color:#e6db74">&#34;4
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">========== password
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Z)========== is
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&amp;========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+<<<<<<< HEAD
 </span></span></span></code></pre></div>
 
 
@@ -504,11 +608,15 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-10"><a class="anchor" href="#level-10" title='Anchor for: Level 10.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 10</h3> 
 
+=======
+</span></span></span></code></pre></div><h3 id="level-10">Level 10</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>Decode base64 from string.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit10@bandit:~$ cat data.txt
 </span></span><span style="display:flex;"><span>VGhlIHBhc3N3b3JkIGlzIElGdWt3S0dzRlc4TU9xM0lSRnFyeEUxaHhUTkViVVBSCg<span style="color:#f92672">==</span>
 </span></span><span style="display:flex;"><span>bandit10@bandit:~$ cat data.txt | base64 -d
 </span></span><span style="display:flex;"><span>The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -520,6 +628,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-11"><a class="anchor" href="#level-11" title='Anchor for: Level 11.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 11</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-11">Level 11</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>From description <code>rotated by 13 positions</code> which make me thinking about rot13 algorithm.</p>
 <ul>
 <li>ROT13 is a special case of the encryption algorithm known as a Caesar cipher</li>
@@ -530,6 +641,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>bandit11@bandit:~$ alias rot13<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tr &#39;A-Za-z&#39; &#39;N-ZA-Mn-za-m&#39;&#34;</span>
 </span></span><span style="display:flex;"><span>bandit11@bandit:~$ cat data.txt | rot13
 </span></span><span style="display:flex;"><span>The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -541,6 +653,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-12"><a class="anchor" href="#level-12" title='Anchor for: Level 12.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 12</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-12">Level 12</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>First step, create directory which permit we execute command on <code>data.txt</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit12@bandit:~$ mkdir /tmp/D@rkmod3
 </span></span><span style="display:flex;"><span>bandit12@bandit:~$ cd /tmp/D@rkmod3
@@ -576,6 +691,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>/dev/stdin: ASCII text
 </span></span><span style="display:flex;"><span>bandit12@bandit:/tmp/D@rkmod3$ zcat data8.bin
 </span></span><span style="display:flex;"><span>The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -587,6 +703,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-13"><a class="anchor" href="#level-13" title='Anchor for: Level 13.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 13</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-13">Level 13</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit13@bandit:~$ ls
 </span></span><span style="display:flex;"><span>sshkey.private
 </span></span></code></pre></div><p>I use nmap to scan port available on this machine:</p>
@@ -612,6 +731,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>30000/tcp open  ndmps
 </span></span></code></pre></div><p>Port 22 is opened and private key is available. Login Now ~~</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit13@bandit:~$ ssh -i sshkey.private bandit14@localhost -p <span style="color:#ae81ff">22</span>
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -623,6 +743,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-14"><a class="anchor" href="#level-14" title='Anchor for: Level 14.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 14</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-14">Level 14</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit14@bandit:~$ ls /etc/bandit_pass
 </span></span><span style="display:flex;"><span>bandit0   bandit11  bandit14  bandit17  bandit2   bandit22  bandit25  bandit28  bandit30  bandit33  bandit6  bandit9
 </span></span><span style="display:flex;"><span>bandit1   bandit12  bandit15  bandit18  bandit20  bandit23  bandit26  bandit29  bandit31  bandit4   bandit7
@@ -634,6 +757,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
 </span></span><span style="display:flex;"><span>Correct!
 </span></span><span style="display:flex;"><span>BfMYroe26WYalil77FoDi9qh59eK5xNr
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -645,12 +769,16 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-15"><a class="anchor" href="#level-15" title='Anchor for: Level 15.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 15</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-15">Level 15</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>Use openssl generates key to connect to localhost</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit15@bandit:~$ openssl s_client -ign_eof -connect localhost:30001
 </span></span><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span>BfMYroe26WYalil77FoDi9qh59eK5xNr
 </span></span><span style="display:flex;"><span>Correct!
 </span></span><span style="display:flex;"><span>cluFn7wTiGryunymYOu4RcffSxQluehd
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -662,6 +790,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-16"><a class="anchor" href="#level-16" title='Anchor for: Level 16.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 16</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-16">Level 16</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>Use <code>nmap -p 31000-32000 localhost</code> to scan all port available from 31000 to 32000</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit16@bandit:~$ nmap -p 31000-32000 localhost
 </span></span><span style="display:flex;"><span>
@@ -692,6 +823,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>bandit16@bandit:/tmp/test$ nano privatekey
 </span></span><span style="display:flex;"><span>bandit16@bandit:/tmp/test$ chmod <span style="color:#ae81ff">700</span> privatekey
 </span></span><span style="display:flex;"><span>bandit16@bandit:/tmp/test$ ssh -i ./privatekey bandit17@localhost
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -703,6 +835,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level--17"><a class="anchor" href="#level--17" title='Anchor for: Level  17.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level  17</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level--17">Level  17</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>Use <code>diff</code> command to find different between two files.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit17@bandit:~$ diff passwords.old passwords.new
 </span></span><span style="display:flex;"><span>42c42
@@ -710,6 +845,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>---
 </span></span><span style="display:flex;"><span>&gt; kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
 </span></span></code></pre></div><p>Thus, password for next level is <code>kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd</code></p>
+<<<<<<< HEAD
 
 
 
@@ -721,6 +857,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-18"><a class="anchor" href="#level-18" title='Anchor for: Level 18.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 18</h3> 
 
+=======
+<h3 id="level-18">Level 18</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>I search on gg for this problem and i found <code>ssh user@host  &quot;/bin/bash --norc&quot;</code> is useful.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh bandit18@bandit.labs.overthewire.org -p <span style="color:#ae81ff">2220</span> <span style="color:#e6db74">&#34;/bin/bash --norc&#34;</span>
 </span></span><span style="display:flex;"><span>bandit18@bandit.labs.overthewire.org<span style="color:#960050;background-color:#1e0010">&#39;</span>s password:
@@ -728,6 +867,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>readme
 </span></span><span style="display:flex;"><span>cat readme
 </span></span><span style="display:flex;"><span>IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -739,6 +879,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-19"><a class="anchor" href="#level-19" title='Anchor for: Level 19.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 19</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-19">Level 19</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit19@bandit:~$ ls
 </span></span><span style="display:flex;"><span>bandit20-do
 </span></span><span style="display:flex;"><span>bandit19@bandit:~$ ./bandit20-do
@@ -746,6 +889,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>  Example: ./bandit20-do id
 </span></span><span style="display:flex;"><span>bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 </span></span><span style="display:flex;"><span>GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -757,6 +901,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-20"><a class="anchor" href="#level-20" title='Anchor for: Level 20.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 20</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-20">Level 20</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit20@bandit:~$ ls
 </span></span><span style="display:flex;"><span>suconnect
 </span></span><span style="display:flex;"><span>bandit20@bandit:~$ ./suconnect
@@ -776,6 +923,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>listening on <span style="color:#f92672">[</span>any<span style="color:#f92672">]</span> <span style="color:#ae81ff">1337</span> ...
 </span></span><span style="display:flex;"><span>connect to <span style="color:#f92672">[</span>127.0.0.1<span style="color:#f92672">]</span> from <span style="color:#f92672">(</span>UNKNOWN<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>127.0.0.1<span style="color:#f92672">]</span> <span style="color:#ae81ff">39324</span>
 </span></span><span style="display:flex;"><span>gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -787,6 +935,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-21"><a class="anchor" href="#level-21" title='Anchor for: Level 21.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 21</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-21">Level 21</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>Following the description: <code>Look in /etc/cron.d/ for the configuration and see what command is being executed.</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit21@bandit:~$ ls -a /etc/cron.d
 </span></span><span style="display:flex;"><span>.   cronjob_bandit15_root  cronjob_bandit22  cronjob_bandit24       .placeholder
@@ -801,6 +952,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>cat /etc/bandit_pass/bandit22 &gt; /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 </span></span><span style="display:flex;"><span>bandit21@bandit:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 </span></span><span style="display:flex;"><span>Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -812,6 +964,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-22"><a class="anchor" href="#level-22" title='Anchor for: Level 22.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 22</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-22">Level 22</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <p>From the experience of the previous level.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit22@bandit:~$ cat /usr/bin/cronjob_bandit23.sh
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span>
@@ -829,6 +984,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>bandit22@bandit:~$ mytarget<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo I am user $myname | md5sum | cut -d <span style="color:#e6db74">&#39; &#39;</span> -f 1<span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>bandit22@bandit:~$ cat /tmp/$mytarget
 </span></span><span style="display:flex;"><span>jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -840,6 +996,9 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   <h3 id="level-23"><a class="anchor" href="#level-23" title='Anchor for: Level 23.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Level 23</h3> 
 
+=======
+</span></span></code></pre></div><h3 id="level-23">Level 23</h3>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bandit23@bandit:~$ cat /usr/bin/cronjob_bandit24.sh
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span>
 </span></span><span style="display:flex;"><span>
@@ -871,6 +1030,7 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 </span></span><span style="display:flex;"><span>hack.sh  pw
 </span></span><span style="display:flex;"><span>bandit23@bandit:/tmp/24$ cat pw
 </span></span><span style="display:flex;"><span>UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+<<<<<<< HEAD
 </span></span></code></pre></div>
 
 
@@ -935,3 +1095,15 @@ So I throw it to <code>/dev/null</code> by <code>2&gt;dev/null</code>.</p>
 
   </body>
 </html>
+=======
+</span></span></code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
+>>>>>>> a5c469a56d11c65f73831de8884a3baa8fb9bc14
