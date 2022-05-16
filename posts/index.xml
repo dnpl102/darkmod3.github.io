@@ -32,18 +32,6 @@ Mình quyết định bruteforce các kí tự printable để xem hành vi xử
       </item>
     
       <item>
-        <title>Overthewire</title>
-        <link>/posts/overthewire/</link>
-        <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
-        
-        <guid>/posts/overthewire/</guid>
-        <description>Bandit  Level 0 Use ls command, we get a file readme. Use cat command to read it.
-cat readme boJ9jbbUNNfktd78OOpsqOltutMc3MY1  Level 1 When use ls it returns only -, I use cat - but it not works because:
- &amp;quot;-&amp;quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
-bandit1@bandit:~$ file ./- ./-: ASCII text  bandit1@bandit:~$ cat .</description>
-      </item>
-    
-      <item>
         <title>DownUnderCTF2021</title>
         <link>/posts/downunderctf/</link>
         <pubDate>Sun, 26 Sep 2021 00:00:00 +0000</pubDate>
@@ -52,17 +40,6 @@ bandit1@bandit:~$ file ./- ./-: ASCII text  bandit1@bandit:~$ cat .</description
         <description>Web (7/11)  My team ends up at 11th place all over 2142 teams, that is a proud achievement right? FarSight  Difficult: easy  Login to this page, notice to the burp proxy history, i found a route /graphql.
 I use a tool named GraphQL Playground to analysis scheme and execute query command.
 type ConfigPair {  key: String!  value: String! }  type Mutation {  loginOrRegister(username: String!</description>
-      </item>
-    
-      <item>
-        <title>Lord of Sqli</title>
-        <link>/posts/lord_of_sqli/</link>
-        <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
-        
-        <guid>/posts/lord_of_sqli/</guid>
-        <description>Day 1  Grimlin cobolt goblin orc   Grimlin To win this game, we force $result[&#39;id&#39;] return any value.
- $query = &amp;#34;select id from prob_gremlin where id=&amp;#39;{$_GET[id]}&amp;#39; and pw=&amp;#39;{$_GET[pw]}&amp;#39;&amp;#34;; I use &#39; to escape id param and add a sql command:
- id=&amp;#39;or(1)--+-  # ... where id=&amp;#39;&amp;#39; or(1)-- +-and pw=  id=1&amp;#39; union select &amp;#39;vietcaijvaodaycungduoc&amp;#39; --+-  # try with union, huh!  # ... many ways  Cobolt Same with Grimlin we must do some trick to force $result[&#39;id&#39;] = &#39;admin&#39;</description>
       </item>
     
       <item>
@@ -76,6 +53,29 @@ http://web.chal.csaw.io:5000/submit?value={{7*7}} Okay, RCE timeeeeee~
 {{request.application.__globals__.__builtins__.__import__(&amp;#39;os&amp;#39;).popen(&amp;#39;ls -la&amp;#39;).read()}} This payload import class os and executes ls -la from popen. Send this payload and we get the response:
 Sorry, the following keywords/characters are not allowed :- _ ,config ,os, RUNCMD, base It&amp;rsquo;s not hard to bypass this filters
  With _ we can bypass by \x5f (hex encode) With os we can bypass by \x6f\x73 With .</description>
+      </item>
+    
+      <item>
+        <title>Overthewire</title>
+        <link>/posts/overthewire/</link>
+        <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/overthewire/</guid>
+        <description>Bandit  Level 0 Use ls command, we get a file readme. Use cat command to read it.
+cat readme boJ9jbbUNNfktd78OOpsqOltutMc3MY1  Level 1 When use ls it returns only -, I use cat - but it not works because:
+ &amp;quot;-&amp;quot; means to read the argument/content from STDIN (file descriptor 0)  So I use ./- to select this file.
+bandit1@bandit:~$ file ./- ./-: ASCII text  bandit1@bandit:~$ cat .</description>
+      </item>
+    
+      <item>
+        <title>Lord of Sqli</title>
+        <link>/posts/lord_of_sqli/</link>
+        <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/lord_of_sqli/</guid>
+        <description>Day 1  Grimlin cobolt goblin orc   Grimlin To win this game, we force $result[&#39;id&#39;] return any value.
+ $query = &amp;#34;select id from prob_gremlin where id=&amp;#39;{$_GET[id]}&amp;#39; and pw=&amp;#39;{$_GET[pw]}&amp;#39;&amp;#34;; I use &#39; to escape id param and add a sql command:
+ id=&amp;#39;or(1)--+-  # ... where id=&amp;#39;&amp;#39; or(1)-- +-and pw=  id=1&amp;#39; union select &amp;#39;vietcaijvaodaycungduoc&amp;#39; --+-  # try with union, huh!  # ... many ways  Cobolt Same with Grimlin we must do some trick to force $result[&#39;id&#39;] = &#39;admin&#39;</description>
       </item>
     
   </channel>
