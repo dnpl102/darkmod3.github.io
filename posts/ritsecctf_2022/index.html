@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-mode="dark">
+<html lang="en" data-mode="light">
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
 
 
 
-<title>RitsecCTF 2022 | </title>
+<title>RitsecCTF 2022 | d@rkmod3</title>
 
 
 
@@ -52,7 +52,7 @@
 
 
 
-<meta property="og:site_name" content="">
+<meta property="og:site_name" content="d@rkmod3">
 <meta property="og:title" content="RitsecCTF 2022">
 
   <meta property="og:url" content="/posts/ritsecctf_2022/">
@@ -143,7 +143,7 @@
 
 
 
-<link rel="stylesheet" href="/css/main.min.860f44e9e1bd35f9d67581a67fe8cdb3a88bf684226678fdc2227107af13e885.css" integrity="sha256-hg9E6eG9NfnWdYGmf&#43;jNs6iL9oQiZnj9wiJxB68T6IU=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/main.min.78522036ddf9f6185ddda21a1e9757b2153d186edb58d42839dfafe93bd833a5.css" integrity="sha256-eFIgNt359hhd3aIaHpdXshU9GG7bWNQoOd&#43;v6TvYM6U=" crossorigin="anonymous">
 
 
 
@@ -158,7 +158,7 @@
   
 
   
-  <link rel="stylesheet" href="/css/noscript.min.3f3b95436b19eaeb9223fb12c0b86737d53ee0a47fdba271a886c244bc03975c.css" integrity="sha256-PzuVQ2sZ6uuSI/sSwLhnN9U&#43;4KR/26JxqIbCRLwDl1w=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/noscript.min.9bacd85b6f1d42296c56d3b8457d0c13a4e7f415c4ca5fc8affb6ed6b39cad72.css" integrity="sha256-m6zYW28dQilsVtO4RX0ME6Tn9BXEyl/Ir/tu1rOcrXI=" crossorigin="anonymous">
 
 </noscript>
 
@@ -194,7 +194,7 @@
     <header>
       
 
-  <a href="/"></a>
+  <a href="/">d@rkmod3</a>
 
 
 
@@ -222,9 +222,30 @@
         
         
       </header>
+ 
+          <details class="toc" open>
+    <summary class="outline-dashed">
+      Contents
+    </summary>
     
-      
-      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#really-cool-encryption">Really Cool Encryption</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#fuzzing-ssti">Fuzzing SSTI</a></li>
+            <li><a href="#lấy-flag-từ-docker-image">Lấy flag từ docker image</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#down-the-data-streams">Down the Data Streams</a></li>
+    <li><a href="#bingus-access">Bingus Access</a></li>
+  </ul>
+</nav>
+  </details>
+        
 
 
 
@@ -267,7 +288,6 @@
 
 
 
-  
 
 
 
@@ -280,8 +300,7 @@
 
 
 
-
-  <h2 id="really-cool-encryption"><a class="anchor" href="#really-cool-encryption" title='Anchor for: Really Cool Encryption.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Really Cool Encryption</h2> 
+  <h2 id="really-cool-encryption"><a class="anchor" href="#really-cool-encryption" title='Anchor for: Really Cool Encryption.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Really Cool Encryption</h2> 
 
 <p>Bài này cho phép chúng ta nhập vào 1 input bất kì và in ra base64 encode của input đó.</p>
 
@@ -293,7 +312,7 @@
 
 
 
-  <h4 id="fuzzing-ssti"><a class="anchor" href="#fuzzing-ssti" title='Anchor for: Fuzzing SSTI.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Fuzzing SSTI</h4> 
+  <h4 id="fuzzing-ssti"><a class="anchor" href="#fuzzing-ssti" title='Anchor for: Fuzzing SSTI.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Fuzzing SSTI</h4> 
 
 <pre aria-label="Box containing code sample." tabindex=0><code>{{7*7}}, {% if ... %}, ...
 </code></pre><p>và nhận thấy rằng chall không có vuln ssti.</p>
@@ -314,7 +333,7 @@
 
 
 
-  <h4 id="lấy-flag-từ-docker-image"><a class="anchor" href="#lấy-flag-từ-docker-image" title='Anchor for: Lấy flag từ docker image.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Lấy flag từ docker image</h4> 
+  <h4 id="lấy-flag-từ-docker-image"><a class="anchor" href="#lấy-flag-từ-docker-image" title='Anchor for: Lấy flag từ docker image.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Lấy flag từ docker image</h4> 
 
 <p>Okay, Kéo image về máy bằng câu lệnh</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>docker pull youngbaofeng/google-image-search-pretext:latest
@@ -345,7 +364,7 @@
   
 
     <img
-      class="borderless"
+      
       loading="lazy"
       src="/posts/img/RitsecCTF2022/flagRCE.png"
       
@@ -370,7 +389,7 @@
 
 
 
-  <h2 id="down-the-data-streams"><a class="anchor" href="#down-the-data-streams" title='Anchor for: Down the Data Streams.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Down the Data Streams</h2> 
+  <h2 id="down-the-data-streams"><a class="anchor" href="#down-the-data-streams" title='Anchor for: Down the Data Streams.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Down the Data Streams</h2> 
 
 <p>Bài này bắt đầu bằng 1 đường dẫn /{filename}.txt.</p>
 <p>
@@ -393,7 +412,7 @@
   
 
     <img
-      class="borderless"
+      
       loading="lazy"
       src="/posts/img/RitsecCTF2022/Step1.png"
       
@@ -423,7 +442,7 @@
   
 
     <img
-      class="borderless"
+      
       loading="lazy"
       src="/posts/img/RitsecCTF2022/Step2.png"
       
@@ -492,7 +511,7 @@
   
 
     <img
-      class="borderless"
+      
       loading="lazy"
       src="/posts/img/RitsecCTF2022/Step3.png"
       
@@ -523,7 +542,7 @@
   
 
     <img
-      class="borderless"
+      
       loading="lazy"
       src="/posts/img/RitsecCTF2022/flagdatastream.png"
       
@@ -548,7 +567,7 @@
 
 
 
-  <h2 id="bingus-access"><a class="anchor" href="#bingus-access" title='Anchor for: Bingus Access.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#hashtag"/></svg></a> Bingus Access</h2> 
+  <h2 id="bingus-access"><a class="anchor" href="#bingus-access" title='Anchor for: Bingus Access.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Bingus Access</h2> 
 
 <p>Bài này khi ta nhấn vào hình con mèo nó sẽ redirect đến trang info.html</p>
 <p>Trong file này có 1 hint rất quan trọng</p>
@@ -573,7 +592,7 @@ password = d4rkmod3ontheland
 </table> </section>
 
 
-
+        
     </article>
   </main>
 
@@ -614,7 +633,7 @@ password = d4rkmod3ontheland
 
 
 <section class="req-js">
-  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="/img/bundle.min.fc89b321aa39dfb355170fc007ce5b94.svg#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#1dbc91" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#1f676b"><option value="#1dbc91"><option value="#f3a530"><option value="#902b37"><option value="#754e85"><option value="#7fc121"><option value="#a8314a"><option value="#ff7433"><option value="#3e6728"><option value="#c063bd"></datalist>
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#1f676b" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#1f676b"><option value="#1dbc91"></datalist>
 </section>
 
 
