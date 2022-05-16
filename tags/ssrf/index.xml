@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>d@rkmod3</title>
+    <link>/tags/ssrf/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 26 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/ssrf/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>DownUnderCTF2021</title>
+        <link>/posts/downunderctf/</link>
+        <pubDate>Sun, 26 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/downunderctf/</guid>
+        <description>FarSight  Difficult: easy  Login to this page, notice to the burp proxy history, i found a route /graphql.
+I use a tool named GraphQL Playground to analysis scheme and execute query command.
+type ConfigPair {  key: String!  value: String! }  type Mutation {  loginOrRegister(username: String!, password: String!): String  newPage(name: String, content: String, siteId: ID!): ID!  setSiteConfig(config: String!, siteId: ID!): ID!  importPage(pageId: ID!</description>
+      </item>
+    
+  </channel>
+</rss>

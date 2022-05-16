@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>d@rkmod3</title>
+    <link>/tags/lfi/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 21 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/lfi/index.xml" rel="self" type="application/rss+xml" />
+      <item>
+        <title>zer0pts CTF 2022</title>
+        <link>/posts/zer0ptsctf_2022/</link>
+        <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>/posts/zer0ptsctf_2022/</guid>
+        <description>GitFile Explorer  Type: LFI  // index.php  function h($s) { return htmlspecialchars($s); } function craft_url($service, $owner, $repo, $branch, $file) {  if (strpos($service, &amp;#34;github&amp;#34;) !== false) {  /* GitHub URL */  return $service.&amp;#34;/&amp;#34;.$owner.&amp;#34;/&amp;#34;.$repo.&amp;#34;/&amp;#34;.$branch.&amp;#34;/&amp;#34;.$file;   } else if (strpos($service, &amp;#34;gitlab&amp;#34;) !== false) {  /* GitLab URL */  return $service.&amp;#34;/&amp;#34;.$owner.&amp;#34;/&amp;#34;.$repo.&amp;#34;/-/raw/&amp;#34;.$branch.&amp;#34;/&amp;#34;.$file;   } else if (strpos($service, &amp;#34;bitbucket&amp;#34;) !== false) {  /* BitBucket URL */  return $service.</description>
+      </item>
+    
+  </channel>
+</rss>

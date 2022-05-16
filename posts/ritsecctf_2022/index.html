@@ -124,7 +124,7 @@
       "inLanguage": "en",
       "datePublished": "2022-04-04",
       "dateModified": "2022-04-04",
-      "wordCount" : "636",
+      "wordCount" : "638",
       "publisher": {
         "@type": "Person",
         "name": ""
@@ -212,6 +212,9 @@
         <h1>RitsecCTF 2022</h1>
 
         
+          <section class="terms">
+            <ul><li><a class="btn" href="/tags/command-injection/">Command injection</a></li><li><a class="btn" href="/tags/lfi-log-poisioning/">LFI log poisioning</a></li><li><a class="btn" href="/tags/web-forensic/">WEB - Forensic</a></li></ul>
+          </section>
           <p>
             
               Published on <time datetime="2022-04-04">2022-04-04</time>
@@ -232,12 +235,9 @@
   <ul>
     <li><a href="#really-cool-encryption">Really Cool Encryption</a>
       <ul>
-        <li>
-          <ul>
-            <li><a href="#fuzzing-ssti">Fuzzing SSTI</a></li>
-            <li><a href="#lấy-flag-từ-docker-image">Lấy flag từ docker image</a></li>
-          </ul>
-        </li>
+        <li><a href="#fuzzing-ssti">Fuzzing SSTI</a></li>
+        <li><a href="#command-injection">Command injection</a></li>
+        <li><a href="#lấy-flag-từ-docker-image">Lấy flag từ docker image</a></li>
       </ul>
     </li>
     <li><a href="#down-the-data-streams">Down the Data Streams</a></li>
@@ -312,12 +312,23 @@
 
 
 
-  <h4 id="fuzzing-ssti"><a class="anchor" href="#fuzzing-ssti" title='Anchor for: Fuzzing SSTI.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Fuzzing SSTI</h4> 
+  <h3 id="fuzzing-ssti"><a class="anchor" href="#fuzzing-ssti" title='Anchor for: Fuzzing SSTI.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Fuzzing SSTI</h3> 
 
 <pre aria-label="Box containing code sample." tabindex=0><code>{{7*7}}, {% if ... %}, ...
 </code></pre><p>và nhận thấy rằng chall không có vuln ssti.</p>
 <p>Fuzzing 1 lúc, mình nhận ra nếu input chứa dấu “(” hoặc “)” thì sẽ không in ra gì cả.</p>
 <p>Mình quyết định bruteforce các kí tự <code>printable</code> để xem hành vi xử lí của input.</p>
+
+
+
+
+
+
+
+
+
+  <h3 id="command-injection"><a class="anchor" href="#command-injection" title='Anchor for: Command injection.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Command injection</h3> 
+
 <p>Kí tự <code>.</code> và <code>~</code> trả về 1 output base64 có độ dài khác thường, cụ thể dấu <code>.</code> sẽ trả về</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>Dockerfile docker-compose.yml ezpwn.py flag templates
 </code></pre><p>và dấu <code>~</code> sẽ trả về</p>
@@ -333,7 +344,7 @@
 
 
 
-  <h4 id="lấy-flag-từ-docker-image"><a class="anchor" href="#lấy-flag-từ-docker-image" title='Anchor for: Lấy flag từ docker image.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Lấy flag từ docker image</h4> 
+  <h3 id="lấy-flag-từ-docker-image"><a class="anchor" href="#lấy-flag-từ-docker-image" title='Anchor for: Lấy flag từ docker image.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Lấy flag từ docker image</h3> 
 
 <p>Okay, Kéo image về máy bằng câu lệnh</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>docker pull youngbaofeng/google-image-search-pretext:latest
