@@ -12,9 +12,9 @@
         <pubDate>Sun, 26 Sep 2021 00:00:00 +0000</pubDate>
         
         <guid>/posts/downunderctf/</guid>
-        <description>FarSight  Difficult: easy  Login to this page, notice to the burp proxy history, i found a route /graphql.
+        <description>FarSight Difficult: easy Login to this page, notice to the burp proxy history, i found a route /graphql.
 I use a tool named GraphQL Playground to analysis scheme and execute query command.
-type ConfigPair {  key: String!  value: String! }  type Mutation {  loginOrRegister(username: String!, password: String!): String  newPage(name: String, content: String, siteId: ID!): ID!  setSiteConfig(config: String!, siteId: ID!): ID!  importPage(pageId: ID!</description>
+type ConfigPair { key: String! value: String! } type Mutation { loginOrRegister(username: String!, password: String!): String newPage(name: String, content: String, siteId: ID!): ID! setSiteConfig(config: String!, siteId: ID!): ID! importPage(pageId: ID!, siteId: ID!): ID! } type Page { id: ID!</description>
       </item>
     
   </channel>

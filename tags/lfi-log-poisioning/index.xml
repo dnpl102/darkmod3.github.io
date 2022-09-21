@@ -13,7 +13,7 @@
         
         <guid>/posts/ritsecctf_2022/</guid>
         <description>Really Cool Encryption Bài này cho phép chúng ta nhập vào 1 input bất kì và in ra base64 encode của input đó.
- Fuzzing SSTI {{7*7}}, {% if ... %}, ... và nhận thấy rằng chall không có vuln ssti.
+Fuzzing SSTI {{7*7}}, {% if ... %}, ... và nhận thấy rằng chall không có vuln ssti.
 Fuzzing 1 lúc, mình nhận ra nếu input chứa dấu “(” hoặc “)” thì sẽ không in ra gì cả.
 Mình quyết định bruteforce các kí tự printable để xem hành vi xử lí của input.</description>
       </item>
